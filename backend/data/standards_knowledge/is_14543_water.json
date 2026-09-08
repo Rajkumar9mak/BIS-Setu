@@ -1,0 +1,57 @@
+[
+  {
+    "id": "is_14543_c1",
+    "standard_number": "IS 14543 : 2004",
+    "standard_title": "Packaged Drinking Water (Other Than Packaged Natural Mineral Water) - Specification",
+    "category": "Food, Beverage & Consumables",
+    "clause_number": "1",
+    "clause_title": "Scope and Statutory Compulsory Certification",
+    "page": 1,
+    "text": "Prescribes requirements and methods of sampling and test for packaged drinking water filled in hermetically sealed containers of various descriptions. Under Food Safety and Standards (Prohibition and Restrictions on Sales) Regulations 2011 and BIS Act, no person shall manufacture, sell or exhibit for sale packaged drinking water without the ISI Certification Mark under Scheme-I.",
+    "mandatory_status": "Joint BIS-FSSAI Mandatory Certification"
+  },
+  {
+    "id": "is_14543_c4",
+    "standard_number": "IS 14543 : 2004",
+    "standard_title": "Packaged Drinking Water (Other Than Packaged Natural Mineral Water) - Specification",
+    "category": "Food, Beverage & Consumables",
+    "clause_number": "4.2",
+    "clause_title": "Multi-Barrier Treatment Processes",
+    "page": 3,
+    "text": "Water shall be derived from potable underground or surface sources and subjected to multiple physical and chemical treatments including aeration, sand filtration, activated carbon filtration, cartridge micro-filtration (1 to 5 micron), reverse osmosis or demineralization, and disinfection by ozonation or UV radiation. Chemical additives other than food-grade remineralization salts are prohibited.",
+    "mandatory_status": "Mandatory Process Requirement"
+  },
+  {
+    "id": "is_14543_t1",
+    "standard_number": "IS 14543 : 2004",
+    "standard_title": "Packaged Drinking Water (Other Than Packaged Natural Mineral Water) - Specification",
+    "category": "Food, Beverage & Consumables",
+    "clause_number": "Table 1",
+    "clause_title": "Physical and Chemical Quality Limits",
+    "page": 5,
+    "text": "Parameters shall conform to: Total Dissolved Solids (TDS): 75 to 500 mg/L; pH value: 6.5 to 8.5; Turbidity: Max 2 NTU; Total Hardness (as CaCO3): Max 200 mg/L; Calcium (as Ca): Max 75 mg/L; Magnesium (as Mg): Max 30 mg/L; Chlorides (as Cl): Max 200 mg/L; Sulphates (as SO4): Max 200 mg/L; Iron (as Fe): Max 0.1 mg/L.",
+    "mandatory_status": "Essential Chemical Quality Parameter"
+  },
+  {
+    "id": "is_14543_t2",
+    "standard_number": "IS 14543 : 2004",
+    "standard_title": "Packaged Drinking Water (Other Than Packaged Natural Mineral Water) - Specification",
+    "category": "Food, Beverage & Consumables",
+    "clause_number": "Table 2",
+    "clause_title": "Toxic Substances and Heavy Metal Limits",
+    "page": 6,
+    "text": "Toxic element thresholds: Lead (as Pb): Max 0.01 mg/L; Arsenic (as As): Max 0.01 mg/L; Cadmium (as Cd): Max 0.003 mg/L; Mercury (as Hg): Max 0.001 mg/L; Chromium (as Cr): Max 0.05 mg/L; Fluoride (as F): Max 1.0 mg/L; Nitrate (as NO3): Max 45 mg/L; Pesticide Residues: Individual compound max 0.0001 mg/L, Total pesticides max 0.0005 mg/L determined by GC-MS/MS.",
+    "mandatory_status": "Statutory Toxicological Thresholds"
+  },
+  {
+    "id": "is_14543_t3",
+    "standard_number": "IS 14543 : 2004",
+    "standard_title": "Packaged Drinking Water (Other Than Packaged Natural Mineral Water) - Specification",
+    "category": "Food, Beverage & Consumables",
+    "clause_number": "Table 3",
+    "clause_title": "Microbiological Quality Limits",
+    "page": 7,
+    "text": "Water shall be free from all pathogenic micro-organisms. Standards per 250 ml sample: Escherichia coli: Absent; Coliform bacteria: Absent; Faecal Streptococci: Absent; Pseudomonas aeruginosa: Absent; Sulphite-reducing anaerobes: Absent in 50 ml; Total viable colony count: Max 100 CFU/ml at 20-22°C and max 20 CFU/ml at 37°C.",
+    "mandatory_status": "Daily Mandatory Batch Release Test"
+  }
+]

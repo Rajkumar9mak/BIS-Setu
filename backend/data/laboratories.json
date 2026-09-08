@@ -1,0 +1,150 @@
+[
+  {
+    "id": "lab_bis_central_sahibabad",
+    "name": "BIS Central Laboratory (CL)",
+    "type": "BIS Owned",
+    "city": "Ghaziabad / Sahibabad",
+    "state": "Uttar Pradesh",
+    "region": "Northern",
+    "address": "Plot No. 20/9, Site IV, Sahibabad Industrial Area, Ghaziabad - 201010",
+    "contact": "+91-120-2776032 | cl@bis.gov.in",
+    "nabl_accreditation": "NABL TC-5001",
+    "testing_scopes": [
+      "IS 302 (Part 2/Sec 15) : Electric Kettles",
+      "IS 302 (Part 1) : Electrical Safety",
+      "IS 4151 : Helmets for Two Wheeler Riders",
+      "IS 9873 : Safety of Toys",
+      "IS 14543 : Packaged Drinking Water",
+      "IS 13252 : IT Equipment"
+    ],
+    "sample_turnaround_days": 10,
+    "rating": 4.9
+  },
+  {
+    "id": "lab_bis_wrol_mumbai",
+    "name": "BIS Western Regional Office Laboratory (WROL)",
+    "type": "BIS Owned",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "region": "Western",
+    "address": "Manakalaya, E9, MIDC, Andheri (East), Mumbai - 400093",
+    "contact": "+91-22-28329295 | wrol@bis.gov.in",
+    "nabl_accreditation": "NABL TC-5022",
+    "testing_scopes": [
+      "IS 302 (Part 2/Sec 15) : Electric Kettles",
+      "IS 302 (Part 1) : Electrical Safety",
+      "IS 4151 : Helmets for Two Wheeler Riders",
+      "IS 14543 : Packaged Drinking Water",
+      "IS 13252 : IT Equipment"
+    ],
+    "sample_turnaround_days": 12,
+    "rating": 4.8
+  },
+  {
+    "id": "lab_bis_srol_chennai",
+    "name": "BIS Southern Regional Office Laboratory (SROL)",
+    "type": "BIS Owned",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "region": "Southern",
+    "address": "CIT Campus, IV Cross Road, Taramani, Chennai - 600113",
+    "contact": "+91-44-22541442 | srol@bis.gov.in",
+    "nabl_accreditation": "NABL TC-5034",
+    "testing_scopes": [
+      "IS 302 (Part 2/Sec 15) : Electric Kettles",
+      "IS 9873 : Safety of Toys",
+      "IS 14543 : Packaged Drinking Water",
+      "IS 13252 : IT Equipment"
+    ],
+    "sample_turnaround_days": 11,
+    "rating": 4.7
+  },
+  {
+    "id": "lab_bis_erol_kolkata",
+    "name": "BIS Eastern Regional Office Laboratory (EROL)",
+    "type": "BIS Owned",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "region": "Eastern",
+    "address": "1/14 C.I.T. Scheme VII M, V.I.P. Road, Kankurgachi, Kolkata - 700054",
+    "contact": "+91-33-23207000 | erol@bis.gov.in",
+    "nabl_accreditation": "NABL TC-5045",
+    "testing_scopes": [
+      "IS 302 (Part 1) : Electrical Safety",
+      "IS 14543 : Packaged Drinking Water",
+      "IS 4151 : Helmets for Two Wheeler Riders"
+    ],
+    "sample_turnaround_days": 14,
+    "rating": 4.6
+  },
+  {
+    "id": "lab_erda_vadodara",
+    "name": "Electrical Research and Development Association (ERDA)",
+    "type": "BIS Recognized Partner",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "region": "Western",
+    "address": "ERDA Road, GIDC, Makarpura, Vadodara - 390010",
+    "contact": "+91-265-3043128 | erda@erda.org",
+    "nabl_accreditation": "NABL TC-5100",
+    "testing_scopes": [
+      "IS 302 (Part 2/Sec 15) : Electric Kettles",
+      "IS 302 (Part 1) : Electrical Safety",
+      "IS 13252 : IT Equipment"
+    ],
+    "sample_turnaround_days": 9,
+    "rating": 4.9
+  },
+  {
+    "id": "lab_shriram_delhi",
+    "name": "Shriram Institute for Industrial Research (SIIR)",
+    "type": "BIS Recognized Partner",
+    "city": "Delhi",
+    "state": "Delhi NCR",
+    "region": "Northern",
+    "address": "19, University Road, Delhi - 110007",
+    "contact": "+91-11-27667267 | customercare@shriraminstitute.org",
+    "nabl_accreditation": "NABL TC-5155",
+    "testing_scopes": [
+      "IS 9873 : Safety of Toys (Mechanical & Heavy Metals)",
+      "IS 14543 : Packaged Drinking Water",
+      "IS 4151 : Helmets"
+    ],
+    "sample_turnaround_days": 8,
+    "rating": 4.9
+  },
+  {
+    "id": "lab_arai_pune",
+    "name": "Automotive Research Association of India (ARAI)",
+    "type": "BIS Recognized Autonomous",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "region": "Western",
+    "address": "Survey No. 102, Vetal Hill, Off Paud Road, Kothrud, Pune - 411038",
+    "contact": "+91-20-30231111 | director@araiindia.com",
+    "nabl_accreditation": "NABL TC-5220",
+    "testing_scopes": [
+      "IS 4151 : Helmets for Two Wheeler Riders (Drop Tower & Penetration)"
+    ],
+    "sample_turnaround_days": 10,
+    "rating": 5.0
+  },
+  {
+    "id": "lab_cpri_bangalore",
+    "name": "Central Power Research Institute (CPRI)",
+    "type": "BIS Recognized Autonomous",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "region": "Southern",
+    "address": "Prof. Sir C.V. Raman Road, Sadashivanagar P.O., Bengaluru - 560080",
+    "contact": "+91-80-22072212 | cpri@cpri.in",
+    "nabl_accreditation": "NABL TC-5011",
+    "testing_scopes": [
+      "IS 302 (Part 2/Sec 15) : Electric Kettles",
+      "IS 302 (Part 1) : Electrical Safety",
+      "IS 13252 : IT Equipment"
+    ],
+    "sample_turnaround_days": 11,
+    "rating": 4.9
+  }
+]

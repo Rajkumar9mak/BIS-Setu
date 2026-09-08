@@ -1,0 +1,101 @@
+[
+  {
+    "id": "is_302_p2_s15_c1",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "1",
+    "clause_title": "Scope",
+    "page": 1,
+    "text": "This standard deals with the safety of electric kettles, jugs and other appliances for heating water for household and similar purposes, their rated voltage being not more than 250 V. Appliances intended for normal household use and appliances that may be used by laymen in shops, in light industry and on farms are within the scope of this standard.",
+    "mandatory_status": "Mandatory under Electrical Appliances (Quality Control) Order"
+  },
+  {
+    "id": "is_302_p2_s15_c7",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "7.1",
+    "clause_title": "Marking and Instructions",
+    "page": 3,
+    "text": "Appliances shall be clearly and indelibly marked with: a) rated voltage or rated voltage range in volts; b) symbol for nature of supply; c) rated power input in watts or rated current in amperes; d) name or trade mark or identification mark of the manufacturer; e) model or type reference; f) maximum water level mark or MIN / MAX indications for kettles; g) The Standard Mark (ISI logo) along with the Licence Number (CM/L-XXXXXXX) shall be prominently displayed on the rating plate after certification.",
+    "mandatory_status": "Mandatory Marking Requirement"
+  },
+  {
+    "id": "is_302_p2_s15_c8",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "8.1",
+    "clause_title": "Protection Against Access to Live Parts",
+    "page": 5,
+    "text": "Appliances shall be constructed and enclosed so that there is adequate protection against accidental contact with live parts. Compliance is checked by inspection and by the test with standard test finger (IS 1401) applied in every possible position with a force not exceeding 50 N. Even when the kettle lid is open, live contacts or internal wiring shall remain inaccessible.",
+    "mandatory_status": "Mandatory Safety Clause"
+  },
+  {
+    "id": "is_302_p2_s15_c10",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "10.1",
+    "clause_title": "Power Input and Current Deviation Limits",
+    "page": 6,
+    "text": "If an appliance is marked with rated power input, the power input at normal operating temperature shall not deviate from the rated power input by more than +5 percent or -10 percent for appliances with rated input above 200 W (which applies to electric kettles typically rated 1000W - 2200W).",
+    "mandatory_status": "Factory Routine & Type Test Requirement"
+  },
+  {
+    "id": "is_302_p2_s15_c11",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "11.8",
+    "clause_title": "Heating and Temperature Rise Limits",
+    "page": 8,
+    "text": "During the heating test, temperature rises are monitored continuously until boiling and auto-cut-off. Handles, knobs, and grips held during normal use shall not exceed a temperature rise of 30 K (30°C above ambient) for metallic parts, 40 K for porcelain/vitreous materials, and 50 K for moulded rubber or plastics. Outer body surfaces of cool-touch kettles shall not exceed 60 K temperature rise.",
+    "mandatory_status": "Type Test Requirement"
+  },
+  {
+    "id": "is_302_p2_s15_c13",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "13.2",
+    "clause_title": "Leakage Current and High Voltage Electric Strength Test",
+    "page": 9,
+    "text": "At normal operating temperature, the electric leakage current of Class I earthed kettles shall not exceed 0.75 mA. An AC test voltage of 1000 V (for basic insulation) or 2500 V (for reinforced insulation) at 50 Hz shall be applied for 1 minute between live parts and the accessible metal body without any breakdown or flashover.",
+    "mandatory_status": "Mandatory 100% Factory Routine Test"
+  },
+  {
+    "id": "is_302_p2_s15_c19",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "19.101",
+    "clause_title": "Abnormal Operation - Boil-Dry and Overheating Protection",
+    "page": 12,
+    "text": "Electric kettles shall incorporate a thermal cut-out or thermal link providing self-resetting or manual-reset boil-dry protection. The kettle is energized without water at 1.15 times rated voltage. The thermal protection must trip safely without flame, molten metal ejection, or toxic fumes. After the boil-dry test, the insulation must withstand a dielectric strength test of 1250 V.",
+    "mandatory_status": "Critical Type Test"
+  },
+  {
+    "id": "is_302_p2_s15_c22",
+    "standard_number": "IS 302 (Part 2/Sec 15) : 2009",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Kettles and Jugs",
+    "category": "Electrical Appliances",
+    "clause_number": "22.102",
+    "clause_title": "Spillage Test and Cordless Base Water Ingress",
+    "page": 15,
+    "text": "For cordless electric kettles, the base connector shall be designed so that water spilled over the kettle body or overflowing from the spout during boiling does not wet electrical connections. The appliance is subjected to a spillage test of 0.5 L of water containing 1% NaCl poured onto the lid and base. The insulation resistance after spillage shall not be less than 2 MΩ.",
+    "mandatory_status": "Special Constructional Requirement"
+  },
+  {
+    "id": "is_302_p1_c27",
+    "standard_number": "IS 302 (Part 1) : 2008",
+    "standard_title": "Safety of Household and Similar Electrical Appliances - General Requirements",
+    "category": "Electrical Appliances",
+    "clause_number": "27.1",
+    "clause_title": "Earthing Continuity and Resistance",
+    "page": 28,
+    "text": "Accessible metal parts of Class I appliances that may become live in the event of an insulation fault shall be permanently and reliably connected to an internal earthing terminal. Earthing resistance between the earthing pin of the supply plug and accessible metal parts shall not exceed 0.1 Ω when tested with a 25 A AC current for 1 minute.",
+    "mandatory_status": "Mandatory 100% Factory Routine Test"
+  }
+]

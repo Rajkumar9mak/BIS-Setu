@@ -1,0 +1,90 @@
+[
+  {
+    "id": "is_4151_c1",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "1",
+    "clause_title": "Scope and Quality Control Order",
+    "page": 1,
+    "text": "This standard specifies the requirements for protective helmets for everyday riders of two-wheel motor vehicles. Under Ministry of Road Transport and Highways (MoRTH) notification S.O. 4252(E), no person shall manufacture, store, sell, or import protective helmets for two-wheeler riders unless they conform to IS 4151:2015 and bear the Standard Mark (ISI logo) under a valid BIS Licence (Scheme-I). Non-ISI helmets are illegal under Motor Vehicles Act Section 129.",
+    "mandatory_status": "Mandatory under MoRTH QCO"
+  },
+  {
+    "id": "is_4151_c6",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "6.1",
+    "clause_title": "Basic Construction and Components",
+    "page": 4,
+    "text": "The helmet shall consist of: a) Hard Outer Shell made of high-impact thermoplastic (ABS/Polycarbonate) or fiber-reinforced composite; b) Protective Padding (Expanded Polystyrene - EPS liner) with uniform density designed to absorb impact energy; c) Comfort padding and anti-allergic lining; d) Retention system (chin strap min 20 mm width with micro-metric buckle or double D-ring); e) Visor with anti-scratch clear optical coating.",
+    "mandatory_status": "Mandatory Construction Requirement"
+  },
+  {
+    "id": "is_4151_c7",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "7.3",
+    "clause_title": "Maximum Weight Limit (Mass)",
+    "page": 5,
+    "text": "The total weight (mass) of the complete helmet including visor and retention system shall not exceed 1200 grams (1.2 kg) for sizes up to 600 mm, with a tolerance of +50 g for XXL/larger shell configurations. This weight limit is formulated to protect riders against cervical spine injury and neck fatigue during deceleration.",
+    "mandatory_status": "Mandatory Specification"
+  },
+  {
+    "id": "is_4151_c9_1",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "9.1",
+    "clause_title": "Impact Absorption and Deceleration Test",
+    "page": 7,
+    "text": "Impact absorption is evaluated by dropping the helmet mounted on a calibrated magnesium-alloy headform from an impact velocity of 7.5 m/s (approx 2.87 m drop height) onto both flat and hemispherical steel anvils. Ambient, heat (50°C), cold (-10°C), and water immersion conditioning are tested. The peak acceleration transmitted to the headform shall not exceed 300 g, and the duration of acceleration exceeding 150 g shall not exceed 5 milliseconds.",
+    "mandatory_status": "Critical Type Test"
+  },
+  {
+    "id": "is_4151_c9_2",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "9.2",
+    "clause_title": "Penetration Resistance Test",
+    "page": 9,
+    "text": "A conical steel punch weighing 3.0 kg with a 60° conical tip and 0.5 mm radius point is dropped in guided free-fall from a height of 3.0 meters onto the helmet shell at any point not less than 50 mm apart. The punch tip shall not penetrate through the shell and EPS liner to make contact with the surface of the headform underneath.",
+    "mandatory_status": "Critical Type Test"
+  },
+  {
+    "id": "is_4151_c9_3",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "9.3",
+    "clause_title": "Retention System Dynamic Test and Rigidity",
+    "page": 11,
+    "text": "The retention system (chin strap) is subjected to a pre-load of 50 N followed by a dynamic drop mass creating an impulse load of 1000 N. The dynamic displacement (elongation) of the strap shall not exceed 35 mm, and the residual elongation after test shall not exceed 25 mm. The buckle mechanism must open under a release force between 10 N and 30 N after the test.",
+    "mandatory_status": "Routine and Type Test Requirement"
+  },
+  {
+    "id": "is_4151_c9_5",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "9.5",
+    "clause_title": "Visor Luminous Transmittance and Scratch Resistance",
+    "page": 13,
+    "text": "The clear visor shall provide a luminous transmittance of not less than 85%. Tinted or smoked daytime visors must provide at least 50% transmittance and must be explicitly marked 'Daytime Use Only'. Visors must resist high-velocity pebble impact (60 m/s steel ball) without shattering, cracking, or splintering.",
+    "mandatory_status": "Component Safety Clause"
+  },
+  {
+    "id": "is_4151_c10",
+    "standard_number": "IS 4151 : 2015",
+    "standard_title": "Protective Helmets for Two-Wheeler Riders - Specification (Fourth Revision)",
+    "category": "Automotive Safety & Protective Gear",
+    "clause_number": "10.1",
+    "clause_title": "Marking, Labelling and ISI Stamp Requirements",
+    "page": 16,
+    "text": "Each helmet shall be durably marked on the outer shell and comfort liner with: a) Manufacturer's name or registered trade name; b) Size designation (circumference in cm); c) Year and month of manufacture; d) Mass of helmet in grams; e) The official BIS Standard Mark (ISI logo) with IS 4151 printed on top and CM/L-XXXXXXXX (8-digit licence code) printed beneath it.",
+    "mandatory_status": "Mandatory Statutory Clause"
+  }
+]

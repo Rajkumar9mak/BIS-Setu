@@ -1,0 +1,68 @@
+[
+  {
+    "id": "is_9873_p1_c1",
+    "standard_number": "IS 9873 (Part 1) : 2019",
+    "standard_title": "Safety of Toys - Part 1: Safety Aspects Related to Mechanical and Physical Properties",
+    "category": "Toys and Child Safety",
+    "clause_number": "1.1",
+    "clause_title": "Scope and Toys Quality Control Order",
+    "page": 1,
+    "text": "Applies to all toys intended for use by children under 14 years of age. Under the Toys (Quality Control) Order issued by DPIIT, Ministry of Commerce & Industry, all toys manufactured, imported, or distributed in India must compulsorily conform to IS 9873 and IS 15644 and carry the ISI Mark under Scheme-I certification. Foreign and domestic toy manufacturers must obtain a BIS licence before market release.",
+    "mandatory_status": "Mandatory under DPIIT Toys QCO"
+  },
+  {
+    "id": "is_9873_p1_c4_4",
+    "standard_number": "IS 9873 (Part 1) : 2019",
+    "standard_title": "Safety of Toys - Part 1: Safety Aspects Related to Mechanical and Physical Properties",
+    "category": "Toys and Child Safety",
+    "clause_number": "4.4",
+    "clause_title": "Small Parts and Choking Hazards (<36 months)",
+    "page": 7,
+    "text": "Toys intended for children under 36 months of age, and their detachable components, shall not fit entirely within the small parts test cylinder (diameter 31.7 mm, truncated cylinder angle 45°, depth 57.1 mm) under zero or specified force. Any small part that fits inside poses a fatal choking risk and constitutes immediate non-conformance.",
+    "mandatory_status": "Critical Safety Test"
+  },
+  {
+    "id": "is_9873_p1_c4_7",
+    "standard_number": "IS 9873 (Part 1) : 2019",
+    "standard_title": "Safety of Toys - Part 1: Safety Aspects Related to Mechanical and Physical Properties",
+    "category": "Toys and Child Safety",
+    "clause_number": "4.7",
+    "clause_title": "Accessible Sharp Edges and Sharp Points",
+    "page": 10,
+    "text": "Accessible edges shall not present an unreasonable risk of injury. Sharp edges are verified using a rotating mandrel covered with PTFE adhesive tape under 6 N force. Sharp points are evaluated using a sharp point tester with an indicator light triggering when the point penetrates deeper than 0.5 mm into a 1.0 mm x 1.15 mm rectangular orifice under 4.5 N spring pressure.",
+    "mandatory_status": "Mandatory Mechanical Test"
+  },
+  {
+    "id": "is_9873_p2_c4",
+    "standard_number": "IS 9873 (Part 2) : 2017",
+    "standard_title": "Safety of Toys - Part 2: Flammability Requirements",
+    "category": "Toys and Child Safety",
+    "clause_number": "4.1",
+    "clause_title": "Flammability of Soft Toys, Costumes and Wigs",
+    "page": 4,
+    "text": "Stuffed soft toys, disguise costumes, and play tents shall not produce flash fire upon contact with a small test flame. The rate of flame spread across plush fabrics or simulated hair shall not exceed 30 mm/s when ignited for 3 seconds with a standardized gas micro-burner.",
+    "mandatory_status": "Mandatory Safety Test"
+  },
+  {
+    "id": "is_9873_p3_c4",
+    "standard_number": "IS 9873 (Part 3) : 2020",
+    "standard_title": "Safety of Toys - Part 3: Migration of Certain Elements (Chemical Toxicology)",
+    "category": "Toys and Child Safety",
+    "clause_number": "4.1",
+    "clause_title": "Heavy Metal Migration Threshold Limits",
+    "page": 5,
+    "text": "The maximum acceptable levels of elemental migration from toy materials (paints, plastics, coatings, modelling clay) into 0.07 mol/L hydrochloric acid simulant shall not exceed: Lead (Pb): 90 mg/kg; Cadmium (Cd): 75 mg/kg; Mercury (Hg): 60 mg/kg; Arsenic (As): 25 mg/kg; Barium (Ba): 1000 mg/kg; Chromium (Cr): 60 mg/kg; Antimony (Sb): 60 mg/kg; Selenium (Se): 500 mg/kg. Tested via Inductively Coupled Plasma Mass Spectrometry (ICP-MS).",
+    "mandatory_status": "Critical Chemical Safety Requirement"
+  },
+  {
+    "id": "is_15644_c5",
+    "standard_number": "IS 15644 : 2006",
+    "standard_title": "Safety of Electric Toys - Electrical Safety Requirements",
+    "category": "Toys and Child Safety",
+    "clause_number": "5.1",
+    "clause_title": "Operating Voltage and Battery Safety",
+    "page": 8,
+    "text": "Electric toys shall not be powered by a supply voltage exceeding 24 V DC or AC equivalent (Safety Extra Low Voltage - SELV). Battery compartments must prevent children from easily extracting button cells without a screwdriver/coin-operated dual locking mechanism, and must withstand drop testing without battery expulsion.",
+    "mandatory_status": "Electrical Safety Test for Battery/Powered Toys"
+  }
+]

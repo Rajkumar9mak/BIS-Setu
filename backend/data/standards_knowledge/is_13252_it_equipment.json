@@ -1,0 +1,46 @@
+[
+  {
+    "id": "is_13252_c1",
+    "standard_number": "IS 13252 (Part 1) : 2010",
+    "standard_title": "Information Technology Equipment - Safety - General Requirements",
+    "category": "Electronics & IT Goods",
+    "clause_number": "1.1",
+    "clause_title": "Scope and Compulsory Registration Scheme (CRS)",
+    "page": 1,
+    "text": "Applies to mains-powered or battery-powered information technology equipment, including laptops, tablets, servers, smart meters, power banks, and point-of-sale terminals. Under the Electronics and Information Technology Goods (Compulsory Registration) Order notified by MeitY, products must be registered with BIS under Scheme-II (CRS) based on test reports from BIS recognized labs before importation or sale.",
+    "mandatory_status": "Mandatory under MeitY CRO (Scheme-II)"
+  },
+  {
+    "id": "is_13252_c2_1",
+    "standard_number": "IS 13252 (Part 1) : 2010",
+    "standard_title": "Information Technology Equipment - Safety - General Requirements",
+    "category": "Electronics & IT Goods",
+    "clause_number": "2.1",
+    "clause_title": "Protection Against Electric Shock and Energy Hazards",
+    "page": 12,
+    "text": "Operator accessible areas shall not present electric shock hazards under normal and single fault conditions. Voltages between any two accessible parts or between an accessible part and earth shall not exceed SELV limits (60 V DC or 42.4 V peak AC). Enclosures must resist accessibility probing with standardized test pin and test probe.",
+    "mandatory_status": "Mandatory Safety Requirement"
+  },
+  {
+    "id": "is_13252_c4_5",
+    "standard_number": "IS 13252 (Part 1) : 2010",
+    "standard_title": "Information Technology Equipment - Safety - General Requirements",
+    "category": "Electronics & IT Goods",
+    "clause_number": "4.5",
+    "clause_title": "Thermal Requirements and Temperature Rise Limits",
+    "page": 35,
+    "text": "Under worst-case rated load conditions, internal component temperatures shall not exceed: Power transformer windings: Class A 100°C, Class B 120°C; Electrolytic capacitors: 85°C/105°C rated limit; External enclosure touching surfaces: Metal 70°C, Non-metal 85°C; Power cord insulation: 75°C.",
+    "mandatory_status": "Type Test Requirement"
+  },
+  {
+    "id": "is_13252_c1_7",
+    "standard_number": "IS 13252 (Part 1) : 2010",
+    "standard_title": "Information Technology Equipment - Safety - General Requirements",
+    "category": "Electronics & IT Goods",
+    "clause_number": "1.7",
+    "clause_title": "Standard Mark for CRS Products",
+    "page": 8,
+    "text": "Equipment certified under Scheme-II CRS shall bear the BIS Standard Mark with words 'Self Declaration - Conforming to IS 13252 (Part 1) : 2010' and Registration Number R-XXXXXXXX. Marking may be affixed on the product rating label or electronically displayed (e-labeling) on screen devices.",
+    "mandatory_status": "Mandatory CRS Labeling Clause"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "statutory_slabs": {
+    "application_fee": 1000,
+    "processing_fee_domestic": 7000,
+    "processing_fee_crs": 5000,
+    "factory_inspection_per_day": 7000,
+    "renewal_application_fee": 1000
+  },
+  "msme_concessions": {
+    "MICRO": {
+      "name": "Micro Enterprise (Udyam Investment < ₹1 Cr, Turnover < ₹5 Cr)",
+      "marking_fee_discount_percent": 50,
+      "description": "50% Special Concession on Minimum Marking Fee under BIS Special MSME Scheme"
+    },
+    "SMALL": {
+      "name": "Small Enterprise (Udyam Investment < ₹10 Cr, Turnover < ₹50 Cr)",
+      "marking_fee_discount_percent": 20,
+      "description": "20% Concession on Minimum Marking Fee"
+    },
+    "MEDIUM": {
+      "name": "Medium Enterprise",
+      "marking_fee_discount_percent": 0,
+      "description": "Standard Fee Schedule"
+    },
+    "LARGE": {
+      "name": "Large Scale Enterprise",
+      "marking_fee_discount_percent": 0,
+      "description": "Standard Statutory Fee Schedule"
+    },
+    "STARTUP": {
+      "name": "DPIIT Recognized Startup / Women-Led Enterprise",
+      "marking_fee_discount_percent": 50,
+      "description": "50% Special Startup Concession"
+    }
+  },
+  "gst_percent": 18
+}

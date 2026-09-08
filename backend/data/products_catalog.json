@@ -1,0 +1,278 @@
+[
+  {
+    "id": "prod_electric_kettle",
+    "name": "Electric Kettle & Water Jug",
+    "category": "Electrical Appliances",
+    "description": "Domestic electrical water heating appliances and immersion jugs with automatic cut-off.",
+    "applicable_standards": [
+      {
+        "code": "IS 302 (Part 2/Sec 15) : 2009",
+        "title": "Particular Requirements for Electric Kettles and Jugs",
+        "is_primary": true
+      },
+      {
+        "code": "IS 302 (Part 1) : 2008",
+        "title": "General Safety Requirements for Household Electrical Appliances",
+        "is_primary": false
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark)",
+    "scheme_description": "Factory audit + Product sample testing at BIS recognized lab + Continuous in-house QC",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Electrical Appliances (Quality Control) Order",
+      "ministry": "Ministry of Heavy Industries & Public Enterprises",
+      "legal_basis": "Section 16 of BIS Act, 2016"
+    },
+    "key_tests": [
+      { "name": "Earthing Continuity (< 0.1 Ω)", "clause": "Clause 27.1", "type": "Routine (100% Units)" },
+      { "name": "Electric Strength High Voltage (1000V/2500V)", "clause": "Clause 13.2", "type": "Routine (100% Units)" },
+      { "name": "Leakage Current Test (< 0.75 mA)", "clause": "Clause 13.2", "type": "Type & Routine" },
+      { "name": "Heating & Temperature Rise Limit", "clause": "Clause 11.8", "type": "Type Test" },
+      { "name": "Abnormal Operation (Boil-Dry Protection)", "clause": "Clause 19.101", "type": "Type Test" },
+      { "name": "Spillage & Water Ingress Base Test", "clause": "Clause 22.102", "type": "Type Test" },
+      { "name": "Protection Against Live Parts", "clause": "Clause 8.1", "type": "Type Test" }
+    ],
+    "documents_required": [
+      "Form-V (Application for Grant of Licence)",
+      "Proof of Factory Registration / MSME Udyam Registration",
+      "Process Flowchart & Manufacturing Machinery List",
+      "List of In-house Quality Testing Equipment with Calibration Certificates",
+      "Appointment of Competent Quality Control Personnel (Technical Bio-data)",
+      "Factory Layout Map & Raw Material Storage Plan",
+      "Raw Material Test Certificates (Heating element, Thermostat, Cable with ISI mark)",
+      "Bank Guarantee / Indemnity Bond for Marking Fee"
+    ],
+    "timeline_days": {
+      "doc_prep": 4,
+      "lab_testing": 12,
+      "factory_audit": 5,
+      "grant_license": 7,
+      "total_estimated": 28
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 7000,
+      "lab_testing_estimate": 22000,
+      "annual_marking_fee": 47000
+    }
+  },
+  {
+    "id": "prod_two_wheeler_helmet",
+    "name": "Protective Helmet for Two-Wheeler Riders",
+    "category": "Automotive Safety & Protective Gear",
+    "description": "Crash protective headgear for riders of two-wheel motor vehicles, full face and open face.",
+    "applicable_standards": [
+      {
+        "code": "IS 4151 : 2015",
+        "title": "Protective Helmets for Two-Wheeler Riders - Specification",
+        "is_primary": true
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark)",
+    "scheme_description": "Rigorous drop-impact compliance, penetration resistance, dynamic retention tests",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Helmet for Two-Wheeler Riders (Quality Control) Order",
+      "ministry": "Ministry of Road Transport and Highways (MoRTH)",
+      "legal_basis": "Motor Vehicles Act 1988 (Section 129)"
+    },
+    "key_tests": [
+      { "name": "Impact Absorption Test (7.5 m/s drop onto anvils, Peak < 300g)", "clause": "Clause 9.1", "type": "Type Test" },
+      { "name": "Penetration Resistance Test (3.0 kg conical punch drop)", "clause": "Clause 9.2", "type": "Type Test" },
+      { "name": "Retention System Dynamic Test (< 35mm elongation)", "clause": "Clause 9.3", "type": "Type Test" },
+      { "name": "Maximum Weight Limit (< 1.2 kg mass)", "clause": "Clause 7.3", "type": "Routine & Type" },
+      { "name": "Visor Luminous Transmittance (> 85%) & Scratch Resistance", "clause": "Clause 9.5", "type": "Type Test" },
+      { "name": "Audibility and Lateral Vision Angle (> 105°)", "clause": "Clause 8.2", "type": "Type Test" }
+    ],
+    "documents_required": [
+      "Form-V BIS License Application",
+      "Factory Registration / DIC / Udyam Certificate",
+      "Mould specifications and Shell resin certification (ABS / Polycarbonate Grade)",
+      "EPS Liner Density Test Records (High density energy absorption)",
+      "Visor Impact & Optical Test Reports",
+      "In-House Test Equipment: Headforms, Accelerometer, Drop Tower, Drop Punch",
+      "Quality Control Manual and Calibrated Testing Log"
+    ],
+    "timeline_days": {
+      "doc_prep": 5,
+      "lab_testing": 14,
+      "factory_audit": 5,
+      "grant_license": 8,
+      "total_estimated": 32
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 7000,
+      "lab_testing_estimate": 35000,
+      "annual_marking_fee": 68000
+    }
+  },
+  {
+    "id": "prod_toys_child_safety",
+    "name": "Children Toys (Electric & Non-Electric)",
+    "category": "Toys and Child Safety",
+    "description": "Toys for play, education, or recreation intended for children under 14 years.",
+    "applicable_standards": [
+      {
+        "code": "IS 9873 (Part 1) : 2019",
+        "title": "Mechanical & Physical Safety Properties",
+        "is_primary": true
+      },
+      {
+        "code": "IS 9873 (Part 2) : 2017",
+        "title": "Flammability Aspects",
+        "is_primary": false
+      },
+      {
+        "code": "IS 9873 (Part 3) : 2020",
+        "title": "Toxic Heavy Metal Migration Thresholds (ICP-MS)",
+        "is_primary": false
+      },
+      {
+        "code": "IS 15644 : 2006",
+        "title": "Electric Toys Safety (< 24V SELV)",
+        "is_primary": false
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark)",
+    "scheme_description": "Mandatory physical safety + elemental toxicology analysis at recognized labs",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Toys (Quality Control) Order, 2020",
+      "ministry": "DPIIT, Ministry of Commerce & Industry",
+      "legal_basis": "Section 16 of BIS Act, 2016"
+    },
+    "key_tests": [
+      { "name": "Small Parts Choking Cylinder (< 36 months)", "clause": "Clause 4.4", "type": "Mechanical Type Test" },
+      { "name": "Sharp Edges Mandrel & Sharp Points Tester", "clause": "Clause 4.7", "type": "Mechanical Type Test" },
+      { "name": "Drop, Torque & Tension Stress Tests", "clause": "Clause 5.24", "type": "Mechanical Type Test" },
+      { "name": "Flammability Spread (< 30 mm/s)", "clause": "IS 9873 P2 Cl 4", "type": "Flammability Test" },
+      { "name": "Heavy Metal Migration (Lead < 90 mg/kg, Cd < 75 mg/kg)", "clause": "IS 9873 P3 Cl 4", "type": "Chemical Type Test" },
+      { "name": "SELV Voltage Verification (< 24V)", "clause": "IS 15644 Cl 5.1", "type": "Electrical Test" }
+    ],
+    "documents_required": [
+      "Form-V Online Application via e-BIS Portal",
+      "Certificate of Incorporation / MSME Certificate",
+      "Toy Design Specifications and Age Grading Declaration (e.g. 0-3 yrs / 3+ yrs)",
+      "Raw Material Polymer Safety Data Sheets (Food-grade/Non-toxic pigments)",
+      "List of Manufacturing Moulds and Ultrasonic Welding Machines",
+      "In-house Drop Test Stand, Torque Meter, Sharp Edge Tester",
+      "List of Qualified QC Inspectors"
+    ],
+    "timeline_days": {
+      "doc_prep": 4,
+      "lab_testing": 15,
+      "factory_audit": 5,
+      "grant_license": 6,
+      "total_estimated": 30
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 7000,
+      "lab_testing_estimate": 28000,
+      "annual_marking_fee": 52000
+    }
+  },
+  {
+    "id": "prod_packaged_water",
+    "name": "Packaged Drinking Water (Bottled / Jars)",
+    "category": "Food, Beverage & Consumables",
+    "description": "Purified water in pet bottles, bulk 20L jars, or pouches intended for human consumption.",
+    "applicable_standards": [
+      {
+        "code": "IS 14543 : 2004",
+        "title": "Packaged Drinking Water (Other Than Natural Mineral Water)",
+        "is_primary": true
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark) + FSSAI Mandatory",
+    "scheme_description": "Dual regulatory oversight: BIS ISI Mark licence mandatory before FSSAI state licence grant",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "FSSAI & BIS Mandatory Packaging Water Directives",
+      "ministry": "Ministry of Consumer Affairs & FSSAI",
+      "legal_basis": "Food Safety and Standards Act & BIS Act"
+    },
+    "key_tests": [
+      { "name": "Microbiology (E. coli, Coliform, Pseudomonas Absent)", "clause": "Table 3", "type": "Mandatory Daily Batch" },
+      { "name": "Physical/Chemical (TDS 75-500 mg/L, pH 6.5-8.5)", "clause": "Table 1", "type": "Routine Test" },
+      { "name": "Heavy Metals (Lead < 0.01 mg/L, Arsenic < 0.01 mg/L)", "clause": "Table 2", "type": "Type Test" },
+      { "name": "Pesticide Residues (Total < 0.0005 mg/L via GC-MS)", "clause": "Table 2", "type": "Type Test" },
+      { "name": "Package Integrity & Tamper Evident Cap Test", "clause": "Clause 8.1", "type": "Routine Test" }
+    ],
+    "documents_required": [
+      "Form-V BIS Application",
+      "Central Ground Water Authority (CGWA) NOC for water extraction",
+      "Complete In-House Microbiological Lab Setup (Autoclave, Incubator, LAF)",
+      "Appointment of Full-time Qualified Microbiologist and Chemist",
+      "Plant Machinery Layout (RO, Micron Filters, Ozone Generator, UV Sterilizer)",
+      "Pest Control Audit Log & Clean Room Environment Validation"
+    ],
+    "timeline_days": {
+      "doc_prep": 6,
+      "lab_testing": 18,
+      "factory_audit": 6,
+      "grant_license": 10,
+      "total_estimated": 40
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 7000,
+      "lab_testing_estimate": 45000,
+      "annual_marking_fee": 84000
+    }
+  },
+  {
+    "id": "prod_it_laptops_chargers",
+    "name": "Laptops, Tablets & Power Adapters",
+    "category": "Electronics & IT Goods",
+    "description": "IT devices, notebook computers, power banks, and universal power adapters.",
+    "applicable_standards": [
+      {
+        "code": "IS 13252 (Part 1) : 2010",
+        "title": "Information Technology Equipment - Safety",
+        "is_primary": true
+      }
+    ],
+    "scheme": "Scheme-II (CRS - Compulsory Registration Scheme)",
+    "scheme_description": "Lab testing at BIS recognized lab + Self Declaration of Conformity. No initial factory inspection required.",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Electronics & IT Goods (Compulsory Registration) Order",
+      "ministry": "Ministry of Electronics and Information Technology (MeitY)",
+      "legal_basis": "MeitY Gazette Order under BIS Act"
+    },
+    "key_tests": [
+      { "name": "Electric Shock Protection & SELV Limits (< 60V DC)", "clause": "Clause 2.1", "type": "Type Test" },
+      { "name": "Dielectric High Voltage Withstand Test", "clause": "Clause 5.2", "type": "Type Test" },
+      { "name": "Thermal Heating & Fire Resistance", "clause": "Clause 4.5", "type": "Type Test" },
+      { "name": "Drop Test & Mechanical Strength", "clause": "Clause 4.2", "type": "Type Test" }
+    ],
+    "documents_required": [
+      "Test Report from BIS Recognized Indian Lab (< 90 days validity)",
+      "Affidavit of Undertaking and Brand Authorization Letter",
+      "Factory Business License / ISO 9001 Certificate",
+      "Authorized Indian Representative (AIR) appointment for foreign brands",
+      "Product Rating Label artwork with BIS CRS logo and R-number"
+    ],
+    "timeline_days": {
+      "doc_prep": 3,
+      "lab_testing": 10,
+      "factory_audit": 0,
+      "grant_license": 7,
+      "total_estimated": 20
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 5000,
+      "factory_inspection": 0,
+      "lab_testing_estimate": 32000,
+      "annual_marking_fee": 35000
+    }
+  }
+]
