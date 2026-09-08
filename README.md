@@ -90,14 +90,16 @@
 ### Step 1: Start Backend (FastAPI)
 ```bash
 cd backend
+cp .env.example .env  # Optional: configure GEMINI_API_KEY, PORT, etc.
 pip install -r requirements.txt
 python main.py
 ```
-*API runs at `http://127.0.0.1:8000` (Swagger docs at `http://127.0.0.1:8000/docs`)*
+*API runs at `http://127.0.0.1:8000` (Swagger docs at `http://127.0.0.1:8000/docs`, Health check at `http://127.0.0.1:8000/health`)*
 
 ### Step 2: Start Frontend (Next.js)
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
 *Frontend runs at `http://localhost:3000`*
@@ -107,3 +109,4 @@ npm run dev
 cd backend
 python -m pytest tests/
 ```
+
