@@ -8,6 +8,13 @@ def test_root():
     assert response.status_code == 200
     assert response.json()["status"] == "OPERATIONAL"
 
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "ok"
+    assert data["service"] == "bis-setu"
+
 def test_compliance_products():
     response = client.get("/api/compliance/products")
     assert response.status_code == 200
@@ -64,3 +71,20 @@ def test_dashboard_certifications():
     assert response.status_code == 200
     data = response.json()
     assert len(data["licences"]) >= 2
+
+def test_error_handling_not_found():
+    response = client.get("/api/compliance/products/non_existent_product_999")
+    assert response.status_code == 404
+    data = response.json()
+    assert "error" in data
+    assert data["error"]["code"] == "NOT_FOUND"
+    assert "Product not found" in data["error"]["message"]
+
+def test_error_handling_validation_error():
+    # Sending invalid data type for query in verify
+    response = client.post("/api/verify", json={"wrong_key": 1234})
+    assert response.status_code == 422
+    data = response.json()
+    assert "error" in data
+    assert data["error"]["code"] == "INVALID_INPUT"
+    assert "validation_errors" in data["error"]["details"]
