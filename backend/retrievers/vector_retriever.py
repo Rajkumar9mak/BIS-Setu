@@ -3,9 +3,23 @@ import hashlib
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import numpy as np
-import chromadb
-from chromadb.config import Settings
-from chromadb.api.types import EmbeddingFunction, Documents, Embeddings
+
+try:
+    import chromadb
+    from chromadb.config import Settings
+    from chromadb.api.types import EmbeddingFunction, Documents, Embeddings
+    CHROMA_AVAILABLE = True
+except ImportError:
+    chromadb = None
+    Settings = None
+    CHROMA_AVAILABLE = False
+    
+    class EmbeddingFunction:
+        def __call__(self, input: Any) -> Any:
+            return []
+    Documents = List[str]
+    Embeddings = List[List[float]]
+
 from config import VECTOR_DB_PATH
 from ingestion.chunker import ClauseChunk
 from retrievers.lexical_retriever import RetrievedDoc
@@ -78,12 +92,16 @@ class VectorRetriever:
     def __init__(self, persist_directory: Optional[Path] = None):
         self.persist_dir = persist_directory or VECTOR_DB_PATH
         self.persist_dir.mkdir(parents=True, exist_ok=True)
-        self.client: Optional[chromadb.ClientAPI] = None
+        self.client: Optional[Any] = None
         self.embedding_fn = LocalRegulatoryEmbeddingFunction(dimension=256)
         self.collection = None
+        self._fallback_records: List[Dict[str, Any]] = []
         self._init_client()
 
     def _init_client(self):
+        if not CHROMA_AVAILABLE or chromadb is None:
+            logger.info("ChromaDB library not available, using in-memory vector storage")
+            return
         try:
             self.client = chromadb.PersistentClient(
                 path=str(self.persist_dir),
@@ -116,8 +134,16 @@ class VectorRetriever:
     def add_chunks(self, chunks: List[ClauseChunk]) -> int:
         if not self.collection:
             self._init_client()
-        if not self.collection or not chunks:
+        if not chunks:
             return 0
+
+        if not self.collection:
+            # In-memory fallback
+            for c in chunks:
+                vec = np.array(self.embedding_fn._embed_single(c.content_for_embedding), dtype=np.float32)
+                self._fallback_records.append({"chunk": c, "vec": vec})
+            logger.info(f"In-memory vector store indexed {len(chunks)} clause chunks")
+            return len(chunks)
 
         # Batch upsert chunks
         ids = [c.chunk_id for c in chunks]
@@ -153,7 +179,36 @@ class VectorRetriever:
 
     def search(self, query: str, top_k: int = 10, category_filter: Optional[str] = None) -> List[RetrievedDoc]:
         if not self.collection:
-            return []
+            if not self._fallback_records:
+                return []
+            q_vec = np.array(self.embedding_fn._embed_single(query), dtype=np.float32)
+            scored = []
+            for item in self._fallback_records:
+                sim = float(np.dot(q_vec, item["vec"]))
+                scored.append((sim, item["chunk"]))
+            scored.sort(key=lambda x: x[0], reverse=True)
+
+            retrieved: List[RetrievedDoc] = []
+            for sim, chunk in scored[:top_k]:
+                norm_sim = max(0.0, min(1.0, (sim + 1.0) / 2.0))
+                retrieved.append(
+                    RetrievedDoc(
+                        chunk_id=chunk.chunk_id,
+                        clause_id=chunk.clause_id,
+                        standard_number=chunk.standard_number,
+                        standard_title=chunk.standard_title,
+                        clause_number=chunk.clause_number,
+                        clause_title=chunk.clause_title,
+                        page=chunk.page,
+                        text=chunk.text,
+                        edition_year=chunk.edition_year,
+                        score=round(norm_sim, 4),
+                        retrieval_source="vector",
+                        data_status=chunk.data_status,
+                        metadata=chunk.metadata
+                    )
+                )
+            return retrieved
 
         try:
             where_filter = None
@@ -215,6 +270,6 @@ class VectorRetriever:
                 return self.collection.count()
             except Exception:
                 return 0
-        return 0
+        return len(self._fallback_records)
 
 vector_retriever = VectorRetriever()
