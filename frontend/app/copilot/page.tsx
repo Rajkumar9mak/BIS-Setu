@@ -11,7 +11,8 @@ import {
   HelpCircle,
   ExternalLink,
   ChevronRight,
-  Info
+  Info,
+  AlertTriangle
 } from 'lucide-react';
 import { queryRag } from '@/lib/api';
 import { RagResponse, SourceClause } from '@/lib/types';
@@ -116,10 +117,32 @@ export default function CopilotPage() {
                   <p className="text-xs text-slate-400">Retrieved from authoritative Indian Standards</p>
                 </div>
               </div>
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                100% Grounded
-              </span>
+              {currentResponse.is_grounded ? (
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  {Math.round((currentResponse.confidence ?? 0.85) * 100)}% Evidence-Grounded
+                </span>
+              ) : (
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5" />
+                  Insufficient Evidence
+                </span>
+              )}
             </div>
+
+            {/* Warnings notice if any */}
+            {currentResponse.warnings && currentResponse.warnings.length > 0 && (
+              <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 space-y-1 text-xs text-amber-300">
+                <div className="font-bold flex items-center gap-1.5 text-amber-400">
+                  <AlertTriangle className="w-4 h-4" />
+                  Regulatory Advisory / Scope Notes:
+                </div>
+                {currentResponse.warnings.map((warn, wIdx) => (
+                  <div key={wIdx} className="text-amber-200/90 pl-5">
+                    • {warn}
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Answer Content */}
             <div className="text-sm text-slate-200 leading-relaxed space-y-4 whitespace-pre-wrap font-sans">
@@ -127,21 +150,28 @@ export default function CopilotPage() {
             </div>
 
             {/* In-line Citations Bar */}
-            <div className="pt-4 border-t border-white/10 space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block">
-                Statutory Citations:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {currentResponse.citations.map((cit, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30"
-                  >
-                    {cit}
-                  </span>
-                ))}
+            {currentResponse.citations && currentResponse.citations.length > 0 && (
+              <div className="pt-4 border-t border-white/10 space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block">
+                  Statutory Citations:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {currentResponse.citations.map((cit, idx) => {
+                    const citText = typeof cit === 'string'
+                      ? cit
+                      : ((cit as any)?.citation_tag || `[${(cit as any)?.standard_number}, Clause ${(cit as any)?.clause_number}, Page ${(cit as any)?.page}]`);
+                    return (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30"
+                      >
+                        {citText}
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right Source Clauses Inspector Drawer */}
