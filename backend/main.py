@@ -7,9 +7,17 @@ from api.compliance import router as compliance_router
 from api.verification import router as verification_router
 from api.rag import router as rag_router
 from api.dashboard import router as dashboard_router
+from api.standards import router as standards_router
+from api.documents import router as documents_router
+from api.projects import router as projects_router
+from api.grievances import router as grievances_router
+from database.db import init_db
 
 # Initialize structured logging
 setup_logging(LOG_LEVEL)
+
+# Initialize SQLite database schema
+init_db()
 
 app = FastAPI(
     title="BIS Setu API",
@@ -37,6 +45,10 @@ app.include_router(compliance_router)
 app.include_router(verification_router)
 app.include_router(rag_router)
 app.include_router(dashboard_router)
+app.include_router(standards_router)
+app.include_router(documents_router)
+app.include_router(projects_router)
+app.include_router(grievances_router)
 
 @app.get("/")
 def root():
@@ -48,7 +60,11 @@ def root():
             "compliance": "/api/compliance",
             "verification": "/api/verify",
             "rag": "/api/rag",
-            "dashboard": "/api/dashboard"
+            "dashboard": "/api/dashboard",
+            "standards": "/api/standards",
+            "documents": "/api/documents",
+            "projects": "/api/projects",
+            "grievances": "/api/grievances"
         }
     }
 

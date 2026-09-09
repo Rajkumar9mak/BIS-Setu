@@ -1,0 +1,68 @@
+[
+  {
+    "id": "is_1489_p1_c1",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "1",
+    "clause_title": "Scope of Portland Pozzolana Cement",
+    "page": 1,
+    "text": "This standard covers the manufacture and chemical and physical requirements of fly ash based Portland Pozzolana Cement for structural concrete, plastering, residential construction, and RCC works.",
+    "mandatory_status": "Mandatory under Cement (Quality Control) Order, 2024"
+  },
+  {
+    "id": "is_1489_p1_c7",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "7.1",
+    "clause_title": "Fineness of Portland Pozzolana Cement",
+    "page": 4,
+    "text": "The fineness of Portland Pozzolana Cement when tested by the air permeability method (Blaine method) described in IS 4031 (Part 2) shall not be less than 300 m2/kg. Finer particle distribution improves workability and reduces water bleeding in concrete.",
+    "mandatory_status": "Mandatory Physical Requirement"
+  },
+  {
+    "id": "is_1489_p1_c8",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "8.1",
+    "clause_title": "Setting Time Parameters",
+    "page": 5,
+    "text": "The setting time of cement when tested by the Vicat apparatus method described in IS 4031 (Part 5) shall conform to: a) Initial setting time not less than 30 minutes; b) Final setting time not more than 600 minutes. Premature flash setting or excessively delayed hydration violates statutory standards.",
+    "mandatory_status": "Mandatory Setting Requirement"
+  },
+  {
+    "id": "is_1489_p1_c9",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "9.1",
+    "clause_title": "Compressive Strength Requirements",
+    "page": 6,
+    "text": "The average compressive strength of standard mortar cubes prepared and tested in accordance with IS 4031 (Part 6) shall be: a) 72 ± 1 hour (3 days) not less than 16.0 MPa; b) 168 ± 2 hours (7 days) not less than 22.0 MPa; c) 672 ± 4 hours (28 days) not less than 33.0 MPa. The 28-day 33 MPa strength is statutory prerequisite for residential structural integrity.",
+    "mandatory_status": "Mandatory Structural Threshold"
+  },
+  {
+    "id": "is_1489_p1_c10",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "10.1",
+    "clause_title": "Soundness of Cement (Expansion Limits)",
+    "page": 7,
+    "text": "When tested by the Le-Chatelier method described in IS 4031 (Part 3), the expansion of Portland Pozzolana Cement shall not exceed 10 mm. When tested by the autoclave method, expansion shall not be more than 0.8 percent.",
+    "mandatory_status": "Mandatory Soundness Requirement"
+  },
+  {
+    "id": "is_1489_p1_c14",
+    "standard_number": "IS 1489 (Part 1) : 2015",
+    "standard_title": "Portland Pozzolana Cement - Specification (Part 1: Fly Ash Based)",
+    "category": "Construction Materials & Cement",
+    "clause_number": "14.1",
+    "clause_title": "Packaging, Marking and Mandatory Standard Mark",
+    "page": 9,
+    "text": "Each bag of cement shall be legibly and indelibly marked with: a) Manufacturer's registered trademark; b) Type of cement (Portland Pozzolana Cement); c) Net mass in kg (50 kg); d) Week and year of manufacture; e) The Standard Mark (ISI logo) and the BIS Licence Number (CM/L-XXXXXXX). Selling or distributing cement without genuine ISI marking is a cognizable offence under the BIS Act, 2016.",
+    "mandatory_status": "Mandatory Statutory Marking"
+  }
+]

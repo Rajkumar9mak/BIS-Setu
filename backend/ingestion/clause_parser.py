@@ -24,7 +24,7 @@ class StandardClause(BaseModel):
     data_status: str = "VERIFIED_CACHE"  # "OFFICIAL", "VERIFIED_CACHE", "DEMO"
 
     def full_citation(self) -> str:
-        return f"[{self.standard_number}, Clause {self.clause_number}, Page {self.page}]"
+        return f"[{self.standard_number}, Cl. {self.clause_number}, p. {self.page}]"
 
 class ClauseParser:
     """

@@ -20,8 +20,8 @@ class GroundingValidator:
     HIGH_CONFIDENCE_THRESHOLD = 0.70
 
     UNSUPPORTED_FALLBACK_TEXT = (
-        "I could not find sufficient authoritative evidence in the indexed BIS material "
-        "to answer this reliably. Please check the product category or consult the official e-BIS Manakonline portal."
+        "The available BIS evidence is insufficient to give a reliable conclusion. "
+        "I could not find sufficient authoritative evidence in the available BIS sources to answer this question reliably."
     )
 
     def evaluate(self, query: str, retrieved_docs: List[RetrievedDoc]) -> GroundingEvaluation:

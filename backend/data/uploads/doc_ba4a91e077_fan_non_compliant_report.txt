@@ -1,0 +1,1 @@
+TEST REPORT: Ceiling Fan 1200mm sweep. IS 374:2019. Air delivery measured: 195 m3/min. Service value: 3.4 m3/min/W. Input power: 75 W. High voltage test pass 1500 V.

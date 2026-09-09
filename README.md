@@ -1,6 +1,6 @@
 # BIS Setu — AI-Powered Indian Standards Compliance & Verification Platform
 
-> **Smart India Hackathon (SIH 2026)** Prototype  
+> **National Standards & Conformity Assessment Platform**  
 > Solving the technical discovery, compliance roadmap, and consumer counterfeit challenges in the Bureau of Indian Standards (BIS) ecosystem.
 
 ---

@@ -1,0 +1,63 @@
+/* 21st.dev Theme: BIS Warm Earthy (Indian Standards Authority) */
+
+:root {
+  --background: #f4f2ec;
+  --foreground: #171713;
+  --card: #ffffff;
+  --card-foreground: #171713;
+  --popover: #ffffff;
+  --popover-foreground: #171713;
+  --primary: #927a48;
+  --primary-foreground: #f4f2ec;
+  --secondary: #4b4932;
+  --secondary-foreground: #f4f2ec;
+  --muted: #d5c7b2;
+  --muted-foreground: #4b4932;
+  --accent: #d1a24f;
+  --accent-foreground: #171713;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d5c7b2;
+  --input: #d5c7b2;
+  --ring: #d1a24f;
+  --radius: 1.25rem;
+
+  /* Custom Warm Earthy Brand Tokens */
+  --primary-olive: #927a48;
+  --dark-olive: #4b4932;
+  --warm-gold: #d1a24f;
+  --warm-ivory: #f4f2ec;
+  --light-beige: #d5c7b2;
+  --deep-charcoal: #171713;
+}
+
+.dark {
+  --background: #171713;
+  --foreground: #f4f2ec;
+  --card: #1f1f1a;
+  --card-foreground: #f4f2ec;
+  --popover: #1f1f1a;
+  --popover-foreground: #f4f2ec;
+  --primary: #d1a24f;
+  --primary-foreground: #171713;
+  --secondary: #4b4932;
+  --secondary-foreground: #f4f2ec;
+  --muted: #4b4932;
+  --muted-foreground: #d5c7b2;
+  --accent: #927a48;
+  --accent-foreground: #f4f2ec;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(213, 199, 178, 0.2);
+  --input: rgba(213, 199, 178, 0.2);
+  --ring: #d1a24f;
+  --radius: 1.25rem;
+
+  /* Custom Warm Earthy Brand Tokens */
+  --primary-olive: #927a48;
+  --dark-olive: #4b4932;
+  --warm-gold: #d1a24f;
+  --warm-ivory: #f4f2ec;
+  --light-beige: #d5c7b2;
+  --deep-charcoal: #171713;
+}

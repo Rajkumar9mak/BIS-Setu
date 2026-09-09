@@ -1,0 +1,68 @@
+[
+  {
+    "id": "is_374_c1",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "1",
+    "clause_title": "Scope of Electric Ceiling Fans",
+    "page": 1,
+    "text": "This standard specifies requirements and methods of test for AC and BLDC motor electric ceiling type fans with blade sweeps from 900 mm to 1500 mm and their associated electronic speed regulators intended for residential and commercial installation.",
+    "mandatory_status": "Mandatory under Electric Ceiling Type Fans (Quality Control) Order, 2023"
+  },
+  {
+    "id": "is_374_c8_2",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "8.2",
+    "clause_title": "Air Delivery Minimum Limits",
+    "page": 7,
+    "text": "The minimum air delivery for a 1200 mm sweep ceiling fan operating at rated voltage (230 V AC) and rated frequency (50 Hz) shall not be less than 210 m3/min (cubic metres per minute) when tested in accordance with the chamber air delivery test specified in Annex C. Air velocity profiles must maintain adequate volume circulation.",
+    "mandatory_status": "Mandatory Performance Test"
+  },
+  {
+    "id": "is_374_c8_3",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "8.3",
+    "clause_title": "Service Value (Energy Efficiency Threshold)",
+    "page": 8,
+    "text": "The service value, defined as the ratio of air delivery in m3/min to electric power consumption in Watts, shall not be less than 4.0 m3/min/W for standard 1200 mm sweep ceiling fans to achieve statutory BEE Star Rating and BIS conformity assessment.",
+    "mandatory_status": "Mandatory Energy Efficiency Threshold"
+  },
+  {
+    "id": "is_374_c13_1",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "13.1",
+    "clause_title": "High Voltage Dielectric Insulation Strength",
+    "page": 12,
+    "text": "The electrical insulation of the fan motor and electronic speed regulator shall withstand a test voltage of 1500 V rms AC at 50 Hz applied between the live electrical parts and accessible earthed metal casing for 1 minute without dielectric puncture, breakdown, or flashover.",
+    "mandatory_status": "Mandatory 100% Routine Safety Test"
+  },
+  {
+    "id": "is_374_c14_2",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "14.2",
+    "clause_title": "Earthing Continuity Resistance",
+    "page": 13,
+    "text": "The electrical resistance between the protective earthing terminal and any accessible dead metal parts (motor casing, downrod, canopy) shall not exceed 0.1 ohm when tested with a test current of 10 A derived from a low-voltage AC source.",
+    "mandatory_status": "Mandatory Routine Safety Test"
+  },
+  {
+    "id": "is_374_c19_1",
+    "standard_number": "IS 374 : 2019",
+    "standard_title": "Electric Ceiling Type Fans and Regulators - Specification",
+    "category": "Electrical Appliances",
+    "clause_number": "19.1",
+    "clause_title": "Rating Plate Marking and Standard Mark",
+    "page": 16,
+    "text": "Every ceiling fan shall carry an indelible rating plate displaying: a) Manufacturer's registered brand or name; b) Rated voltage range (230 V); c) Sweep size in mm (e.g. 1200 mm); d) Rated power input in Watts; e) Minimum air delivery; f) The Standard Mark (ISI Monogram) under Scheme-I with CM/L licence number (CM/L-XXXXXXX). Selling ceiling fans without valid ISI mark is prohibited under the BIS Act, 2016.",
+    "mandatory_status": "Mandatory Statutory Marking"
+  }
+]

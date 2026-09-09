@@ -20,7 +20,7 @@ class CitationBuilder:
 
     def build_citation(self, doc: RetrievedDoc) -> Citation:
         doc_name = doc.metadata.get("document_name") or f"{doc.standard_number.lower().replace(' ', '_')}.pdf"
-        tag = f"[{doc.standard_number}, Clause {doc.clause_number}, Page {doc.page}]"
+        tag = f"[{doc.standard_number}, Cl. {doc.clause_number}, p. {doc.page}]"
         
         return Citation(
             standard_number=doc.standard_number,
@@ -50,7 +50,7 @@ class CitationBuilder:
         """
         blocks = []
         for i, doc in enumerate(docs, 1):
-            tag = f"[{doc.standard_number}, Clause {doc.clause_number}, Page {doc.page}]"
+            tag = f"[{doc.standard_number}, Cl. {doc.clause_number}, p. {doc.page}]"
             blocks.append(
                 f"--- EVIDENCE ITEM {i} ---\n"
                 f"CITATION TAG: {tag}\n"

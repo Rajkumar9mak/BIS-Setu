@@ -20,28 +20,73 @@ async def synthesize_with_gemini(query: str, context_text: str) -> Optional[str]
     if not GEMINI_API_KEY:
         return None
 
-    prompt = f"""You are BIS Setu, the official AI compliance advisor for the Bureau of Indian Standards (BIS).
-Answer the user's question accurately, strictly grounded in the Indian Standards excerpts provided below.
+    prompt = f"""You are BIS-Setu, an AI-powered Indian Standards and BIS Compliance Assistant.
 
-CRITICAL REGULATORY RULES:
-1. Every important technical requirement, voltage, test parameter, or pass/fail threshold MUST cite its exact in-line citation tag: [IS Standard Number, Clause Number, Page N].
-2. Do NOT invent, assume, or extrapolate requirements not present in the excerpts.
-3. If the excerpts do not contain the answer, state: "The provided Indian Standards excerpts do not contain sufficient information on this specific aspect."
-4. Structure your response with clear headings, bullet points, and highlight statutory limits.
-5. Gemini must never override or contradict retrieved evidence.
+Convert retrieved BIS evidence into a SHORT, STRUCTURED, EASY-TO-READ answer.
 
-USER QUESTION: {query}
+USER QUERY:
+{query}
 
-OFFICIAL BIS EXCERPTS:
+RETRIEVED EVIDENCE:
 {context_text}
+
+━━━ GROUNDING RULES ━━━
+1. Use ONLY information from the retrieved evidence. Do NOT invent limits, clauses, standards, fees, or legal conclusions.
+2. Every technical claim must cite its source using compact format: [IS XXX, Cl. X.X, p. Y]
+3. Do NOT combine information from unrelated standards or products.
+4. If evidence conflicts, state the conflict explicitly — do not choose one silently.
+5. If evidence is insufficient, say: "The available BIS evidence is insufficient to give a reliable conclusion."
+6. Preserve exact standard numbers, years, clause numbers, and page numbers.
+
+━━━ RELEVANCE FILTER ━━━
+Only include evidence relevant to the user's product/question. Exclude unrelated standards even if retrieved. If relevance is uncertain, label as "Potentially relevant" not "Applicable".
+
+━━━ RESPONSE FORMAT ━━━
+Give the answer FIRST. No introductory paragraphs. No question repetition.
+
+### 🔎 Applicable Standard
+**[Standard Number]** — [Short title]
+One sentence on why it is relevant.
+
+### 📌 Key Requirements
+Use concise bullet points with bold values:
+- **[Parameter]:** [value] `[IS XXX, Cl. X.X, p. Y]`
+  - Condition: [if applicable]
+
+OR use a compact table for numerical limits:
+| Parameter | Requirement | Reference |
+|---|---|---|
+| [name] | **[value]** | `[IS XXX, Cl. X.X, p. Y]` |
+
+### ⚠️ Important
+2-4 short bullets maximum. Only include if supported by evidence.
+- Do NOT auto-generate: "Manufacturers must comply", "Testing in BIS labs required", "ISI mark mandatory", "Non-compliance violates law" — unless the evidence explicitly says so.
+- If certification/QCO is not established by evidence, say so.
+
+### 📚 Sources
+- **[Standard]** — Cl. X.X, p. Y
+Combine multiple clauses from the same standard. Do not repeat standards.
+
+━━━ WHAT TO AVOID ━━━
+- Long paragraphs, legal language, PDF quotations
+- Repeating the same fact in multiple sections
+- Generic compliance claims not in the evidence
+- Confidence scores unless meaningful
+- "BIS Compliance Analysis" report headers
+- Sections like "Compliance Interpretation", "Related Requirements" (fold into Key Requirements)
+
+━━━ WITHDRAWN STANDARDS ━━━
+If a standard is withdrawn, display: ⚠️ **WITHDRAWN** — do not present as current.
+
+The answer should fit on one screen. Make BIS-Setu feel like a smart compliance assistant, not a PDF summarizer.
 """
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.1, "maxOutputTokens": 1024}
+            "generationConfig": {"temperature": 0.1, "maxOutputTokens": 1500}
         }
-        async with httpx.AsyncClient(timeout=12.0) as client:
+        async with httpx.AsyncClient(timeout=14.0) as client:
             resp = await client.post(url, json=payload)
             if resp.status_code == 200:
                 data = resp.json()
@@ -55,34 +100,73 @@ OFFICIAL BIS EXCERPTS:
 
 def synthesize_grounded_local(query: str, top_docs: list) -> str:
     """
-    Deterministic, high-fidelity synthesizer that guarantees zero-hallucination
-    local answers with strict page and clause citations.
+    Deterministic synthesizer producing the compact BIS-Setu response format:
+    🔎 Applicable Standard → 📌 Key Requirements → ⚠️ Important → 📚 Sources
     """
     if not top_docs:
         return (
-            "I could not find sufficient authoritative evidence in the indexed BIS material "
-            "to answer this reliably. Please check the product category or consult the official e-BIS Manakonline portal."
+            "### ℹ️ Evidence Limitation\n\n"
+            "The available BIS evidence is not sufficient to give a reliable answer to this question."
         )
 
     primary_doc = top_docs[0]
     lines = []
-    lines.append(f"### BIS Compliance Analysis for: **{query}**")
-    lines.append(
-        f"**Primary Governing Standard:** {primary_doc.standard_number} — *{primary_doc.standard_title}*\n"
-    )
-    lines.append("Based on authoritative clauses retrieved from the Indian Standards knowledge base:\n")
 
-    for i, doc in enumerate(top_docs, 1):
-        tag = f"[{doc.standard_number}, Clause {doc.clause_number}, Page {doc.page}]"
-        lines.append(f"#### {i}. {doc.clause_title} (Clause {doc.clause_number})")
-        lines.append(f"> \"{doc.text.strip()}\"")
-        lines.append(f"**Statutory Citation:** `{tag}` | **Provenance:** `{doc.data_status}`\n")
+    # 1. Applicable Standard
+    lines.append("### 🔎 Applicable Standard\n")
+    lines.append(f"**{primary_doc.standard_number}** — {primary_doc.standard_title}\n")
+    lines.append(f"Covers requirements related to *{primary_doc.clause_title}*.\n")
 
-    lines.append("---")
-    lines.append("**Key Compliance Takeaways:**")
-    lines.append("- All products manufactured or imported must strictly adhere to the technical limits stipulated above before bearing the ISI mark.")
-    lines.append("- Conformance must be validated through type test reports from BIS recognized laboratories and routine in-house QC logs.")
-    lines.append(f"- Statutory enforcement: Non-compliance violates mandatory Quality Control Orders under the BIS Act, 2016.")
+    # 2. Key Requirements
+    lines.append("### 📌 Key Requirements\n")
+
+    for doc in top_docs:
+        req_title = doc.clause_title or f"Clause {doc.clause_number}"
+        # Extract numerical limits if present
+        limit_match = re.search(
+            r"([\u2264\u2265<>±]?\s*\d+(?:\.\d+)?\s*(?:mA|V|W|Ω|MPa|m3/min|°C|mm|kg|N|%|Hz|min|s|h))",
+            doc.text, re.IGNORECASE
+        )
+        limit_text = f"**{limit_match.group(1).strip()}**" if limit_match else "See clause text"
+
+        ref_str = f"`[{doc.standard_number}, Cl. {doc.clause_number}, p. {doc.page}]`"
+
+        # Extract a brief condition if present
+        cond_match = re.search(
+            r"(?:when tested|at normal|under|applied at|tested by|during|at rated)\s*([^,.;]{5,50})",
+            doc.text, re.IGNORECASE
+        )
+        condition = cond_match.group(0).strip() if cond_match else None
+
+        lines.append(f"- **{req_title}:** {limit_text} {ref_str}")
+        if condition:
+            lines.append(f"  - Condition: {condition}")
+
+    # 3. Important
+    lines.append("\n### ⚠️ Important\n")
+    lines.append("- Check the latest applicable edition of this standard.")
+    lines.append("- Certification/QCO applicability is not established by the retrieved evidence — verify separately.")
+
+    # Add withdrawn warning if applicable
+    for doc in top_docs:
+        status = doc.metadata.get("status", "").upper()
+        if "WITHDRAWN" in status:
+            lines.append(f"- ⚠️ **{doc.standard_number}** is marked **WITHDRAWN** — do not treat as current.")
+            break
+
+    # 4. Sources (compact, deduplicated)
+    lines.append("\n### 📚 Sources\n")
+    seen_standards = {}
+    for doc in top_docs:
+        std = doc.standard_number
+        clause_ref = f"Cl. {doc.clause_number}, p. {doc.page}"
+        if std not in seen_standards:
+            seen_standards[std] = []
+        if clause_ref not in seen_standards[std]:
+            seen_standards[std].append(clause_ref)
+
+    for std, refs in seen_standards.items():
+        lines.append(f"- **{std}** — {'; '.join(refs)}")
 
     return "\n".join(lines)
 
@@ -145,7 +229,7 @@ async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[s
                     "page": d.page,
                     "text": d.text,
                     "mandatory_status": d.metadata.get("mandatory_status", "Statutory"),
-                    "citation": f"[{d.standard_number}, Clause {d.clause_number}, Page {d.page}]",
+                    "citation": f"[{d.standard_number}, Cl. {d.clause_number}, p. {d.page}]",
                     "_relevance_score": d.score
                 }
                 for d in reranked_docs
@@ -180,7 +264,6 @@ async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[s
         raw_answer, reranked_docs, grounding_eval
     )
 
-    # 8. Assemble sources for frontend
     sources = [
         {
             "id": d.clause_id,
@@ -192,22 +275,67 @@ async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[s
             "page": d.page,
             "text": d.text,
             "mandatory_status": d.metadata.get("mandatory_status", "Statutory"),
-            "citation": f"[{d.standard_number}, Clause {d.clause_number}, Page {d.page}]",
+            "citation": f"[{d.standard_number}, Cl. {d.clause_number}, p. {d.page}]",
             "_relevance_score": d.score
         }
         for d in reranked_docs
     ]
 
+    primary_doc = reranked_docs[0] if reranked_docs else None
+    conf_score = final_eval.confidence
+    conf_level = "High" if conf_score >= 0.70 else ("Medium" if conf_score >= 0.40 else "Low")
+
     return {
         "query": clean_query,
         "answer": final_answer,
+        "applicable_standard": primary_doc.standard_number if primary_doc else "Not Determined",
+        "standard_title": primary_doc.standard_title if primary_doc else "",
+        "relevant_requirement": primary_doc.clause_title if primary_doc else "",
+        "evidence": primary_doc.text if primary_doc else "",
+        "source": f"{primary_doc.standard_number}, Cl. {primary_doc.clause_number}, p. {primary_doc.page}" if primary_doc else "N/A",
         "is_grounded": final_eval.is_grounded,
-        "confidence": final_eval.confidence,
+        "grounded": final_eval.is_grounded,
+        "confidence": conf_score,
+        "confidence_level": conf_level,
         "citations": citation_tags,
         "structured_citations": structured_citations,
         "sources": sources,
         "warnings": final_eval.warnings
     }
+
+def get_clause_by_id(clause_id: str) -> Optional[Dict[str, Any]]:
+    cid_norm = clause_id.lower().replace("-", "_").strip()
+    for c in standards_indexer.clauses:
+        c_norm = c.id.lower().replace("-", "_").strip()
+        if c.id == clause_id or c_norm == cid_norm:
+            return {
+                "id": c.id,
+                "standard_code": c.standard_number,
+                "standard_number": c.standard_number,
+                "standard_title": c.standard_title,
+                "clause_number": c.clause_number,
+                "clause_title": c.clause_title,
+                "page": c.page,
+                "text": c.text,
+                "citation": c.full_citation(),
+                "mandatory_status": getattr(c, "mandatory_status", "Statutory")
+            }
+    # Fallback fuzzy match by standard number and clause number
+    for c in standards_indexer.clauses:
+        if c.clause_number.lower() in cid_norm:
+            return {
+                "id": c.id,
+                "standard_code": c.standard_number,
+                "standard_number": c.standard_number,
+                "standard_title": c.standard_title,
+                "clause_number": c.clause_number,
+                "clause_title": c.clause_title,
+                "page": c.page,
+                "text": c.text,
+                "citation": c.full_citation(),
+                "mandatory_status": getattr(c, "mandatory_status", "Statutory")
+            }
+    return None
 
 # Backward compatibility alias for existing router imports
 class LegacyClauseIndex:

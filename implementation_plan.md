@@ -18,7 +18,7 @@
 
 > [!NOTE]
 > **AI / LLM API Key**:
-> The system will support a `GEMINI_API_KEY` in `.env`. If an API key is not yet provided, our built-in Semantic & Clause-Ranked RAG retrieval engine will seamlessly synthesize precise answers from the verified BIS clauses with full citations, ensuring no demo failures during SIH evaluation.
+> The system will support a `GEMINI_API_KEY` in `.env`. If an API key is not yet provided, our built-in Semantic & Clause-Ranked RAG retrieval engine will seamlessly synthesize precise answers from the verified BIS clauses with full citations, ensuring no demo failures in production or offline demonstration environments.
 
 ---
 

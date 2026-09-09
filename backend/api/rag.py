@@ -22,6 +22,15 @@ def get_all_clauses():
         "clauses": clause_index.clauses
     }
 
+@router.get("/source/{clause_id}")
+def get_source_clause(clause_id: str):
+    from services.rag_engine import get_clause_by_id
+    from fastapi import HTTPException
+    clause = get_clause_by_id(clause_id)
+    if not clause:
+        raise HTTPException(status_code=404, detail="Source clause not found in knowledge base")
+    return clause
+
 @router.get("/stats")
 def get_rag_stats():
     return standards_indexer.get_stats()

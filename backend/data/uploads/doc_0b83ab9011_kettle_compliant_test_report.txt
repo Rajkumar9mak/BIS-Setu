@@ -1,0 +1,1 @@
+LAB TEST REPORT: Electric Kettle Model EK-200. Conforms to IS 302-2-15:2009. Rated Voltage: 230 V AC. Input Power: 1500 W. Leakage Current: 0.32 mA (Clause 13.2 pass). Earthing Resistance: 0.04 Ohms (Clause 27.5 pass). Electric Strength: 1500 V withstand (Clause 13.3 pass). Boil-dry auto shut off functional.

@@ -35,6 +35,10 @@ class StandardsIndexer:
                         for item in data:
                             clause = clause_parser.parse_from_json_item(item, file_name=json_path.name)
                             loaded_clauses.append(clause)
+                    elif isinstance(data, dict) and "clauses" in data:
+                        for item in data["clauses"]:
+                            clause = clause_parser.parse_from_json_item(item, file_name=json_path.name)
+                            loaded_clauses.append(clause)
             except Exception as e:
                 logger.error(f"Error loading standards JSON {json_path.name}: {e}")
 

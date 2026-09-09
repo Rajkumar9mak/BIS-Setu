@@ -274,5 +274,110 @@
       "lab_testing_estimate": 32000,
       "annual_marking_fee": 35000
     }
+  },
+  {
+    "id": "prod_cement_residential",
+    "name": "Portland Pozzolana Cement & Ordinary Portland Cement (PPC/OPC)",
+    "category": "Construction Materials & Cement",
+    "description": "Hydraulic binder cement manufactured by inter-grinding Portland clinker, gypsum, and fly ash pozzolana for residential construction and RCC works.",
+    "applicable_standards": [
+      {
+        "code": "IS 1489 (Part 1) : 2015",
+        "title": "Portland Pozzolana Cement - Specification (Fly Ash Based)",
+        "is_primary": true
+      },
+      {
+        "code": "IS 269 : 2015",
+        "title": "Ordinary Portland Cement - Specification (33, 43, 53 Grade)",
+        "is_primary": false
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark)",
+    "scheme_description": "Mandatory Scheme-I: Complete in-house physical & chemical testing laboratory, raw material limestone/clinker tracking, statutory surveillance audits, and compulsory ISI monogramming.",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Cement (Quality Control) Order, 2024",
+      "ministry": "DPIIT, Ministry of Commerce and Industry",
+      "legal_basis": "Section 16 of BIS Act, 2016"
+    },
+    "key_tests": [
+      { "name": "Compressive Strength 28-Day (>= 33.0 MPa)", "clause": "Clause 9.1", "type": "Mandatory Batch" },
+      { "name": "Fineness by Blaine Air Permeability (>= 300 m2/kg)", "clause": "Clause 7.1", "type": "Routine Daily" },
+      { "name": "Initial Setting Time (>= 30 min) & Final (<= 600 min)", "clause": "Clause 8.1", "type": "Routine Daily" },
+      { "name": "Soundness via Le-Chatelier (<= 10 mm)", "clause": "Clause 10.1", "type": "Routine Daily" },
+      { "name": "Loss on Ignition (<= 5.0%) & Insoluble Residue", "clause": "Clause 6.1", "type": "Chemical Type Test" }
+    ],
+    "documents_required": [
+      "Form-V BIS License Application via Manakonline",
+      "Factory Lease Deed / Industrial Land Allotment Order",
+      "Mining Lease or Fly Ash Supply Agreement with Thermal Power Station",
+      "Complete In-House Physical & Chemical Laboratory Setup (Compression testing machine, Blaine apparatus, Vicat needle, Muffle furnace)",
+      "Appointment of Full-Time Qualified Chemical Analyst and Physicist",
+      "Pollution Control Board (SPCB) Consent to Operate (CTO)"
+    ],
+    "timeline_days": {
+      "doc_prep": 7,
+      "lab_testing": 28,
+      "factory_audit": 7,
+      "grant_license": 10,
+      "total_estimated": 52
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 14000,
+      "lab_testing_estimate": 65000,
+      "annual_marking_fee": 115000
+    }
+  },
+  {
+    "id": "prod_electric_fans",
+    "name": "Electric Ceiling Fans & Regulators",
+    "category": "Electrical Appliances",
+    "description": "AC and Brushless DC (BLDC) motor driven ceiling fans with sweeps from 900mm to 1400mm and electronic speed regulators.",
+    "applicable_standards": [
+      {
+        "code": "IS 374 : 2019",
+        "title": "Electric Ceiling Type Fans and Regulators - Specification",
+        "is_primary": true
+      }
+    ],
+    "scheme": "Scheme-I (ISI Mark)",
+    "scheme_description": "Mandatory Scheme-I ISI Mark: Type testing for minimum air delivery, BEE service value, dielectric insulation withstand, and factory surveillance.",
+    "qco_status": {
+      "is_mandatory": true,
+      "order_name": "Electric Ceiling Type Fans (Quality Control) Order, 2023",
+      "ministry": "DPIIT, Ministry of Commerce and Industry",
+      "legal_basis": "Section 16 of Bureau of Indian Standards Act, 2016"
+    },
+    "key_tests": [
+      { "name": "Air Delivery Test for 1200mm Sweep (>= 210 m3/min)", "clause": "Clause 8.2", "type": "Type & Batch Test" },
+      { "name": "Service Value Energy Efficiency (>= 4.0 m3/min/W)", "clause": "Clause 8.3", "type": "Type Test" },
+      { "name": "High Voltage Dielectric Strength (1500 V RMS, 1 min)", "clause": "Clause 13.1", "type": "100% Routine Test" },
+      { "name": "Earthing Continuity Resistance (<= 0.1 ohm)", "clause": "Clause 14.2", "type": "100% Routine Test" },
+      { "name": "Temperature Rise of Motor Winding (< 75 K)", "clause": "Clause 11.1", "type": "Type Test" }
+    ],
+    "documents_required": [
+      "Form-V BIS Application on Manakonline",
+      "Factory Registration & Udyam MSME Certificate",
+      "Air Delivery Test Chamber Calibration Certificate",
+      "List of In-House Manufacturing Machinery (Winding machines, balancing rig, bake-varnish plant)",
+      "Motor Stator & Rotor Copper Grade Raw Material Test Certificates",
+      "Rating Plate Artwork displaying ISI Monogram and BEE Star Rating"
+    ],
+    "timeline_days": {
+      "doc_prep": 4,
+      "lab_testing": 14,
+      "factory_audit": 5,
+      "grant_license": 7,
+      "total_estimated": 30
+    },
+    "base_fees": {
+      "application": 1000,
+      "processing": 7000,
+      "factory_inspection": 7000,
+      "lab_testing_estimate": 26000,
+      "annual_marking_fee": 54000
+    }
   }
 ]

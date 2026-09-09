@@ -1,102 +1,276 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --bg-primary: #060b18;
-    --bg-secondary: #0c152e;
-    --bg-card: rgba(16, 27, 56, 0.7);
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-glow: rgba(255, 159, 28, 0.3);
-    --accent-saffron: #ff9f1c;
-    --accent-saffron-light: #ffbf69;
-    --accent-emerald: #10b981;
-    --accent-emerald-light: #34d399;
-    --accent-blue: #3b82f6;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    /* Exact Light Mode Tokens */
+    --background: #f4f2ec;
+    --foreground: #171713;
+
+    --card: #ffffff;
+    --card-foreground: #171713;
+
+    --primary: #927a48;
+    --primary-foreground: #ffffff;
+
+    --secondary: #4b4932;
+    --secondary-foreground: #f4f2ec;
+
+    --accent: #d1a24f;
+    --accent-foreground: #171713;
+
+    --muted: #e8e3d9;
+    --muted-foreground: #6b675b;
+
+    --border: #d5c7b2;
+    --input: #d5c7b2;
+
+    --ring: #d1a24f;
+
+    --popover: #ffffff;
+    --popover-foreground: #171713;
+
+    --sidebar: #f4f2ec;
+    --sidebar-foreground: #171713;
+    --sidebar-primary: #927a48;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e8e3d9;
+    --sidebar-accent-foreground: #4b4932;
+    --sidebar-border: #d5c7b2;
+    --sidebar-ring: #d1a24f;
+
+    --destructive: #b84a3a;
+    --destructive-foreground: #ffffff;
+
+    /* Core Named Color Tokens */
+    --primary-olive: #927a48;
+    --dark-olive: #4b4932;
+    --warm-gold: #d1a24f;
+    --warm-ivory: #f4f2ec;
+    --light-beige: #d5c7b2;
+    --deep-charcoal: #171713;
+
+    --radius: 1.25rem;
+  }
+
+  .dark {
+    /* Exact Dark Mode Tokens */
+    --background: #171713;
+    --foreground: #f4f2ec;
+
+    --card: #25251d;
+    --card-foreground: #f4f2ec;
+
+    --primary: #d1a24f;
+    --primary-foreground: #171713;
+
+    --secondary: #4b4932;
+    --secondary-foreground: #f4f2ec;
+
+    --accent: #927a48;
+    --accent-foreground: #f4f2ec;
+
+    --muted: #303027;
+    --muted-foreground: #b8b3a5;
+
+    --border: #4b4932;
+    --input: #4b4932;
+
+    --ring: #d1a24f;
+
+    --popover: #25251d;
+    --popover-foreground: #f4f2ec;
+
+    --sidebar: #1d1d18;
+    --sidebar-foreground: #f4f2ec;
+    --sidebar-primary: #d1a24f;
+    --sidebar-primary-foreground: #171713;
+    --sidebar-accent: #303027;
+    --sidebar-accent-foreground: #f4f2ec;
+    --sidebar-border: #4b4932;
+    --sidebar-ring: #d1a24f;
+
+    --destructive: #b84a3a;
+    --destructive-foreground: #ffffff;
+
+    /* Core Named Color Tokens */
+    --primary-olive: #927a48;
+    --dark-olive: #4b4932;
+    --warm-gold: #d1a24f;
+    --warm-ivory: #f4f2ec;
+    --light-beige: #d5c7b2;
+    --deep-charcoal: #171713;
   }
 
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: var(--background);
+    color: var(--foreground);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     min-height: 100vh;
     overflow-x: hidden;
   }
 }
 
-/* Glassmorphism utilities */
-.glass-panel {
-  background: rgba(14, 23, 49, 0.75);
+/* Background Color Utilities */
+.bg-deep-charcoal {
+  background-color: #171713;
+}
+
+.bg-dark-olive {
+  background-color: #4b4932;
+}
+
+.bg-primary-olive {
+  background-color: #927a48;
+}
+
+.bg-warm-gold {
+  background-color: #d1a24f;
+}
+
+.bg-warm-ivory {
+  background-color: #f4f2ec;
+}
+
+.bg-light-beige {
+  background-color: #d5c7b2;
+}
+
+/* Text Colors */
+.text-warm-ivory {
+  color: #f4f2ec;
+}
+
+.text-deep-charcoal {
+  color: #171713;
+}
+
+.text-warm-gold {
+  color: #d1a24f;
+}
+
+.text-primary-olive {
+  color: #927a48;
+}
+
+.text-light-beige {
+  color: #d5c7b2;
+}
+
+/* Glassmorphism Panels */
+.glass-charcoal {
+  background: rgba(23, 23, 19, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(213, 199, 178, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
-.glass-card-hover {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+html:not(.dark) .glass-charcoal {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(213, 199, 178, 0.5);
+  box-shadow: 0 14px 36px rgba(75, 73, 50, 0.08);
 }
 
-.glass-card-hover:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 159, 28, 0.4);
-  box-shadow: 0 16px 40px 0 rgba(255, 159, 28, 0.12);
+.glass-olive {
+  background: rgba(75, 73, 50, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(209, 162, 79, 0.3);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
-.glass-card-emerald-hover:hover {
-  transform: translateY(-3px);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 16px 40px 0 rgba(16, 185, 129, 0.12);
+.glass-ivory {
+  background: rgba(244, 242, 236, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(146, 122, 72, 0.25);
+  box-shadow: 0 14px 36px rgba(23, 23, 19, 0.08);
 }
 
-.glow-saffron {
-  box-shadow: 0 0 25px rgba(255, 159, 28, 0.35);
+/* Card Hover Effects */
+.card-hover-gold {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glow-emerald {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+.card-hover-gold:hover {
+  transform: translateY(-4px);
+  border-color: rgba(209, 162, 79, 0.65);
+  box-shadow: 0 20px 48px rgba(209, 162, 79, 0.16);
 }
 
-.text-gradient-saffron {
-  background: linear-gradient(135deg, #ffffff 0%, #ffbf69 50%, #ff9f1c 100%);
+.card-hover-olive {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-olive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(146, 122, 72, 0.65);
+  box-shadow: 0 18px 42px rgba(146, 122, 72, 0.16);
+}
+
+/* Subtle Gold Glow */
+.glow-gold {
+  box-shadow: 0 0 30px rgba(209, 162, 79, 0.25);
+}
+
+.glow-olive {
+  box-shadow: 0 0 30px rgba(146, 122, 72, 0.25);
+}
+
+/* Editorial Gradient Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f4f2ec 0%, #d1a24f 60%, #927a48 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
+.text-gradient-charcoal {
+  background: linear-gradient(135deg, #171713 0%, #4b4932 70%, #927a48 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-blue {
-  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Subtle Earthy Lighting Background */
+.bg-earthy-mesh {
+  background: radial-gradient(circle at 15% 15%, rgba(146, 122, 72, 0.14) 0%, transparent 45%),
+              radial-gradient(circle at 85% 25%, rgba(209, 162, 79, 0.1) 0%, transparent 45%),
+              radial-gradient(circle at 50% 85%, rgba(75, 73, 50, 0.18) 0%, transparent 55%),
+              #171713;
 }
 
-/* Custom animated background elements */
-.bg-mesh-gradient {
-  background: radial-gradient(circle at 15% 20%, rgba(255, 159, 28, 0.08) 0%, transparent 40%),
-              radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.09) 0%, transparent 45%),
-              radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-              #060b18;
+html:not(.dark) .bg-earthy-mesh {
+  background: radial-gradient(circle at 15% 15%, rgba(146, 122, 72, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 25%, rgba(209, 162, 79, 0.06) 0%, transparent 45%),
+              radial-gradient(circle at 50% 85%, rgba(75, 73, 50, 0.05) 0%, transparent 55%),
+              #f4f2ec;
 }
 
-/* Custom scrollbar */
+.bg-ivory-mesh {
+  background: radial-gradient(circle at 10% 20%, rgba(209, 162, 79, 0.07) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(146, 122, 72, 0.08) 0%, transparent 45%),
+              #f4f2ec;
+}
+
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #060b18;
+  background: #171713;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #4b4932;
   border-radius: 9999px;
+  border: 2px solid #171713;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #927a48;
 }
