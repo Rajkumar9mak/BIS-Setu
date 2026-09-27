@@ -17,11 +17,11 @@ export default function Hero() {
           {/* Left Column: Editorial Headline & Copy */}
           <div className="lg:col-span-7 space-y-8 text-left">
             {/* National Authority Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#f4f2ec] text-xs font-semibold shadow-inner">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8e3d9]/70 dark:bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#171713] dark:text-[#f4f2ec] text-xs font-semibold shadow-inner">
               <span className="w-2 h-2 rounded-full bg-[#d1a24f] animate-pulse" />
-              <span className="text-[#d5c7b2]">Bureau of Indian Standards</span>
-              <span className="text-[#d5c7b2]/40">•</span>
-              <span className="text-[#d1a24f]">Intelligent Assistant</span>
+              <span className="text-[#4b4932] dark:text-[#d5c7b2]">Bureau of Indian Standards</span>
+              <span className="text-[#6b675b]/40 dark:text-[#d5c7b2]/40">•</span>
+              <span className="text-[#927a48] dark:text-[#d1a24f] font-bold">Intelligent Assistant</span>
             </div>
 
             {/* Editorial Headline */}
@@ -75,21 +75,21 @@ export default function Hero() {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-[28px] glass-charcoal border border-[#d1a24f]/35 p-6 sm:p-7 shadow-2xl backdrop-blur-2xl">
               {/* Top Bar of the Mockup */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#d5c7b2]/15">
+              <div className="flex items-center justify-between pb-4 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#927a48]/20 border border-[#d1a24f]/40 text-[#d1a24f]">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#927a48]/20 border border-[#d1a24f]/40 text-[#927a48] dark:text-[#d1a24f]">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#f4f2ec]">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#171713] dark:text-[#f4f2ec]">
                       BIS-Setu Intelligent Engine
                     </h3>
-                    <p className="text-[10px] text-[#d5c7b2]/70 font-mono">
+                    <p className="text-[10px] text-[#6b675b] dark:text-[#d5c7b2]/70 font-mono">
                       Query Dispatch • Model Grounded
                     </p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#927a48]/30 text-[#d1a24f] border border-[#d1a24f]/30">
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#927a48]/20 dark:bg-[#927a48]/30 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/30">
                   LIVE RAG
                 </span>
               </div>
@@ -98,49 +98,49 @@ export default function Hero() {
               <div className="mt-5 space-y-4">
                 {/* User Query Bubble */}
                 <div className="space-y-1.5">
-                  <div className="flex items-center justify-between text-[10px] font-mono uppercase text-[#d5c7b2]/60">
+                  <div className="flex items-center justify-between text-[10px] font-mono uppercase text-[#6b675b] dark:text-[#d5c7b2]/60">
                     <span>User Query</span>
                     <span>Just now</span>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-[#4b4932]/40 border border-[#d5c7b2]/15 text-xs text-[#f4f2ec] font-medium leading-relaxed">
+                  <div className="p-3.5 rounded-2xl bg-[#f4f2ec] dark:bg-[#4b4932]/40 border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 text-xs text-[#171713] dark:text-[#f4f2ec] font-medium leading-relaxed">
                     &ldquo;What BIS standard applies to my electric kettle?&rdquo;
                   </div>
                 </div>
 
                 {/* AI Retrieval Response */}
                 <div className="space-y-2 pt-1">
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#d1a24f]">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#927a48] dark:text-[#d1a24f]">
                     <CornerDownRight className="w-3.5 h-3.5" />
                     <span className="uppercase tracking-wide font-bold">Relevant Indian Standard Identified</span>
                   </div>
 
                   {/* Primary Identified Standard Card */}
-                  <div className="p-4 rounded-2xl bg-[#171713]/80 border border-[#d1a24f]/40 space-y-3 shadow-inner">
+                  <div className="p-4 rounded-2xl bg-white dark:bg-[#171713]/80 border border-[#d1a24f]/40 space-y-3 shadow-md dark:shadow-inner">
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <span className="text-[10px] font-mono text-[#d5c7b2]/70 uppercase">Standard Designation</span>
-                        <h4 className="text-sm font-black text-[#f4f2ec] font-mono tracking-tight">
+                        <span className="text-[10px] font-mono text-[#6b675b] dark:text-[#d5c7b2]/70 uppercase">Standard Designation</span>
+                        <h4 className="text-sm font-black text-[#171713] dark:text-[#f4f2ec] font-mono tracking-tight">
                           IS 302 (Part 2/Sec 15):2009
                         </h4>
-                        <p className="text-[11px] text-[#d5c7b2] mt-0.5">
+                        <p className="text-[11px] text-[#4b4932] dark:text-[#d5c7b2] mt-0.5">
                           Safety of Household and Similar Electrical Appliances — Particular Requirements for Kettles
                         </p>
                       </div>
-                      <ShieldCheck className="w-5 h-5 text-[#d1a24f] shrink-0" />
+                      <ShieldCheck className="w-5 h-5 text-[#927a48] dark:text-[#d1a24f] shrink-0" />
                     </div>
 
                     {/* Metadata Strip: Clause, Page, Source-Backed Badge */}
-                    <div className="pt-2 border-t border-[#d5c7b2]/10 flex items-center justify-between flex-wrap gap-2 text-xs">
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-[#d5c7b2]">
-                        <span className="px-2 py-0.5 rounded bg-[#4b4932]/50 border border-[#d5c7b2]/20">
+                    <div className="pt-2 border-t border-[#d5c7b2]/20 dark:border-[#d5c7b2]/10 flex items-center justify-between flex-wrap gap-2 text-xs">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-[#4b4932] dark:text-[#d5c7b2]">
+                        <span className="px-2 py-0.5 rounded bg-[#f4f2ec] dark:bg-[#4b4932]/50 border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/20 font-semibold">
                           Clause 13.2
                         </span>
-                        <span className="px-2 py-0.5 rounded bg-[#4b4932]/50 border border-[#d5c7b2]/20">
+                        <span className="px-2 py-0.5 rounded bg-[#f4f2ec] dark:bg-[#4b4932]/50 border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/20 font-semibold">
                           Page 9
                         </span>
                       </div>
 
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#d1a24f]/20 text-[#d1a24f] border border-[#d1a24f]/40 flex items-center gap-1">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#d1a24f]/20 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/40 flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#d1a24f]"></span>
                         Source-Backed
                       </span>
@@ -148,7 +148,7 @@ export default function Hero() {
                   </div>
 
                   {/* Verbatim Excerpt Preview */}
-                  <div className="p-3 rounded-xl bg-[#4b4932]/25 border border-[#d5c7b2]/10 text-[11px] text-[#d5c7b2] leading-relaxed italic">
+                  <div className="p-3 rounded-xl bg-[#f4f2ec] dark:bg-[#4b4932]/25 border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/10 text-[11px] text-[#4b4932] dark:text-[#d5c7b2] leading-relaxed italic">
                     &ldquo;Electric kettles must incorporate an automatic boil-dry cut-off that terminates heating before surface temperatures exceed 115°C.&rdquo;
                   </div>
                 </div>

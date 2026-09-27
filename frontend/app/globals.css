@@ -4,103 +4,103 @@
 
 @layer base {
   :root {
-    /* Exact Light Mode Tokens */
-    --background: #f4f2ec;
-    --foreground: #171713;
+    /* Section 1 Light Mode Color System */
+    --background: #F7F8FA;
+    --foreground: #111827;
 
-    --card: #ffffff;
-    --card-foreground: #171713;
+    --surface: #FFFFFF;
+    --surface-secondary: #F8FAFC;
 
-    --primary: #927a48;
-    --primary-foreground: #ffffff;
+    --card: #FFFFFF;
+    --card-foreground: #111827;
 
-    --secondary: #4b4932;
-    --secondary-foreground: #f4f2ec;
+    --border: #E5E7EB;
+    --border-subtle: #F1F5F9;
+    --input: #E5E7EB;
 
-    --accent: #d1a24f;
-    --accent-foreground: #171713;
+    --text-primary: #111827;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
 
-    --muted: #e8e3d9;
-    --muted-foreground: #6b675b;
+    --primary: #C49A45;
+    --primary-hover: #B58936;
+    --primary-foreground: #FFFFFF;
 
-    --border: #d5c7b2;
-    --input: #d5c7b2;
+    --secondary: #4F6EF7;
+    --secondary-foreground: #FFFFFF;
 
-    --ring: #d1a24f;
+    --accent: #C49A45;
+    --accent-foreground: #111827;
 
-    --popover: #ffffff;
-    --popover-foreground: #171713;
+    --accent-blue: #4F6EF7;
+    --success: #22A06B;
+    --warning: #D99020;
+    --error: #D64545;
 
-    --sidebar: #f4f2ec;
-    --sidebar-foreground: #171713;
-    --sidebar-primary: #927a48;
-    --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #e8e3d9;
-    --sidebar-accent-foreground: #4b4932;
-    --sidebar-border: #d5c7b2;
-    --sidebar-ring: #d1a24f;
+    --muted: #F1F5F9;
+    --muted-foreground: #64748B;
 
-    --destructive: #b84a3a;
-    --destructive-foreground: #ffffff;
+    --ring: #C49A45;
+    --radius: 1.125rem;
+    --card-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 
-    /* Core Named Color Tokens */
-    --primary-olive: #927a48;
-    --dark-olive: #4b4932;
-    --warm-gold: #d1a24f;
-    --warm-ivory: #f4f2ec;
-    --light-beige: #d5c7b2;
-    --deep-charcoal: #171713;
-
-    --radius: 1.25rem;
+    /* Core Named Color Tokens for compatibility */
+    --primary-olive: #C49A45;
+    --dark-olive: #475569;
+    --warm-gold: #C49A45;
+    --warm-ivory: #F7F8FA;
+    --light-beige: #E5E7EB;
+    --deep-charcoal: #111827;
   }
 
   .dark {
-    /* Exact Dark Mode Tokens */
-    --background: #171713;
-    --foreground: #f4f2ec;
+    /* Section 1 & 20 Dark Mode Color System */
+    --background: #171812;
+    --foreground: #F4F1E8;
 
-    --card: #25251d;
-    --card-foreground: #f4f2ec;
+    --surface: #1D1E18;
+    --surface-secondary: #22231B;
 
-    --primary: #d1a24f;
-    --primary-foreground: #171713;
+    --card: #1D1E18;
+    --card-foreground: #F4F1E8;
 
-    --secondary: #4b4932;
-    --secondary-foreground: #f4f2ec;
+    --border: rgba(212, 175, 98, 0.20);
+    --border-subtle: rgba(212, 175, 98, 0.12);
+    --input: rgba(212, 175, 98, 0.25);
 
-    --accent: #927a48;
-    --accent-foreground: #f4f2ec;
+    --text-primary: #F4F1E8;
+    --text-secondary: #D5D0C4;
+    --text-muted: #969287;
 
-    --muted: #303027;
-    --muted-foreground: #b8b3a5;
+    --primary: #D4AF62;
+    --primary-hover: #E0BD70;
+    --primary-foreground: #171812;
 
-    --border: #4b4932;
-    --input: #4b4932;
+    --secondary: #2D2E24;
+    --secondary-foreground: #F4F1E8;
 
-    --ring: #d1a24f;
+    --accent: #D4AF62;
+    --accent-foreground: #171812;
 
-    --popover: #25251d;
-    --popover-foreground: #f4f2ec;
+    --accent-blue: #60A5FA;
+    --success: #34D399;
+    --warning: #FBBF24;
+    --error: #F87171;
 
-    --sidebar: #1d1d18;
-    --sidebar-foreground: #f4f2ec;
-    --sidebar-primary: #d1a24f;
-    --sidebar-primary-foreground: #171713;
-    --sidebar-accent: #303027;
-    --sidebar-accent-foreground: #f4f2ec;
-    --sidebar-border: #4b4932;
-    --sidebar-ring: #d1a24f;
+    --muted: #23241C;
+    --muted-foreground: #969287;
 
-    --destructive: #b84a3a;
-    --destructive-foreground: #ffffff;
+    --ring: #D4AF62;
+    --radius: 1.125rem;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 
-    /* Core Named Color Tokens */
+    /* Core Named Color Tokens for compatibility */
     --primary-olive: #927a48;
     --dark-olive: #4b4932;
     --warm-gold: #d1a24f;
     --warm-ivory: #f4f2ec;
     --light-beige: #d5c7b2;
-    --deep-charcoal: #171713;
+    --deep-charcoal: #171812;
   }
 
   body {
@@ -272,5 +272,107 @@ html:not(.dark) .bg-earthy-mesh {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #927a48;
+}
+
+/* ==========================================================================
+   LIGHT MODE TEXT & COMPONENT VISIBILITY SYSTEM
+   Ensures WCAG AAA contrast and high legibility across all components
+   when the user is in Light Theme (html:not(.dark)).
+   ========================================================================== */
+
+/* 1. Primary Text Override: Turn Warm Ivory into Deep Charcoal in Light Mode */
+html:not(.dark) .text-\[\#f4f2ec\],
+html:not(.dark) .text-\[\#F4F2EC\],
+html:not(.dark) [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class*="text-[#F4F2EC]" i],
+html:not(.dark) .text-warm-ivory {
+  color: #171713;
+}
+
+/* 2. Secondary / Muted Text Override: Turn Light Beige into High-Contrast Muted Olive-Slate */
+html:not(.dark) .text-\[\#d5c7b2\],
+html:not(.dark) .text-\[\#D5C7B2\],
+html:not(.dark) [class*="text-[#d5c7b2]" i],
+html:not(.dark) [class*="text-[#D5C7B2]" i],
+html:not(.dark) .text-light-beige {
+  color: #6b675b;
+}
+
+/* 3. Editorial Gradient Text for Light Mode */
+html:not(.dark) .text-gradient-gold {
+  background: linear-gradient(135deg, #171713 0%, #927a48 55%, #d1a24f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4. Glass Panels in Light Mode */
+html:not(.dark) .glass-charcoal {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(213, 199, 178, 0.6);
+  box-shadow: 0 14px 36px rgba(75, 73, 50, 0.08);
+}
+
+html:not(.dark) .glass-olive {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(146, 122, 72, 0.35);
+  box-shadow: 0 14px 36px rgba(75, 73, 50, 0.08);
+}
+
+/* 5. Inputs, Textareas and Placeholders in Light Mode */
+html:not(.dark) input[class*="bg-[#171713]"],
+html:not(.dark) textarea[class*="bg-[#171713]"],
+html:not(.dark) select[class*="bg-[#171713]"] {
+  background-color: #ffffff !important;
+  color: #171713 !important;
+  border-color: #d5c7b2 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #6b675b !important;
+  opacity: 0.75;
+}
+
+/* 6. Embedded Cards & Bubbles inside Light Glass Panels */
+html:not(.dark) .glass-charcoal [class*="bg-[#171713]"],
+html:not(.dark) .glass-charcoal [class*="bg-[#4b4932]"],
+html:not(.dark) .glass-olive [class*="bg-[#4b4932]"] {
+  background-color: #f4f2ec;
+  border-color: rgba(213, 199, 178, 0.65);
+}
+
+/* 7. Solid Dark Buttons & Badges retain legible White/Ivory Text in Light Mode */
+html:not(.dark) button[class*="bg-[#927a48]"],
+html:not(.dark) button[class*="bg-[#4b4932]"],
+html:not(.dark) button[class*="bg-[#b84a3a]"],
+html:not(.dark) a[class*="bg-[#927a48]"],
+html:not(.dark) a[class*="bg-[#4b4932]"],
+html:not(.dark) [class*="bg-[#927a48]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class*="bg-[#4b4932]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class*="bg-[#b84a3a]"] > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class*="bg-[#927a48]"]:not([class*="/"])[class*="text-[#f4f2ec]" i],
+html:not(.dark) [class*="bg-[#4b4932]"]:not([class*="/"])[class*="text-[#f4f2ec]" i] {
+  color: #ffffff !important;
+}
+
+/* Gold badges / buttons retain dark charcoal text */
+html:not(.dark) [class*="bg-[#d1a24f]"][class*="text-[#171713]"],
+html:not(.dark) [class*="bg-[#d1a24f]"] > [class*="text-[#171713]"] {
+  color: #171713 !important;
+}
+
+/* 8. Light Mode Custom Scrollbars */
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #f4f2ec;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #d5c7b2;
+  border: 2px solid #f4f2ec;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
   background: #927a48;
 }

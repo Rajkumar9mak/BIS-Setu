@@ -238,16 +238,16 @@ export default function ProductComplianceExplorer({
   return (
     <section className="w-full space-y-10 animate-in fade-in duration-300">
       {/* 1. TOP PRODUCT SELECTOR BAR */}
-      <div className="rounded-[28px] glass-charcoal p-6 sm:p-8 border border-[#d1a24f]/30 shadow-2xl space-y-6">
+      <div className="rounded-[28px] bg-white dark:bg-[#171713]/90 dark:glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/50 dark:border-[#d1a24f]/30 shadow-lg space-y-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4b4932]/40 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-2">
-            <Layers className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#927a48]/15 dark:bg-[#4b4932]/40 border border-[#927a48]/30 dark:border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-2">
+            <Layers className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>Regulated Product Standards & Safety Explorer</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-[#f4f2ec] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#171713] dark:text-[#f4f2ec] tracking-tight">
             Explore Standards, QCOs & Technical Safety by Product
           </h2>
-          <p className="text-xs sm:text-sm text-[#d5c7b2] mt-1 max-w-3xl">
+          <p className="text-xs sm:text-sm text-[#6b675b] dark:text-[#d5c7b2] mt-1 max-w-3xl">
             Select an official regulated product category to view its governing Indian Standards, active vs. withdrawn revisions, test scopes, and regulatory roadmaps.
           </p>
         </div>
@@ -263,14 +263,14 @@ export default function ProductComplianceExplorer({
                 className={`flex items-center gap-2.5 px-4 py-3 rounded-2xl text-xs font-bold transition-all whitespace-nowrap ${
                   isSelected
                     ? 'bg-[#d1a24f] text-[#171713] shadow-lg shadow-[#d1a24f]/25 scale-[1.02]'
-                    : 'bg-[#171713]/80 hover:bg-[#4b4932]/50 text-[#d5c7b2] hover:text-[#f4f2ec] border border-[#d5c7b2]/20'
+                    : 'bg-[#f4f2ec] dark:bg-[#171713]/80 hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/50 text-[#171713] dark:text-[#d5c7b2] hover:text-[#171713] dark:hover:text-[#f4f2ec] border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/20'
                 }`}
               >
                 <span className="text-base">{prod.icon}</span>
                 <span>{prod.name}</span>
                 <span
                   className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
-                    isSelected ? 'bg-[#171713] text-[#d1a24f]' : 'bg-[#4b4932] text-[#d5c7b2]'
+                    isSelected ? 'bg-[#171713] text-[#d1a24f]' : 'bg-[#e8e3d9] dark:bg-[#4b4932] text-[#4b4932] dark:text-[#d5c7b2]'
                   }`}
                 >
                   {prod.standards.length} std
@@ -548,18 +548,18 @@ export default function ProductComplianceExplorer({
 
       {/* 6. DYNAMIC STANDARDS SEARCH & CATALOG */}
       <div ref={searchRef} className="space-y-6">
-        <div className="rounded-3xl glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/20 shadow-2xl space-y-6">
+        <div className="rounded-3xl bg-white dark:bg-[#171713]/90 dark:glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/20 shadow-lg space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#d1a24f]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#927a48] dark:text-[#d1a24f]">
                 Standards Catalog ({activeProduct.name})
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-[#f4f2ec]">
+              <h3 className="text-xl sm:text-2xl font-black text-[#171713] dark:text-[#f4f2ec]">
                 Published & Historical Specifications
               </h3>
             </div>
 
-            <label className="inline-flex items-center gap-2 text-xs font-semibold text-[#d5c7b2] cursor-pointer">
+            <label className="inline-flex items-center gap-2 text-xs font-semibold text-[#6b675b] dark:text-[#d5c7b2] cursor-pointer">
               <input
                 type="checkbox"
                 checked={includeWithdrawn}
@@ -572,18 +572,18 @@ export default function ProductComplianceExplorer({
 
           {/* Search bar */}
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#d5c7b2]/60" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6b675b]/60 dark:text-[#d5c7b2]/60" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={`Search ${activeProduct.name} standards by IS code, title, or scope...`}
-              className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#f4f2ec] placeholder:text-[#d5c7b2]/40 text-xs sm:text-sm outline-none"
+              className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-[#f4f2ec] dark:bg-[#171713]/90 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#171713] dark:text-[#f4f2ec] placeholder:text-[#6b675b]/60 dark:placeholder:text-[#d5c7b2]/40 text-xs sm:text-sm outline-none"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#d5c7b2]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6b675b] dark:text-[#d5c7b2] font-semibold"
               >
                 Clear
               </button>
@@ -599,47 +599,47 @@ export default function ProductComplianceExplorer({
                   key={std.id}
                   className={`p-5 rounded-2xl border transition-all flex flex-col justify-between ${
                     isWithdrawn
-                      ? 'bg-[#171713]/40 border-[#b84a3a]/30'
-                      : 'bg-[#25251d] border-[#d5c7b2]/20 hover:border-[#d1a24f]'
+                      ? 'bg-[#b84a3a]/5 dark:bg-[#171713]/40 border-[#b84a3a]/30'
+                      : 'bg-white dark:bg-[#25251d] border-[#d5c7b2]/50 dark:border-[#d5c7b2]/20 hover:border-[#d1a24f] shadow-sm'
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#4b4932] text-[#d5c7b2]">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#e8e3d9] dark:bg-[#4b4932] text-[#4b4932] dark:text-[#d5c7b2]">
                         {std.category}
                       </span>
                       {isWithdrawn ? (
-                        <span className="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#b84a3a]/20 text-[#b84a3a] border border-[#b84a3a]/40">
+                        <span className="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#b84a3a]/15 text-[#b84a3a] border border-[#b84a3a]/40">
                           WITHDRAWN
                         </span>
                       ) : (
-                        <span className="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#927a48]/30 text-[#d1a24f] border border-[#d1a24f]/40">
+                        <span className="text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#927a48]/20 dark:bg-[#927a48]/30 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/40">
                           CURRENT
                         </span>
                       )}
                     </div>
 
-                    <h4 className="text-sm font-mono font-black text-[#f4f2ec] mb-1">
+                    <h4 className="text-sm font-mono font-black text-[#171713] dark:text-[#f4f2ec] mb-1">
                       {std.standard_number}
                     </h4>
                     {std.revision && (
-                      <p className="text-[10px] font-mono text-[#d1a24f] mb-1">{std.revision}</p>
+                      <p className="text-[10px] font-mono text-[#927a48] dark:text-[#d1a24f] font-semibold mb-1">{std.revision}</p>
                     )}
-                    <p className="text-xs text-[#d5c7b2] leading-snug mb-3 line-clamp-3">
+                    <p className="text-xs text-[#6b675b] dark:text-[#d5c7b2] leading-snug mb-3 line-clamp-3">
                       {std.title}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#d5c7b2]/10 flex items-center justify-between text-xs">
+                  <div className="pt-3 border-t border-[#d5c7b2]/20 dark:border-[#d5c7b2]/10 flex items-center justify-between text-xs">
                     <button
                       onClick={() => setSelectedStandardForModal(std)}
-                      className="font-bold text-[#d5c7b2] hover:text-[#d1a24f] transition-colors"
+                      className="font-bold text-[#4b4932] dark:text-[#d5c7b2] hover:text-[#927a48] dark:hover:text-[#d1a24f] transition-colors"
                     >
                       View Details →
                     </button>
                     <button
                       onClick={() => handleAsk(`What are the key provisions of ${std.standard_number}?`)}
-                      className="px-2.5 py-1 rounded-lg bg-[#4b4932]/40 hover:bg-[#d1a24f] hover:text-[#171713] text-[#d1a24f] text-[11px] font-bold transition-all"
+                      className="px-2.5 py-1 rounded-lg bg-[#927a48]/15 dark:bg-[#4b4932]/40 hover:bg-[#d1a24f] hover:text-[#171713] text-[#927a48] dark:text-[#d1a24f] text-[11px] font-bold transition-all"
                     >
                       Ask AI
                     </button>
@@ -653,17 +653,17 @@ export default function ProductComplianceExplorer({
 
       {/* 7. VERSION & REVISION PROGRESSION TIMELINE */}
       {activeProduct.evolutionGroups.length > 0 && (
-        <div className="rounded-3xl glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/20 shadow-2xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d5c7b2]/15 pb-4">
+        <div className="rounded-3xl bg-white dark:bg-[#171713]/90 dark:glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/20 shadow-lg space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 pb-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#d1a24f]/20 flex items-center justify-center text-[#d1a24f]">
+              <div className="w-8 h-8 rounded-lg bg-[#927a48]/15 dark:bg-[#d1a24f]/20 flex items-center justify-center text-[#927a48] dark:text-[#d1a24f]">
                 <History className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-lg font-black text-[#f4f2ec]">
+                <h3 className="text-lg font-black text-[#171713] dark:text-[#f4f2ec]">
                   Historical Standards Evolution ({activeProduct.name})
                 </h3>
-                <p className="text-xs text-[#d5c7b2]">
+                <p className="text-xs text-[#6b675b] dark:text-[#d5c7b2]">
                   Chronological progression of revisions cataloged by the Bureau of Indian Standards.
                 </p>
               </div>
@@ -679,7 +679,7 @@ export default function ProductComplianceExplorer({
                     className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
                       selectedEvolutionIndex === gIdx
                         ? 'bg-[#d1a24f] text-[#171713]'
-                        : 'bg-[#25251d] text-[#d5c7b2] border border-[#4b4932]'
+                        : 'bg-[#f4f2ec] dark:bg-[#25251d] text-[#171713] dark:text-[#d5c7b2] border border-[#d5c7b2]/40 dark:border-[#4b4932]'
                     }`}
                   >
                     {grp.series}
@@ -690,7 +690,7 @@ export default function ProductComplianceExplorer({
           </div>
 
           {/* Stepper list */}
-          <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#4b4932]">
+          <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#d5c7b2] dark:before:bg-[#4b4932]">
             {currentEvolutionGroup.versions.map((ver, idx) => {
               const isWithdrawn = ver.status === 'Withdrawn';
               const isLast = idx === currentEvolutionGroup.versions.length - 1;
@@ -699,7 +699,7 @@ export default function ProductComplianceExplorer({
                   <div
                     className={`absolute -left-6 sm:-left-8 top-1.5 w-6 h-6 rounded-full flex items-center justify-center border-2 ${
                       isWithdrawn
-                        ? 'bg-[#171713] border-[#b84a3a] text-[#b84a3a]'
+                        ? 'bg-white dark:bg-[#171713] border-[#b84a3a] text-[#b84a3a]'
                         : 'bg-[#d1a24f] border-[#f4f2ec] text-[#171713]'
                     }`}
                   >
@@ -713,8 +713,8 @@ export default function ProductComplianceExplorer({
                   <div
                     className={`p-4 rounded-xl border ${
                       isWithdrawn
-                        ? 'bg-[#171713]/60 border-[#b84a3a]/30 text-[#d5c7b2]/70'
-                        : 'bg-[#25251d] border-[#d1a24f]/60 text-[#f4f2ec]'
+                        ? 'bg-[#b84a3a]/5 dark:bg-[#171713]/60 border-[#b84a3a]/30 text-[#6b675b] dark:text-[#d5c7b2]/70'
+                        : 'bg-white dark:bg-[#25251d] border-[#d5c7b2]/50 dark:border-[#d1a24f]/60 text-[#171713] dark:text-[#f4f2ec] shadow-sm'
                     }`}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
@@ -724,19 +724,19 @@ export default function ProductComplianceExplorer({
                           WITHDRAWN
                         </span>
                       ) : (
-                        <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#927a48]/30 text-[#d1a24f]">
+                        <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#927a48]/20 dark:bg-[#927a48]/30 text-[#927a48] dark:text-[#d1a24f]">
                           CURRENT SPECIFICATION
                         </span>
                       )}
                     </div>
-                    <p className="text-xs leading-relaxed">{ver.title}</p>
-                    <div className="mt-2 text-[10px] font-mono opacity-70">
+                    <p className="text-xs leading-relaxed text-[#4b4932] dark:text-[#d5c7b2]">{ver.title}</p>
+                    <div className="mt-2 text-[10px] font-mono text-[#6b675b] dark:text-[#d5c7b2]/70">
                       Publication Year: {ver.year} {ver.revision ? `• ${ver.revision}` : ''}
                     </div>
                   </div>
 
                   {!isLast && (
-                    <div className="pl-4 pt-2 text-[#927a48]">
+                    <div className="pl-4 pt-2 text-[#927a48] dark:text-[#d1a24f]">
                       <ArrowDown className="w-3.5 h-3.5" />
                     </div>
                   )}
@@ -748,16 +748,16 @@ export default function ProductComplianceExplorer({
       )}
 
       {/* 8. DEDICATED AI COMPLIANCE ASSISTANT */}
-      <div ref={aiRef} className="rounded-3xl glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/20 shadow-2xl space-y-6">
+      <div ref={aiRef} className="rounded-3xl bg-white dark:bg-[#171713]/90 dark:glass-charcoal p-6 sm:p-8 border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/20 shadow-lg space-y-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4b4932]/40 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-2">
-            <Bot className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#927a48]/15 dark:bg-[#4b4932]/40 border border-[#927a48]/30 dark:border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-2">
+            <Bot className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>AI Regulatory Assistant</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black text-[#f4f2ec]">
+          <h3 className="text-xl sm:text-2xl font-black text-[#171713] dark:text-[#f4f2ec]">
             Ask about {activeProduct.name} Compliance
           </h3>
-          <p className="text-xs text-[#d5c7b2] mt-1">
+          <p className="text-xs text-[#6b675b] dark:text-[#d5c7b2] mt-1">
             Grounded answers backed by authoritative BIS publications and QCO statutes.
           </p>
         </div>
@@ -768,7 +768,7 @@ export default function ProductComplianceExplorer({
             <button
               key={idx}
               onClick={() => handleAsk(q)}
-              className="px-3 py-1.5 rounded-xl bg-[#25251d] hover:bg-[#4b4932] border border-[#4b4932] hover:border-[#d1a24f] text-xs text-[#d5c7b2] hover:text-[#f4f2ec] transition-all text-left"
+              className="px-3 py-1.5 rounded-xl bg-[#f4f2ec] dark:bg-[#25251d] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932] border border-[#d5c7b2]/40 dark:border-[#4b4932] hover:border-[#d1a24f] text-xs text-[#171713] dark:text-[#d5c7b2] hover:text-[#171713] dark:hover:text-[#f4f2ec] transition-all text-left"
             >
               {q}
             </button>
@@ -776,14 +776,14 @@ export default function ProductComplianceExplorer({
         </div>
 
         {/* Messages */}
-        <div className="p-4 sm:p-6 rounded-2xl bg-[#171713]/80 border border-[#d5c7b2]/10 space-y-4 max-h-[400px] overflow-y-auto">
+        <div className="p-4 sm:p-6 rounded-2xl bg-[#f4f2ec]/70 dark:bg-[#171713]/80 border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/10 space-y-4 max-h-[400px] overflow-y-auto">
           {messages.map((m, idx) => (
             <div
               key={idx}
               className={`flex gap-3 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {m.role === 'assistant' && (
-                <div className="w-7 h-7 rounded-lg bg-[#4b4932] border border-[#d1a24f]/40 flex items-center justify-center text-[#d1a24f] flex-shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-[#927a48]/20 dark:bg-[#4b4932] border border-[#927a48]/30 dark:border-[#d1a24f]/40 flex items-center justify-center text-[#927a48] dark:text-[#d1a24f] flex-shrink-0">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
@@ -791,21 +791,21 @@ export default function ProductComplianceExplorer({
                 className={`max-w-xl rounded-2xl p-4 text-xs leading-relaxed ${
                   m.role === 'user'
                     ? 'bg-[#d1a24f] text-[#171713] font-medium'
-                    : 'bg-[#25251d] text-[#f4f2ec] border border-[#d5c7b2]/15'
+                    : 'bg-white dark:bg-[#25251d] text-[#171713] dark:text-[#f4f2ec] border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/15 shadow-sm'
                 }`}
               >
                 <p className="whitespace-pre-line">{m.content}</p>
 
                 {m.citation && (
-                  <div className="mt-3 p-3 rounded-xl bg-[#171713] border border-[#d1a24f]/40 text-[#f4f2ec] space-y-1.5">
+                  <div className="mt-3 p-3 rounded-xl bg-[#f4f2ec] dark:bg-[#171713] border border-[#d5c7b2]/40 dark:border-[#d1a24f]/40 text-[#171713] dark:text-[#f4f2ec] space-y-1.5">
                     <div className="flex items-center justify-between text-[10px] font-mono">
-                      <span className="font-bold text-[#d1a24f]">SOURCE-BACKED</span>
-                      <span className="text-green-400">{m.citation.provenance_status}</span>
+                      <span className="font-bold text-[#927a48] dark:text-[#d1a24f]">SOURCE-BACKED</span>
+                      <span className="text-green-600 dark:text-green-400">{m.citation.provenance_status}</span>
                     </div>
-                    <p className="font-mono text-xs font-bold text-[#d1a24f]">
+                    <p className="font-mono text-xs font-bold text-[#927a48] dark:text-[#d1a24f]">
                       {m.citation.standard_number}
                     </p>
-                    <p className="text-[11px] text-[#d5c7b2]">{m.citation.evidence}</p>
+                    <p className="text-[11px] text-[#6b675b] dark:text-[#d5c7b2]">{m.citation.evidence}</p>
                   </div>
                 )}
               </div>
@@ -818,7 +818,7 @@ export default function ProductComplianceExplorer({
           ))}
 
           {chatLoading && (
-            <div className="text-xs text-[#d1a24f] flex items-center gap-2 p-2">
+            <div className="text-xs text-[#927a48] dark:text-[#d1a24f] flex items-center gap-2 p-2">
               <span className="w-2 h-2 rounded-full bg-[#d1a24f] animate-ping" />
               <span>Retrieving regulatory requirements for {activeProduct.name}...</span>
             </div>
@@ -838,7 +838,7 @@ export default function ProductComplianceExplorer({
             value={chatQuery}
             onChange={(e) => setChatQuery(e.target.value)}
             placeholder={`Ask about ${activeProduct.name} tests, tolerances, or licensing...`}
-            className="flex-1 px-4 py-3 rounded-xl bg-[#171713] border border-[#d5c7b2]/20 text-xs sm:text-sm text-[#f4f2ec] focus:outline-none focus:border-[#d1a24f]"
+            className="flex-1 px-4 py-3 rounded-xl bg-[#f4f2ec] dark:bg-[#171713] border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/20 text-xs sm:text-sm text-[#171713] dark:text-[#f4f2ec] placeholder:text-[#6b675b]/60 dark:placeholder:text-[#d5c7b2]/40 focus:outline-none focus:border-[#d1a24f]"
           />
           <button
             type="submit"

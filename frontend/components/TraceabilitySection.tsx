@@ -14,7 +14,7 @@ export default function TraceabilitySection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#171713] text-[#f4f2ec] overflow-hidden border-y border-[#d5c7b2]/10">
+    <section className="relative py-24 bg-[#f4f2ec] dark:bg-[#171713] text-[#171713] dark:text-[#f4f2ec] overflow-hidden border-y border-[#d5c7b2]/30 dark:border-[#d5c7b2]/10 transition-colors">
       {/* 3D Decorative Shape in Background */}
       <DecorativeShapes variant="loop" className="top-1/4 -right-16 opacity-50" />
       <DecorativeShapes variant="connected" className="-bottom-10 -left-10 opacity-30" />
@@ -22,14 +22,14 @@ export default function TraceabilitySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4b4932]/50 border border-[#d1a24f]/40 text-[#d1a24f] text-xs font-bold uppercase tracking-wider shadow-inner">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8e3d9]/70 dark:bg-[#4b4932]/50 border border-[#d1a24f]/40 text-[#927a48] dark:text-[#d1a24f] text-xs font-bold uppercase tracking-wider shadow-inner">
             <ShieldCheck className="w-4 h-4" />
             <span>Zero-Hallucination Regulatory Grounding</span>
           </div>
-          <h2 className="text-3xl sm:text-6xl font-black tracking-tight text-[#f4f2ec]">
+          <h2 className="text-3xl sm:text-6xl font-black tracking-tight text-[#171713] dark:text-[#f4f2ec]">
             Every answer should be traceable.
           </h2>
-          <p className="text-base sm:text-lg text-[#d5c7b2] font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-[#4b4932] dark:text-[#d5c7b2] font-normal leading-relaxed">
             In statutory compliance, an unverified assertion is a liability. BIS-Setu anchors every AI statement to the exact Indian Standard, clause, and page number.
           </p>
         </div>
@@ -47,24 +47,24 @@ export default function TraceabilitySection() {
                       className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all ${
                         s.highlight
                           ? 'bg-[#d1a24f] text-[#171713] shadow-lg shadow-[#d1a24f]/25 ring-4 ring-[#d1a24f]/20 font-bold'
-                          : 'bg-[#4b4932]/60 border border-[#d5c7b2]/20 text-[#f4f2ec]'
+                          : 'bg-[#e8e3d9] dark:bg-[#4b4932]/60 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 text-[#4b4932] dark:text-[#f4f2ec]'
                       }`}
                     >
                       <Icon className="w-6 h-6" />
                     </div>
 
                     <div className="space-y-0.5">
-                      <span className="text-[11px] font-black uppercase tracking-wider text-[#f4f2ec] block">
+                      <span className="text-[11px] font-black uppercase tracking-wider text-[#171713] dark:text-[#f4f2ec] block">
                         {s.label}
                       </span>
-                      <span className="text-[10px] text-[#d5c7b2]/70 block leading-tight font-mono">
+                      <span className="text-[10px] text-[#6b675b] dark:text-[#d5c7b2]/70 block leading-tight font-mono">
                         {s.desc}
                       </span>
                     </div>
                   </div>
 
                   {idx < steps.length - 1 && (
-                    <div className="flex items-center justify-center text-[#d1a24f]/70 font-bold text-lg -mt-6">
+                    <div className="flex items-center justify-center text-[#927a48] dark:text-[#d1a24f]/70 font-bold text-lg -mt-6">
                       →
                     </div>
                   )}
@@ -82,31 +82,31 @@ export default function TraceabilitySection() {
                   <div
                     className={`w-full max-w-sm p-4 rounded-2xl flex items-center gap-3 border ${
                       s.highlight
-                        ? 'bg-[#4b4932]/70 border-[#d1a24f] shadow-lg'
-                        : 'bg-[#171713] border-[#d5c7b2]/20'
+                        ? 'bg-[#e8e3d9] dark:bg-[#4b4932]/70 border-[#d1a24f] shadow-lg'
+                        : 'bg-white dark:bg-[#171713] border-[#d5c7b2] dark:border-[#d5c7b2]/20'
                     }`}
                   >
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
                         s.highlight
                           ? 'bg-[#d1a24f] text-[#171713] font-bold'
-                          : 'bg-[#4b4932]/40 text-[#f4f2ec]'
+                          : 'bg-[#e8e3d9] dark:bg-[#4b4932]/40 text-[#4b4932] dark:text-[#f4f2ec]'
                       }`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-xs font-black uppercase tracking-wider text-[#f4f2ec] block">
+                      <span className="text-xs font-black uppercase tracking-wider text-[#171713] dark:text-[#f4f2ec] block">
                         {s.label}
                       </span>
-                      <span className="text-[11px] text-[#d5c7b2] block font-mono">
+                      <span className="text-[11px] text-[#6b675b] dark:text-[#d5c7b2] block font-mono">
                         {s.desc}
                       </span>
                     </div>
                   </div>
 
                   {idx < steps.length - 1 && (
-                    <ArrowDown className="w-4 h-4 text-[#d1a24f]" />
+                    <ArrowDown className="w-4 h-4 text-[#927a48] dark:text-[#d1a24f]" />
                   )}
                 </React.Fragment>
               );
@@ -124,10 +124,10 @@ export default function TraceabilitySection() {
           </div>
 
           <div className="space-y-1">
-            <h3 className="text-xl sm:text-2xl font-black text-[#f4f2ec] font-mono">
+            <h3 className="text-xl sm:text-2xl font-black text-[#171713] dark:text-[#f4f2ec] font-mono">
               IS 302 (Part 2/Sec 15):2009
             </h3>
-            <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-[#d1a24f] pt-1">
+            <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-[#927a48] dark:text-[#d1a24f] pt-1">
               <span>Clause 13.2</span>
               <span>•</span>
               <span>Page 9</span>
@@ -136,7 +136,7 @@ export default function TraceabilitySection() {
             </div>
           </div>
 
-          <p className="text-xs text-[#f4f2ec]/90 max-w-lg mx-auto italic leading-relaxed pt-2">
+          <p className="text-xs text-[#4b4932] dark:text-[#f4f2ec]/90 max-w-lg mx-auto italic leading-relaxed pt-2">
             &ldquo;Every claim generated by BIS-Setu provides an immediate hyperlink to the exact Gazette clause, eradicating LLM hallucination in regulatory environments.&rdquo;
           </p>
         </div>

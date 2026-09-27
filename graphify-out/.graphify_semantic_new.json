@@ -1,0 +1,435 @@
+{
+  "nodes": [
+    {
+      "id": "_agents_rules_graphify_graphify",
+      "label": "Specification Doc: graphify",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\.agents\\rules\\graphify.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "_agents_workflows_graphify_graphify",
+      "label": "Specification Doc: graphify",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\.agents\\workflows\\graphify.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_bis_setu_architecture",
+      "label": "BIS-Setu Architecture & Compliance Engine",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_hybrid_retriever_pipeline",
+      "label": "Hybrid Retriever & RAG System",
+      "file_type": "concept",
+      "source_file": "C:\\Lest's Code\\bis\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_0091e71c1c_test_kettle_report_doc_0091e71c1c_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_0091e71c)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0091e71c1c_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_01ee78705d_test_kettle_report_doc_01ee78705d_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_01ee7870)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_01ee78705d_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_0523940753_test_kettle_report_doc_0523940753_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_05239407)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0523940753_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_0b83ab9011_kettle_compliant_test_report_doc_0b83ab9011_kettle_compliant_test_report",
+      "label": "Electric Kettle Test Report (doc_0b83ab90)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0b83ab9011_kettle_compliant_test_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_0d32946d3f_test_kettle_report_doc_0d32946d3f_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_0d32946d)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0d32946d3f_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_3dba183a32_kettle_compliant_test_report_doc_3dba183a32_kettle_compliant_test_report",
+      "label": "Electric Kettle Test Report (doc_3dba183a)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_3dba183a32_kettle_compliant_test_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_773cd8f43d_test_kettle_report_doc_773cd8f43d_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_773cd8f4)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_773cd8f43d_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_7ab21df007_test_kettle_report_doc_7ab21df007_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_7ab21df0)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_7ab21df007_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_b3e244f525_test_kettle_report_doc_b3e244f525_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_b3e244f5)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_b3e244f525_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_ba4a91e077_fan_non_compliant_report_fan_audit_report",
+      "label": "Ceiling Fan Test Report Non-Compliant",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_ba4a91e077_fan_non_compliant_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_uploads_doc_f676d25ade_test_kettle_report_doc_f676d25ade_test_kettle_report",
+      "label": "Electric Kettle Test Report (doc_f676d25a)",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_f676d25ade_test_kettle_report.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_requirements_python_dependencies",
+      "label": "Backend Python Dependencies",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_agents_agents",
+      "label": "Specification Doc: AGENTS",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_claude_claude",
+      "label": "Specification Doc: CLAUDE",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_readme_readme",
+      "label": "Specification Doc: README",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "implementation_plan_implementation_plan",
+      "label": "Specification Doc: implementation_plan",
+      "file_type": "document",
+      "source_file": "C:\\Lest's Code\\bis\\implementation_plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "backend_data_standards_docs_sample_amendment_is_302_amendment_is_302",
+      "label": "IS 302-2-15 Official Gazette Amendment",
+      "file_type": "paper",
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\standards_docs\\sample_amendment_is_302.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_public_file_file",
+      "label": "UI Asset file",
+      "file_type": "image",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\public\\file.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_public_globe_globe",
+      "label": "UI Asset globe",
+      "file_type": "image",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\public\\globe.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_public_next_next",
+      "label": "UI Asset next",
+      "file_type": "image",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\public\\next.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_public_vercel_vercel",
+      "label": "UI Asset vercel",
+      "file_type": "image",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\public\\vercel.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_public_window_window",
+      "label": "UI Asset window",
+      "file_type": "image",
+      "source_file": "C:\\Lest's Code\\bis\\frontend\\public\\window.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_bis_setu_architecture",
+      "target": "readme_hybrid_retriever_pipeline",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Lest's Code\\bis\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_0091e71c1c_test_kettle_report_doc_0091e71c1c_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0091e71c1c_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_01ee78705d_test_kettle_report_doc_01ee78705d_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_01ee78705d_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_0523940753_test_kettle_report_doc_0523940753_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0523940753_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_0b83ab9011_kettle_compliant_test_report_doc_0b83ab9011_kettle_compliant_test_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0b83ab9011_kettle_compliant_test_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_0d32946d3f_test_kettle_report_doc_0d32946d3f_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_0d32946d3f_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_3dba183a32_kettle_compliant_test_report_doc_3dba183a32_kettle_compliant_test_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_3dba183a32_kettle_compliant_test_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_773cd8f43d_test_kettle_report_doc_773cd8f43d_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_773cd8f43d_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_7ab21df007_test_kettle_report_doc_7ab21df007_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_7ab21df007_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_b3e244f525_test_kettle_report_doc_b3e244f525_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_b3e244f525_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_ba4a91e077_fan_non_compliant_report_fan_audit_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_ba4a91e077_fan_non_compliant_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_uploads_doc_f676d25ade_test_kettle_report_doc_f676d25ade_test_kettle_report",
+      "target": "backend_services_compliance_engine_complianceengine",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\uploads\\doc_f676d25ade_test_kettle_report.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_requirements_python_dependencies",
+      "target": "backend_main_app",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "backend_data_standards_docs_sample_amendment_is_302_amendment_is_302",
+      "target": "backend_services_rag_engine_ragengine",
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Lest's Code\\bis\\backend\\data\\standards_docs\\sample_amendment_is_302.pdf",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1250,
+  "output_tokens": 850
+}

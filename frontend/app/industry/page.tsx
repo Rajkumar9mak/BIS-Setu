@@ -238,28 +238,28 @@ export default function IndustryPage() {
       <DecorativeShapes variant="loop" className="-top-16 -right-20 opacity-50" />
 
       {/* Header & Primary Mode Switcher */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#d5c7b2]/15">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15">
         <div>
-          <div className="flex items-center gap-2 text-[#d1a24f] text-xs font-semibold uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-[#927a48] dark:text-[#d1a24f] text-xs font-semibold uppercase tracking-wider mb-1">
             <Building2 className="w-4 h-4" />
             <span>BIS Industry & Manufacturer Suite</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-[#f4f2ec] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black text-[#171713] dark:text-[#f4f2ec] tracking-tight">
             Manufacturing Compliance Platform
           </h1>
-          <p className="text-sm text-[#d5c7b2] mt-1">
+          <p className="text-sm text-[#4b4932] dark:text-[#d5c7b2] mt-1">
             Intelligent standards discovery, lab report audits, statutory project milestones, and MSME fee concessions.
           </p>
         </div>
 
         {/* Main Industry Tabs */}
-        <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#171713]/90 border border-[#d5c7b2]/15 text-xs font-semibold overflow-x-auto shadow-md">
+        <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/15 text-xs font-semibold overflow-x-auto shadow-sm dark:shadow-md">
           <button
             onClick={() => setActiveTab('products')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all ${
               activeTab === 'products'
                 ? 'bg-[#d1a24f] text-[#171713] font-bold shadow-md shadow-[#d1a24f]/20'
-                : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -271,7 +271,7 @@ export default function IndustryPage() {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all ${
               activeTab === 'discovery'
                 ? 'bg-[#d1a24f] text-[#171713] font-bold shadow-md shadow-[#d1a24f]/20'
-                : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
             }`}
           >
             <Search className="w-3.5 h-3.5" />
@@ -283,7 +283,7 @@ export default function IndustryPage() {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all ${
               activeTab === 'audit'
                 ? 'bg-[#d1a24f] text-[#171713] font-bold shadow-md shadow-[#d1a24f]/20'
-                : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
             }`}
           >
             <FileSpreadsheet className="w-3.5 h-3.5" />
@@ -295,7 +295,7 @@ export default function IndustryPage() {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all ${
               activeTab === 'projects'
                 ? 'bg-[#d1a24f] text-[#171713] font-bold shadow-md shadow-[#d1a24f]/20'
-                : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
             }`}
           >
             <FolderGit2 className="w-3.5 h-3.5" />
@@ -307,7 +307,7 @@ export default function IndustryPage() {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all ${
               activeTab === 'wizard'
                 ? 'bg-[#d1a24f] text-[#171713] font-bold shadow-md shadow-[#d1a24f]/20'
-                : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />

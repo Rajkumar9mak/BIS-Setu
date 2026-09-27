@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth" data-scroll-behavior="smooth">
+    <html lang="en" suppressHydrationWarning className="dark scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -26,8 +26,14 @@ export default function RootLayout({
                   var stored = localStorage.getItem('theme');
                   if (stored === 'light') {
                     document.documentElement.classList.remove('dark');
-                  } else {
+                  } else if (stored === 'dark') {
                     document.documentElement.classList.add('dark');
+                  } else {
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                      document.documentElement.classList.remove('dark');
+                    } else {
+                      document.documentElement.classList.add('dark');
+                    }
                   }
                 } catch (e) {}
               })();
@@ -41,7 +47,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-earthy-mesh flex flex-col min-h-screen font-['Inter',system-ui,sans-serif] antialiased text-[#171713] dark:text-[#f4f2ec] selection:bg-[#d1a24f]/30 selection:text-[#f4f2ec] transition-colors duration-200">
+      <body className="bg-[#F7F8FA] dark:bg-[#171812] text-[#111827] dark:text-[#F4F1E8] flex flex-col min-h-screen font-['Inter',system-ui,sans-serif] antialiased selection:bg-[#C49A45]/20 dark:selection:bg-[#D4AF62]/30 selection:text-[#C49A45] dark:selection:text-[#F4F1E8] transition-colors duration-200">
         <Navbar />
         <main className="flex-1 w-full">
           {children}

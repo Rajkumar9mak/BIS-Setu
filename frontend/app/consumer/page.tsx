@@ -205,14 +205,14 @@ export default function ConsumerPage() {
 
       {/* Header */}
       <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-semibold">
-          <CheckCircle className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8e3d9]/70 dark:bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-semibold">
+          <CheckCircle className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
           <span>National Verification Registry • Direct e-BIS Sync</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black text-[#f4f2ec] tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-black text-[#171713] dark:text-[#f4f2ec] tracking-tight">
           Consumer Authenticity & Safety
         </h1>
-        <p className="text-sm text-[#d5c7b2] leading-relaxed">
+        <p className="text-sm text-[#4b4932] dark:text-[#d5c7b2] leading-relaxed">
           Verify whether the ISI mark or CM/L licence printed on your product is genuine, inspect pre-purchase checklists, or report suspicious counterfeit marks directly to BIS enforcement.
         </p>
       </div>
@@ -220,14 +220,14 @@ export default function ConsumerPage() {
       {/* Multimodal Verification Section */}
       <div className="rounded-[30px] glass-charcoal p-6 sm:p-8 border border-[#d1a24f]/30 space-y-6 shadow-2xl backdrop-blur-2xl">
         {/* Verification Mode Selector */}
-        <div className="flex items-center justify-between flex-wrap gap-2 border-b border-[#d5c7b2]/15 pb-4">
+        <div className="flex items-center justify-between flex-wrap gap-2 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 pb-4">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveVerifyTab('cml')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                 activeVerifyTab === 'cml'
                   ? 'bg-[#d1a24f] text-[#171713] shadow-md shadow-[#d1a24f]/20'
-                  : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                  : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
               }`}
             >
               <Search className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ export default function ConsumerPage() {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                 activeVerifyTab === 'qr'
                   ? 'bg-[#d1a24f] text-[#171713] shadow-md shadow-[#d1a24f]/20'
-                  : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                  : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
               }`}
             >
               <QrCode className="w-3.5 h-3.5" />
@@ -251,7 +251,7 @@ export default function ConsumerPage() {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                 activeVerifyTab === 'image'
                   ? 'bg-[#d1a24f] text-[#171713] shadow-md shadow-[#d1a24f]/20'
-                  : 'text-[#d5c7b2] hover:text-[#f4f2ec] hover:bg-[#4b4932]/40'
+                  : 'text-[#4b4932] hover:text-[#171713] dark:text-[#d5c7b2] dark:hover:text-[#f4f2ec] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932]/40'
               }`}
             >
               <Camera className="w-3.5 h-3.5" />
@@ -261,7 +261,7 @@ export default function ConsumerPage() {
 
           <button
             onClick={() => handleOpenGrievance()}
-            className="px-3.5 py-1.5 rounded-xl bg-red-950/40 hover:bg-red-900/60 border border-red-500/40 text-red-300 text-xs font-semibold flex items-center gap-1.5 transition-all"
+            className="px-3.5 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 dark:bg-red-950/40 dark:hover:bg-red-900/60 border border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-300 text-xs font-semibold flex items-center gap-1.5 transition-all"
           >
             <ShieldAlert className="w-3.5 h-3.5" />
             <span>Report Counterfeit</span>
@@ -272,14 +272,14 @@ export default function ConsumerPage() {
         {activeVerifyTab === 'cml' && (
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#d5c7b2]/60" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6b675b]/60 dark:text-[#d5c7b2]/60" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                 placeholder="Enter 7 or 8-digit CM/L Number (e.g. 8400192, 7123901, or 8219011)"
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] focus:ring-2 focus:ring-[#d1a24f]/20 text-[#f4f2ec] placeholder:text-[#d5c7b2]/40 text-sm font-medium outline-none transition-all font-mono"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] focus:ring-2 focus:ring-[#d1a24f]/20 text-[#171713] dark:text-[#f4f2ec] placeholder:text-[#6b675b]/60 dark:placeholder:text-[#d5c7b2]/40 text-sm font-medium outline-none transition-all font-mono shadow-sm"
               />
             </div>
 

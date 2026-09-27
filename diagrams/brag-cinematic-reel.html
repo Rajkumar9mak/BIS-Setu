@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIS Setu — 20s Cinematic Vertical Reel Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --saffron: #f97316;
+      --saffron-glow: rgba(249, 115, 22, 0.4);
+      --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.4);
+      --emerald: #10b981;
+      --crimson: #ef4444;
+      --gold: #f59e0b;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+    }
+
+    /* Header & Badges */
+    .header-bar {
+      max-width: 1080px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #ea580c, #f59e0b);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .title-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .meta-chip {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Main Grid */
+    .workspace-grid {
+      max-width: 1180px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .workspace-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+
+    /* 9:16 Vertical Phone Showcase */
+    .phone-housing {
+      width: 380px;
+      height: 675px; /* Exact 9:16 aspect ratio (380 x 675.5) */
+      background: #000;
+      border-radius: 46px;
+      padding: 12px;
+      box-shadow: 
+        0 0 0 2px rgba(255, 255, 255, 0.12),
+        0 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0 0 60px -10px var(--saffron-glow);
+      position: relative;
+      user-select: none;
+    }
+
+    .phone-housing::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 22px;
+      background: #0b0f19;
+      border-radius: 20px;
+      z-index: 100;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .screen-canvas {
+      width: 100%;
+      height: 100%;
+      background: #020617;
+      border-radius: 36px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Reel Layers */
+    .reel-stage {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 1.5rem 2rem 1.5rem;
+      z-index: 10;
+    }
+
+    .reel-stage.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    /* Visual Backgrounds for Stages */
+    .stage-1-bg {
+      background: radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.22) 0%, #030712 70%);
+    }
+    .stage-2-bg {
+      background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.25) 0%, #030712 75%);
+    }
+    .stage-3-bg {
+      background: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.22) 0%, #030712 75%);
+    }
+    .stage-4-bg {
+      background: radial-gradient(circle at 50% 60%, rgba(16, 185, 129, 0.25) 0%, #030712 75%);
+    }
+    .stage-5-bg {
+      background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.3) 0%, #030712 80%);
+    }
+
+    /* Screen UI Overlays */
+    .top-telemetry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 30;
+      letter-spacing: 0.05em;
+    }
+
+    .status-pip {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse-dot 1.2s infinite;
+      margin-right: 5px;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
+    /* Timeline Progress Bars on Top (Instagram/Reels Style) */
+    .stories-timeline {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      display: flex;
+      gap: 4px;
+      z-index: 90;
+    }
+
+    .timeline-segment {
+      flex: 1;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .timeline-fill {
+      height: 100%;
+      width: 0%;
+      background: #fff;
+      transition: width 0.05s linear;
+    }
+
+    /* Cinematic Center Visual Elements */
+    .center-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .hero-glitch-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .badge-crimson {
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    .badge-cyan {
+      background: rgba(6, 182, 212, 0.18);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #67e8f9;
+    }
+
+    .badge-gold {
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fcd34d;
+    }
+
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6ee7b7;
+    }
+
+    .cinematic-headline {
+      font-size: 2.15rem;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .cinematic-subline {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.35;
+      max-width: 280px;
+    }
+
+    .data-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .data-pill {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #e2e8f0;
+    }
+
+    /* Holographic Radar / Scanner UI */
+    .scanner-box {
+      width: 170px;
+      height: 170px;
+      border: 2px dashed rgba(6, 182, 212, 0.6);
+      border-radius: 20px;
+      position: relative;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(6, 182, 212, 0.04);
+      overflow: hidden;
+    }
+
+    .scan-laser {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #06b6d4, transparent);
+      box-shadow: 0 0 12px #06b6d4;
+      animation: laser-sweep 1.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes laser-sweep {
+      0% { top: 5%; }
+      100% { top: 92%; }
+    }
+
+    /* Subtitles Caption Bar */
+    .captions-wrapper {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 0.75rem 1rem;
+      z-index: 40;
+      text-align: center;
+    }
+
+    .captions-role {
+      font-size: 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--saffron);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.25rem;
+    }
+
+    .captions-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    /* Right Panel: Storyboard & Controls */
+    .controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .playback-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      background: #f97316;
+      border: none;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px var(--saffron-glow);
+    }
+
+    .btn-action:hover {
+      background: #ea580c;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .sound-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    /* Scene Timeline Grid */
+    .scene-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .scene-item {
+      display: grid;
+      grid-template-columns: 85px 1fr 60px;
+      align-items: center;
+      padding: 0.85rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .scene-item:hover, .scene-item.active-scene {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(249, 115, 22, 0.4);
+      transform: translateX(4px);
+    }
+
+    .scene-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--saffron);
+    }
+
+    .scene-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #fff;
+    }
+
+    .scene-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .scene-tag {
+      font-size: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--cyan);
+    }
+
+    /* Video Spec Matrix */
+    .spec-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .spec-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.75rem;
+      border-radius: 10px;
+    }
+
+    .spec-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-val {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      position: relative;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: #a5f3fc;
+      max-height: 150px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="brand-group">
+      <span class="brand-badge">CINEMATIC SHOWCASE</span>
+      <h1 class="title-text">BIS Setu — 20-Second High-Impact Reel</h1>
+    </div>
+    <div class="meta-tags">
+      <div class="meta-chip"><span>⚡</span> 9:16 VERTICAL</div>
+      <div class="meta-chip"><span>⏱️</span> 20.0 SECONDS</div>
+      <div class="meta-chip"><span>🔊</span> SPATIAL SFX SYNTH</div>
+    </div>
+  </div>
+
+  <!-- Workspace Grid -->
+  <div class="workspace-grid">
+
+    <!-- 9:16 Smartphone Mockup -->
+    <div class="phone-housing">
+      <div class="screen-canvas" id="reelScreen">
+        
+        <!-- Story Timeline Bars (5 segments) -->
+        <div class="stories-timeline">
+          <div class="timeline-segment"><div class="timeline-fill" id="fill-0"></div></div>
+          <div class="timeline-segment"><div class="timeline-fill" id="fill-1"></div></div>
+          <div class="timeline-segment"><div class="timeline-fill" id="fill-2"></div></div>
+          <div class="timeline-segment"><div class="timeline-fill" id="fill-3"></div></div>
+          <div class="timeline-segment"><div class="timeline-fill" id="fill-4"></div></div>
+        </div>
+
+        <!-- SCENE 1: 00:00 - 00:03 (THE CRISIS) -->
+        <div class="reel-stage stage-1-bg active" id="stage-0">
+          <div class="top-telemetry">
+            <span><span class="status-pip"></span>REC • 4K HDR</span>
+            <span>00:00 - 00:03</span>
+          </div>
+
+          <div class="center-visual">
+            <div class="hero-glitch-badge badge-crimson">⚠️ THE STANDARDS BREACH</div>
+            <h2 class="cinematic-headline" style="color: #f87171;">COUNTERFEIT<br>EPIDEMIC</h2>
+            <p class="cinematic-subline">Millions of untested products. Spurious ISI seals. Critical citizen hazard.</p>
+            <div class="data-pill-row">
+              <span class="data-pill">IS 4151 FAKE HELMETS</span>
+              <span class="data-pill">IS 302 SHOCK HAZARD</span>
+              <span class="data-pill">IS 9873 TOXIC TOYS</span>
+            </div>
+          </div>
+
+          <div class="captions-wrapper">
+            <div class="captions-role">VOICEOVER // PROTAGONIST</div>
+            <div class="captions-text">"1.4 billion citizens. Millions of fake marks. Bureaucratic bottlenecks."</div>
+          </div>
+        </div>
+
+        <!-- SCENE 2: 00:03 - 00:08 (THE DUAL ENGINE REVEAL) -->
+        <div class="reel-stage stage-2-bg" id="stage-1">
+          <div class="top-telemetry">
+            <span><span class="status-pip" style="background:#06b6d4;"></span>SYS: DUAL-CORE ONLINE</span>
+            <span>00:03 - 00:08</span>
+          </div>
+
+          <div class="center-visual">
+            <div class="hero-glitch-badge badge-cyan">🚀 ENTER BIS SETU</div>
+            <h2 class="cinematic-headline" style="color: #67e8f9;">ONE PLATFORM.<br>DUAL REVOLUTION.</h2>
+            <p class="cinematic-subline">Bridging Industry Compliance & Consumer Verification into a single neural hub.</p>
+            
+            <div class="scanner-box">
+              <div class="scan-laser"></div>
+              <div style="font-family:'JetBrains Mono'; font-size:0.75rem; color:#67e8f9; text-align:center; font-weight:800;">
+                FASTAPI<br>+ NEXT.JS 16<br><span style="color:#f59e0b;">NEURAL RAG</span>
+              </div>
+            </div>
+
+            <div class="data-pill-row">
+              <span class="data-pill" style="border-color:#06b6d4; color:#67e8f9;">🏭 INDUSTRY MODE</span>
+              <span class="data-pill" style="border-color:#f97316; color:#fdba74;">🔍 CONSUMER MODE</span>
+            </div>
+          </div>
+
+          <div class="captions-wrapper">
+            <div class="captions-role">VOICEOVER // PUNCH</div>
+            <div class="captions-text">"Meet BIS Setu. The AI nerve-center engineered for Indian Standards."</div>
+          </div>
+        </div>
+
+        <!-- SCENE 3: 00:08 - 00:13 (HYPER-INTELLIGENCE) -->
+        <div class="reel-stage stage-3-bg" id="stage-2">
+          <div class="top-telemetry">
+            <span><span class="status-pip" style="background:#f59e0b;"></span>LLM GROUNDING ENGINE</span>
+            <span>00:08 - 00:13</span>
+          </div>
+
+          <div class="center-visual">
+            <div class="hero-glitch-badge badge-gold">⚡ ZERO-HALLUCINATION AI</div>
+            <h2 class="cinematic-headline" style="color: #fcd34d;">COMPLIANCE<br>AT WARP SPEED</h2>
+            <p class="cinematic-subline">Every answer mathematically anchored to Gazette QCOs and verbatim clauses.</p>
+            
+            <div style="background: rgba(0,0,0,0.6); border:1px solid rgba(245,158,11,0.4); border-radius:12px; padding:0.75rem 1rem; width:100%; margin:0.75rem 0; text-align:left;">
+              <div style="font-size:0.65rem; color:#f59e0b; font-family:'JetBrains Mono';">⚡ CLAUSE RETRIEVAL: 42ms</div>
+              <div style="font-size:0.78rem; font-weight:700; color:#fff; margin-top:2px;">[IS 302-2-15: Cl. 19.1, P. 14]</div>
+              <div style="font-size:0.65rem; color:#94a3b8; margin-top:4px;">MSME Concession: 50% Marking Fee Waiver Applied</div>
+            </div>
+
+            <div class="data-pill-row">
+              <span class="data-pill">FORM-V EXPORT</span>
+              <span class="data-pill">7-PHASE ROADMAP</span>
+              <span class="data-pill">LAB LOCATOR</span>
+            </div>
+          </div>
+
+          <div class="captions-wrapper">
+            <div class="captions-role">VOICEOVER // EVIDENCE</div>
+            <div class="captions-text">"Zero hallucination. Instant cost formulas. Form-V ready in seconds."</div>
+          </div>
+        </div>
+
+        <!-- SCENE 4: 00:13 - 00:17 (ENFORCEMENT SHIELD) -->
+        <div class="reel-stage stage-4-bg" id="stage-3">
+          <div class="top-telemetry">
+            <span><span class="status-pip" style="background:#10b981;"></span>RADAR TELEMETRY</span>
+            <span>00:13 - 00:17</span>
+          </div>
+
+          <div class="center-visual">
+            <div class="hero-glitch-badge badge-emerald">🛡️ REAL-TIME SHIELD</div>
+            <h2 class="cinematic-headline" style="color: #6ee7b7;">VERIFY.<br>ENFORCE.</h2>
+            <p class="cinematic-subline">Instant QR & CM/L scanner. Auto-dispatches fraud alerts to Helpline 1915.</p>
+            
+            <div style="background: rgba(16,185,129,0.15); border: 2px solid #10b981; border-radius: 14px; padding: 0.85rem; width:100%; margin:0.8rem 0;">
+              <div style="font-size:0.7rem; font-family:'JetBrains Mono'; color:#a7f3d0; font-weight:800;">✓ GENUINE BIS LICENCE ACTIVE</div>
+              <div style="font-size:0.95rem; font-weight:900; color:#fff; margin-top:3px;">CM/L-8400123456</div>
+              <div style="font-size:0.68rem; color:#6ee7b7; margin-top:2px;">Steelbird Hi-Tech India • IS 4151 Validated</div>
+            </div>
+
+            <div class="data-pill-row">
+              <span class="data-pill" style="border-color:#10b981; color:#a7f3d0;">42ms LOOKUP</span>
+              <span class="data-pill" style="border-color:#ef4444; color:#fca5a5;">1-CLICK GRIEVANCE</span>
+            </div>
+          </div>
+
+          <div class="captions-wrapper">
+            <div class="captions-role">VOICEOVER // ENFORCEMENT</div>
+            <div class="captions-text">"One scan unmasks fakes. Instant regulatory action at your fingertips."</div>
+          </div>
+        </div>
+
+        <!-- SCENE 5: 00:17 - 00:20 (THE CLIMAX & CALL TO ACTION) -->
+        <div class="reel-stage stage-5-bg" id="stage-4">
+          <div class="top-telemetry">
+            <span><span class="status-pip" style="background:#f97316;"></span>SOVEREIGN CLOUD</span>
+            <span>00:17 - 00:20</span>
+          </div>
+
+          <div class="center-visual">
+            <div class="hero-glitch-badge" style="background: rgba(249,115,22,0.25); border:1px solid #f97316; color:#fdba74;">🇮🇳 NATIONAL STANDARDS IMPACT</div>
+            <h2 class="cinematic-headline" style="color: #fb923c; font-size: 2.3rem;">BIS SETU</h2>
+            <p class="cinematic-subline" style="font-weight: 700; color:#fff;">STANDARDS. REIMAGINED.</p>
+            
+            <div style="margin-top: 1.5rem; text-align:center;">
+              <div style="font-family:'JetBrains Mono'; font-size:1rem; font-weight:900; color:#38bdf8; letter-spacing:0.04em;">bis-setu.gov.in</div>
+              <div style="font-size:0.75rem; color:#cbd5e1; margin-top:0.35rem;">Powering Atmanirbhar & Consumer Trust</div>
+            </div>
+          </div>
+
+          <div class="captions-wrapper" style="border-color: rgba(249,115,22,0.4);">
+            <div class="captions-role" style="color:#fdba74;">VOICEOVER // ANCHOR</div>
+            <div class="captions-text">"Bridge compliance. Protect the nation. This is BIS Setu."</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Storyboard, Master Script & Controls -->
+    <div class="controls-panel">
+
+      <!-- Playback Console -->
+      <div class="glass-card">
+        <div class="card-title">
+          <span>🎬 Reel Playback Controller</span>
+          <div class="sound-badge" id="soundToggleBtn">
+            <span id="soundIcon">🔊</span> <span id="soundLabel">SFX AUDIO ACTIVE</span>
+          </div>
+        </div>
+
+        <div class="playback-toolbar">
+          <button class="btn-action" id="playBtn">▶ PLAY REEL</button>
+          <button class="btn-secondary" id="restartBtn">↺ RESTART</button>
+          <button class="btn-secondary" id="speedBtn">1.0x SPEED</button>
+          <div style="font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--cyan); margin-left:auto; font-weight:800;" id="timerDisplay">
+            00.0s / 20.0s
+          </div>
+        </div>
+
+        <!-- Spec Matrix -->
+        <div class="spec-matrix">
+          <div class="spec-item">
+            <div class="spec-label">Format Ratio</div>
+            <div class="spec-val">9:16 Vertical</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Total Runtime</div>
+            <div class="spec-val">20.0 Seconds</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Cinematic Tone</div>
+            <div class="spec-val">Epic / High Stakes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot-by-Shot Storyboard -->
+      <div class="glass-card">
+        <div class="card-title">
+          <span>📜 Shot-by-Shot Cinematic Breakdown</span>
+          <span style="font-size:0.75rem; color:var(--text-muted); font-family:'JetBrains Mono';">5 SCENES</span>
+        </div>
+
+        <div class="scene-list">
+          <div class="scene-item active-scene" data-scene="0">
+            <div class="scene-time">0:00 - 0:03</div>
+            <div>
+              <div class="scene-name">The Standards Crisis</div>
+              <div class="scene-desc">Macro crimson macro shots of counterfeit ISI marks with sub-bass drop & heartbeat.</div>
+            </div>
+            <div class="scene-tag">HOOK</div>
+          </div>
+
+          <div class="scene-item" data-scene="1">
+            <div class="scene-time">0:03 - 0:08</div>
+            <div>
+              <div class="scene-name">The Dual-Engine Reveal</div>
+              <div class="scene-desc">Screen splits with cyan and saffron laser line. Industry Wizard + Consumer Radar.</div>
+            </div>
+            <div class="scene-tag">REVEAL</div>
+          </div>
+
+          <div class="scene-item" data-scene="2">
+            <div class="scene-time">0:08 - 0:13</div>
+            <div>
+              <div class="scene-name">Hyper-Intelligence & Speed</div>
+              <div class="scene-desc">Clause citation anchor, 50% MSME waiver calculation, instant Form-V readiness.</div>
+            </div>
+            <div class="scene-tag">VALUE</div>
+          </div>
+
+          <div class="scene-item" data-scene="3">
+            <div class="scene-time">0:13 - 0:17</div>
+            <div>
+              <div class="scene-name">Enforcement Shield</div>
+              <div class="scene-desc">42ms QR lookup, verified green glow, real-time fake detection with NCH 1915 dispatch.</div>
+            </div>
+            <div class="scene-tag">CLIMAX</div>
+          </div>
+
+          <div class="scene-item" data-scene="4">
+            <div class="scene-time">0:17 - 0:20</div>
+            <div>
+              <div class="scene-name">Sovereign Climax & CTA</div>
+              <div class="scene-desc">BIS Setu gold emblem, deep anamorphic flare, sovereign URL punchline.</div>
+            </div>
+            <div class="scene-tag">OUTRO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Video Generator Master Prompt -->
+      <div class="glass-card">
+        <div class="card-title">
+          <span>🤖 AI Video Generator Prompt (Runway / Sora / Luma)</span>
+          <button class="btn-secondary" style="font-size:0.75rem; padding:0.35rem 0.75rem;" id="copyPromptBtn">📋 COPY PROMPT</button>
+        </div>
+        <div class="prompt-box" id="masterPrompt">
+[CINEMATIC 9:16 VERTICAL PRODUCT TEASER — 20 SECONDS]
+CAMERA: Vertical cinematic aspect ratio 9:16, anamorphic lens flares, dynamic camera pushes and crash zooms, 60fps high shutter, deep cinematic contrast.
+COLOR GRADE: Blade Runner 2049 meets high-tech Indian Civic Tech — Midnight Obsidian, Saffron Orange (#f97316), Electric Cyan (#06b6d4), Emerald Verified (#10b981).
+
+SCENE 1 (0-3s): Extreme macro close-up of a consumer electrical kettle vibrating on a dark granite pedestal. Spurious blurry ISI mark flickers in ominous crimson light. Quick crash zoom to HUD warning text "CRITICAL SAFETY RISK". Audio: Heavy Hans Zimmer sub-bass braam, heartbeat thump.
+
+SCENE 2 (3-8s): Screen cuts abruptly into an explosive holographic neon split. Left side: High-tech industrial CAD blueprint and 7-phase certification pipeline. Right side: Smartphone camera locking onto a motorcycle helmet QR code. Laser scanning line sweeps across the frame.
+
+SCENE 3 (8-13s): Holographic Bureau of Indian Standards gazette document pages rapidly fan out in 3D space. Laser highlights clause "[IS 302-2-15: Cl. 19.1]". Numbers count down rapidly: "MSME Concession -50%", "Form-V Complete in 0.4s". 
+
+SCENE 4 (13-17s): Optical focus shifts to mobile screen. Rapid green HUD biometric-style lock: "GENUINE ACTIVE — CM/L 8400123456". Split second transition to counterfeit helmet mark turning toxic red with instant button "FILE NCH 1915 GRIEVANCE".
+
+SCENE 5 (17-20s): Deep cinematic drum hit. The BIS Setu golden emblem rises through volumetric saffron and cyan smoke. Anamorphic lens flare sweeps horizontally. Clean typography: "BIS SETU • BRIDGE COMPLIANCE. PROTECT THE NATION. bis-setu.gov.in".
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Audio Synthesizer via Web Audio API for Cinematic Impacts
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playCinematicHit(freq = 60, type = 'sawtooth', duration = 1.2) {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + duration);
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(280, audioCtx.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + duration);
+
+        gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.warn('Audio synthesis warning:', e);
+      }
+    }
+
+    function playLaserSweep() {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(180, audioCtx.currentTime + 0.35);
+
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.35);
+      } catch (e) {}
+    }
+
+    function playSuccessChirp() {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
+        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
+
+        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.5);
+      } catch (e) {}
+    }
+
+    // Playback State Machine
+    const scenes = [
+      { start: 0, end: 3, sound: () => playCinematicHit(75, 'sawtooth', 1.8) },
+      { start: 3, end: 8, sound: () => { playLaserSweep(); setTimeout(() => playCinematicHit(90, 'sine', 1.2), 300); } },
+      { start: 8, end: 13, sound: () => playLaserSweep() },
+      { start: 13, end: 17, sound: () => playSuccessChirp() },
+      { start: 17, end: 20, sound: () => playCinematicHit(55, 'sawtooth', 2.5) }
+    ];
+
+    let currentSec = 0;
+    let isPlaying = false;
+    let playbackSpeed = 1.0;
+    let currentSceneIdx = 0;
+    let intervalId = null;
+
+    const playBtn = document.getElementById('playBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const speedBtn = document.getElementById('speedBtn');
+    const timerDisplay = document.getElementById('timerDisplay');
+    const soundToggleBtn = document.getElementById('soundToggleBtn');
+    const soundIcon = document.getElementById('soundIcon');
+    const soundLabel = document.getElementById('soundLabel');
+    const copyPromptBtn = document.getElementById('copyPromptBtn');
+
+    function updateView() {
+      timerDisplay.textContent = `${currentSec.toFixed(1).padStart(4, '0')}s / 20.0s`;
+
+      // Find current scene
+      let activeIdx = scenes.findIndex(s => currentSec >= s.start && currentSec < s.end);
+      if (activeIdx === -1 && currentSec >= 20) activeIdx = 4;
+
+      if (activeIdx !== currentSceneIdx) {
+        currentSceneIdx = activeIdx;
+        scenes[currentSceneIdx]?.sound();
+      }
+
+      // Update phone stages
+      for (let i = 0; i < 5; i++) {
+        const stageEl = document.getElementById(`stage-${i}`);
+        if (stageEl) {
+          if (i === currentSceneIdx) {
+            stageEl.classList.add('active');
+          } else {
+            stageEl.classList.remove('active');
+          }
+        }
+
+        // Update timeline bars
+        const fillEl = document.getElementById(`fill-${i}`);
+        const scene = scenes[i];
+        if (fillEl) {
+          if (currentSec <= scene.start) {
+            fillEl.style.width = '0%';
+          } else if (currentSec >= scene.end) {
+            fillEl.style.width = '100%';
+          } else {
+            const pct = ((currentSec - scene.start) / (scene.end - scene.start)) * 100;
+            fillEl.style.width = `${pct}%`;
+          }
+        }
+      }
+
+      // Update right-hand scene list highlight
+      document.querySelectorAll('.scene-item').forEach((item, idx) => {
+        if (idx === currentSceneIdx) {
+          item.classList.add('active-scene');
+        } else {
+          item.classList.remove('active-scene');
+        }
+      });
+    }
+
+    function step() {
+      currentSec += 0.05 * playbackSpeed;
+      if (currentSec >= 20.0) {
+        currentSec = 20.0;
+        pause();
+      }
+      updateView();
+    }
+
+    function play() {
+      if (isPlaying) return;
+      initAudio();
+      isPlaying = true;
+      playBtn.textContent = '⏸ PAUSE';
+      playBtn.style.background = '#06b6d4';
+      if (currentSec >= 20.0) currentSec = 0;
+      intervalId = setInterval(step, 50);
+    }
+
+    function pause() {
+      isPlaying = false;
+      playBtn.textContent = '▶ PLAY REEL';
+      playBtn.style.background = '#f97316';
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pause();
+      } else {
+        play();
+      }
+    });
+
+    restartBtn.addEventListener('click', () => {
+      pause();
+      currentSec = 0;
+      updateView();
+      play();
+    });
+
+    speedBtn.addEventListener('click', () => {
+      if (playbackSpeed === 1.0) {
+        playbackSpeed = 0.5;
+        speedBtn.textContent = '0.5x SPEED';
+      } else {
+        playbackSpeed = 1.0;
+        speedBtn.textContent = '1.0x SPEED';
+      }
+    });
+
+    soundToggleBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      if (soundEnabled) {
+        soundIcon.textContent = '🔊';
+        soundLabel.textContent = 'SFX AUDIO ACTIVE';
+        soundLabel.style.color = '#94a3b8';
+      } else {
+        soundIcon.textContent = '🔇';
+        soundLabel.textContent = 'SFX MUTED';
+        soundLabel.style.color = '#ef4444';
+      }
+    });
+
+    // Clicking scenes directly
+    document.querySelectorAll('.scene-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const sceneIdx = parseInt(item.getAttribute('data-scene'));
+        currentSec = scenes[sceneIdx].start;
+        updateView();
+      });
+    });
+
+    // Copy prompt
+    copyPromptBtn.addEventListener('click', () => {
+      const text = document.getElementById('masterPrompt').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const oldText = copyPromptBtn.textContent;
+        copyPromptBtn.textContent = '✓ COPIED!';
+        setTimeout(() => copyPromptBtn.textContent = oldText, 2000);
+      });
+    });
+
+    // Initial View setup
+    updateView();
+  </script>
+</body>
+</html>

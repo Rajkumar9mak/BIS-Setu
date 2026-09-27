@@ -16,18 +16,18 @@ export default function ToyStandardsOverview() {
       value: totalStandards,
       detail: 'Indexed in Knowledge Base',
       icon: BookOpen,
-      accentColor: 'text-[#d1a24f]',
-      borderColor: 'border-[#d1a24f]/30',
-      bgColor: 'bg-[#4b4932]/30',
+      accentColor: 'text-[#927a48] dark:text-[#d1a24f]',
+      borderColor: 'border-[#d5c7b2]/40 dark:border-[#d1a24f]/30',
+      bgColor: 'bg-white dark:bg-[#4b4932]/30',
     },
     {
       label: 'Current Standards',
       value: currentStandards,
       detail: 'Active / Published Editions',
       icon: CheckCircle,
-      accentColor: 'text-[#927a48]',
-      borderColor: 'border-[#927a48]/40',
-      bgColor: 'bg-[#927a48]/20',
+      accentColor: 'text-green-600 dark:text-green-400',
+      borderColor: 'border-[#d5c7b2]/40 dark:border-[#927a48]/40',
+      bgColor: 'bg-white dark:bg-[#927a48]/20',
     },
     {
       label: 'Withdrawn Standards',
@@ -35,34 +35,34 @@ export default function ToyStandardsOverview() {
       detail: 'Retained for Historical Reference',
       icon: AlertTriangle,
       accentColor: 'text-[#b84a3a]',
-      borderColor: 'border-[#b84a3a]/30',
-      bgColor: 'bg-[#b84a3a]/10',
+      borderColor: 'border-[#d5c7b2]/40 dark:border-[#b84a3a]/30',
+      bgColor: 'bg-white dark:bg-[#b84a3a]/10',
     },
     {
       label: 'Toy Safety Categories',
       value: totalCategories,
       detail: 'Mechanical to Chemical Scopes',
       icon: Layers,
-      accentColor: 'text-[#f4f2ec]',
-      borderColor: 'border-[#d5c7b2]/30',
-      bgColor: 'bg-[#4b4932]/40',
+      accentColor: 'text-[#171713] dark:text-[#f4f2ec]',
+      borderColor: 'border-[#d5c7b2]/40 dark:border-[#d5c7b2]/30',
+      bgColor: 'bg-white dark:bg-[#4b4932]/40',
     },
   ];
 
   return (
-    <section className="w-full py-10 bg-[#171713]/80 border-b border-[#d5c7b2]/15">
+    <section className="w-full py-10 bg-[#f4f2ec] dark:bg-[#171713]/80 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#f4f2ec] tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-[#171713] dark:text-[#f4f2ec] tracking-tight">
               Standards in BIS-Setu Toy Knowledge Base
             </h2>
-            <p className="text-xs text-[#d5c7b2] mt-1">
+            <p className="text-xs text-[#6b675b] dark:text-[#d5c7b2] mt-1">
               Curated benchmark records from the Bureau of Indian Standards dataset
             </p>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#4b4932]/40 border border-[#d5c7b2]/20 text-[11px] text-[#d5c7b2] self-start sm:self-auto">
-            <Info className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-[#4b4932]/40 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/20 text-[11px] text-[#6b675b] dark:text-[#d5c7b2] self-start sm:self-auto shadow-sm">
+            <Info className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>Dataset Verified Scope: 27 Standards</span>
           </div>
         </div>
@@ -74,10 +74,10 @@ export default function ToyStandardsOverview() {
             return (
               <div
                 key={idx}
-                className={`rounded-xl p-5 border ${stat.borderColor} ${stat.bgColor} backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5`}
+                className={`rounded-xl p-5 border ${stat.borderColor} ${stat.bgColor} shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-[#d5c7b2] uppercase tracking-wider">
+                  <span className="text-xs font-semibold text-[#6b675b] dark:text-[#d5c7b2] uppercase tracking-wider">
                     {stat.label}
                   </span>
                   <Icon className={`w-4 h-4 ${stat.accentColor}`} />
@@ -85,7 +85,7 @@ export default function ToyStandardsOverview() {
                 <div className={`text-3xl sm:text-4xl font-black font-mono tracking-tight ${stat.accentColor} mb-1`}>
                   {stat.value}
                 </div>
-                <p className="text-[11px] text-[#d5c7b2]/80">{stat.detail}</p>
+                <p className="text-[11px] text-[#6b675b] dark:text-[#d5c7b2]/80">{stat.detail}</p>
               </div>
             );
           })}

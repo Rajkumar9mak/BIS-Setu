@@ -49,14 +49,14 @@ export default function LabsPage() {
 
       {/* Header */}
       <div className="text-center space-y-2 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-semibold">
-          <Award className="w-3.5 h-3.5 text-[#d1a24f]" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8e3d9]/70 dark:bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-semibold">
+          <Award className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
           <span>NABL Accredited & BIS Recognized Directory</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-black text-[#f4f2ec] tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-black text-[#171713] dark:text-[#f4f2ec] tracking-tight">
           BIS Recognized Testing Laboratories
         </h1>
-        <p className="text-sm text-[#d5c7b2]">
+        <p className="text-sm text-[#4b4932] dark:text-[#d5c7b2]">
           Locate accredited laboratories across India authorized to conduct type-testing and factory surveillance sample tests for ISI certification.
         </p>
       </div>
@@ -65,13 +65,13 @@ export default function LabsPage() {
       <div className="rounded-[28px] glass-charcoal p-6 border border-[#d1a24f]/30 space-y-4 shadow-xl">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#d5c7b2]/60" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6b675b]/60 dark:text-[#d5c7b2]/60" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by lab name, city, or state..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#f4f2ec] placeholder:text-[#d5c7b2]/40 text-xs font-medium outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#171713] dark:text-[#f4f2ec] placeholder:text-[#6b675b]/60 dark:placeholder:text-[#d5c7b2]/40 text-xs font-medium outline-none shadow-sm"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function LabsPage() {
             <select
               value={selectedStandard}
               onChange={(e) => setSelectedStandard(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#f4f2ec] text-xs font-medium outline-none"
+              className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#171713] dark:text-[#f4f2ec] text-xs font-medium outline-none shadow-sm"
             >
               <option value="">All Indian Standards</option>
               <option value="IS 302">IS 302 (Electric Kettles & Appliances)</option>
@@ -94,7 +94,7 @@ export default function LabsPage() {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#f4f2ec] text-xs font-medium outline-none"
+              className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] text-[#171713] dark:text-[#f4f2ec] text-xs font-medium outline-none shadow-sm"
             >
               <option value="">All Geographic Regions</option>
               <option value="Northern">Northern Region</option>
@@ -111,45 +111,45 @@ export default function LabsPage() {
         {filteredLabs.map((lab) => (
           <div
             key={lab.id}
-            className="p-6 rounded-[26px] glass-charcoal border border-[#d5c7b2]/20 hover:border-[#d1a24f] transition-all flex flex-col justify-between space-y-4 shadow-xl card-hover-gold"
+            className="p-6 rounded-[26px] glass-charcoal border border-[#d5c7b2]/30 dark:border-[#d5c7b2]/20 hover:border-[#d1a24f] transition-all flex flex-col justify-between space-y-4 shadow-xl card-hover-gold"
           >
             <div className="space-y-3">
               <div className="flex items-start justify-between gap-2">
-                <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-[#927a48]/25 text-[#d1a24f] border border-[#d1a24f]/30">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-[#927a48]/20 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/30">
                   {lab.type}
                 </span>
-                <span className="text-xs font-bold text-[#d1a24f] bg-[#4b4932]/60 px-2 py-0.5 rounded border border-[#d1a24f]/20">
+                <span className="text-xs font-bold text-[#927a48] dark:text-[#d1a24f] bg-[#e8e3d9] dark:bg-[#4b4932]/60 px-2 py-0.5 rounded border border-[#d1a24f]/20">
                   ★ {lab.rating}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[#f4f2ec]">{lab.name}</h3>
-                <p className="text-xs text-[#d5c7b2] flex items-center gap-1 mt-1">
+                <h3 className="text-lg font-bold text-[#171713] dark:text-[#f4f2ec]">{lab.name}</h3>
+                <p className="text-xs text-[#4b4932] dark:text-[#d5c7b2] flex items-center gap-1 mt-1">
                   <MapPin className="w-3.5 h-3.5 text-[#927a48] shrink-0" />
                   <span>{lab.city}, {lab.state}</span>
                 </p>
               </div>
 
-              <div className="p-3 rounded-xl bg-[#4b4932]/30 border border-[#d5c7b2]/10 space-y-1 text-xs">
-                <div className="flex justify-between text-[#d5c7b2] text-[11px]">
+              <div className="p-3 rounded-xl bg-[#f4f2ec] dark:bg-[#4b4932]/30 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/10 space-y-1 text-xs">
+                <div className="flex justify-between text-[#6b675b] dark:text-[#d5c7b2] text-[11px]">
                   <span>NABL Code:</span>
-                  <span className="font-mono font-bold text-[#d1a24f]">{lab.nabl_accreditation}</span>
+                  <span className="font-mono font-bold text-[#927a48] dark:text-[#d1a24f]">{lab.nabl_accreditation}</span>
                 </div>
-                <div className="flex justify-between text-[#d5c7b2] text-[11px]">
+                <div className="flex justify-between text-[#6b675b] dark:text-[#d5c7b2] text-[11px]">
                   <span>Avg Turnaround:</span>
-                  <span className="font-bold text-[#f4f2ec]">{lab.sample_turnaround_days} Days</span>
+                  <span className="font-bold text-[#171713] dark:text-[#f4f2ec]">{lab.sample_turnaround_days} Days</span>
                 </div>
               </div>
 
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#d5c7b2]/70 block mb-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#6b675b] dark:text-[#d5c7b2]/70 block mb-1">
                   Accredited Testing Scope:
                 </span>
-                <ul className="space-y-1 text-xs text-[#d5c7b2]">
+                <ul className="space-y-1 text-xs text-[#4b4932] dark:text-[#d5c7b2]">
                   {lab.testing_scopes.map((scope, idx) => (
                     <li key={idx} className="flex items-start gap-1.5 line-clamp-1">
-                      <span className="text-[#d1a24f]">•</span>
+                      <span className="text-[#927a48] dark:text-[#d1a24f]">•</span>
                       <span>{scope}</span>
                     </li>
                   ))}
@@ -157,9 +157,9 @@ export default function LabsPage() {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-[#d5c7b2]/15 text-xs text-[#d5c7b2] flex items-center justify-between">
+            <div className="pt-3 border-t border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 text-xs text-[#6b675b] dark:text-[#d5c7b2] flex items-center justify-between">
               <span className="font-mono text-[11px]">{lab.contact.split('|')[0]}</span>
-              <span className="text-[#d1a24f] font-semibold">{lab.region} Region</span>
+              <span className="text-[#927a48] dark:text-[#d1a24f] font-semibold">{lab.region} Region</span>
             </div>
           </div>
         ))}

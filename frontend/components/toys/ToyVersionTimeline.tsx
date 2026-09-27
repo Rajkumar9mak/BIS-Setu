@@ -9,18 +9,18 @@ export default function ToyVersionTimeline() {
   const currentGroup = TOY_EVOLUTION_GROUPS[selectedGroupIndex];
 
   return (
-    <section className="w-full py-16 bg-[#171713] text-[#f4f2ec] border-b border-[#d5c7b2]/15">
+    <section className="w-full py-16 bg-[#f4f2ec] dark:bg-[#171713] text-[#171713] dark:text-[#f4f2ec] border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4b4932]/60 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-3">
-            <History className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#927a48]/15 dark:bg-[#4b4932]/60 border border-[#927a48]/30 dark:border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-3">
+            <History className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>Standards Evolution</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#f4f2ec]">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#171713] dark:text-[#f4f2ec]">
             Version & Revision Progression
           </h2>
-          <p className="text-sm sm:text-base text-[#d5c7b2] mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6b675b] dark:text-[#d5c7b2] mt-2 leading-relaxed">
             Trace how multi-edition Indian Toy Standards evolved across successive publication years.
             Historical revisions are recorded strictly as cataloged by the Bureau of Indian Standards.
           </p>
@@ -35,7 +35,7 @@ export default function ToyVersionTimeline() {
               className={`px-4 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all ${
                 selectedGroupIndex === idx
                   ? 'bg-[#d1a24f] text-[#171713] shadow-lg scale-[1.02]'
-                  : 'bg-[#25251d] text-[#d5c7b2] border border-[#4b4932] hover:border-[#927a48]'
+                  : 'bg-white dark:bg-[#25251d] text-[#171713] dark:text-[#d5c7b2] border border-[#d5c7b2]/40 dark:border-[#4b4932] hover:border-[#927a48]'
               }`}
             >
               <span>{group.series}</span>
@@ -45,24 +45,24 @@ export default function ToyVersionTimeline() {
         </div>
 
         {/* Selected Series Evolution Card */}
-        <div className="rounded-3xl glass-charcoal border border-[#d5c7b2]/25 p-6 sm:p-8 backdrop-blur-xl">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#d5c7b2]/15 mb-8">
+        <div className="rounded-3xl bg-white dark:bg-[#171713]/90 dark:glass-charcoal border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/25 p-6 sm:p-8 shadow-xl backdrop-blur-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 mb-8">
             <div>
-              <span className="text-xs font-mono text-[#d1a24f] font-semibold uppercase tracking-wider">
+              <span className="text-xs font-mono text-[#927a48] dark:text-[#d1a24f] font-semibold uppercase tracking-wider">
                 {currentGroup.category}
               </span>
-              <h3 className="text-2xl font-black font-mono text-[#f4f2ec] mt-1">
+              <h3 className="text-2xl font-black font-mono text-[#171713] dark:text-[#f4f2ec] mt-1">
                 {currentGroup.series}
               </h3>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#4b4932]/40 border border-[#d5c7b2]/20 text-xs text-[#d5c7b2]">
-              <Info className="w-3.5 h-3.5 text-[#d1a24f]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#f4f2ec] dark:bg-[#4b4932]/40 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/20 text-xs text-[#6b675b] dark:text-[#d5c7b2]">
+              <Info className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
               <span>Evolution timeline based on dataset records</span>
             </div>
           </div>
 
           {/* Vertical Stepper Timeline */}
-          <div className="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-3 sm:before:left-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-[#4b4932]">
+          <div className="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-3 sm:before:left-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-[#d5c7b2] dark:before:bg-[#4b4932]">
             {currentGroup.versions.map((ver: ToyStandard, vIdx: number) => {
               const isWithdrawn = ver.status === 'Withdrawn';
               const isLast = vIdx === currentGroup.versions.length - 1;
@@ -73,7 +73,7 @@ export default function ToyVersionTimeline() {
                   <div
                     className={`absolute -left-6 sm:-left-8 top-1.5 w-6 h-6 rounded-full flex items-center justify-center border-2 transition-colors ${
                       isWithdrawn
-                        ? 'bg-[#171713] border-[#b84a3a] text-[#b84a3a]'
+                        ? 'bg-white dark:bg-[#171713] border-[#b84a3a] text-[#b84a3a]'
                         : 'bg-[#d1a24f] border-[#f4f2ec] text-[#171713]'
                     }`}
                   >
@@ -88,40 +88,40 @@ export default function ToyVersionTimeline() {
                   <div
                     className={`rounded-2xl p-5 border transition-all ${
                       isWithdrawn
-                        ? 'bg-[#171713]/70 border-[#b84a3a]/30'
-                        : 'bg-[#25251d] border-[#d1a24f]/60 shadow-lg'
+                        ? 'bg-[#b84a3a]/5 dark:bg-[#171713]/70 border-[#b84a3a]/30'
+                        : 'bg-[#f4f2ec] dark:bg-[#25251d] border-[#d5c7b2]/50 dark:border-[#d1a24f]/60 shadow-sm'
                     }`}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-base sm:text-lg font-mono font-bold text-[#f4f2ec]">
+                        <span className="text-base sm:text-lg font-mono font-bold text-[#171713] dark:text-[#f4f2ec]">
                           {ver.standard_number}
                         </span>
                         {ver.revision && (
-                          <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#4b4932] text-[#d1a24f] border border-[#d1a24f]/20">
+                          <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#e8e3d9] dark:bg-[#4b4932] text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/20">
                             {ver.revision}
                           </span>
                         )}
                       </div>
 
                       {isWithdrawn ? (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-[#b84a3a]/20 text-[#b84a3a] border border-[#b84a3a]/40">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-[#b84a3a]/15 text-[#b84a3a] border border-[#b84a3a]/40">
                           <ShieldAlert className="w-3 h-3" />
                           WITHDRAWN
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-full bg-[#927a48]/30 text-[#d1a24f] border border-[#d1a24f]/50">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-full bg-[#927a48]/20 dark:bg-[#927a48]/30 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/50">
                           <CheckCircle2 className="w-3 h-3 text-[#d1a24f]" />
                           CURRENT REVISION
                         </span>
                       )}
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#d5c7b2] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#4b4932] dark:text-[#d5c7b2] leading-relaxed">
                       {ver.title}
                     </p>
 
-                    <div className="mt-3 pt-3 border-t border-[#d5c7b2]/10 flex items-center justify-between text-[11px] text-[#d5c7b2]/70 font-mono">
+                    <div className="mt-3 pt-3 border-t border-[#d5c7b2]/30 dark:border-[#d5c7b2]/10 flex items-center justify-between text-[11px] text-[#6b675b] dark:text-[#d5c7b2]/70 font-mono">
                       <span>Publication Year: {ver.year}</span>
                       <span>Source: BIS Standards Catalog</span>
                     </div>
@@ -129,7 +129,7 @@ export default function ToyVersionTimeline() {
 
                   {/* Down Arrow indicator between items */}
                   {!isLast && (
-                    <div className="pl-4 pt-3 flex items-center text-[#927a48]">
+                    <div className="pl-4 pt-3 flex items-center text-[#927a48] dark:text-[#d1a24f]">
                       <ArrowDown className="w-4 h-4 animate-bounce" />
                     </div>
                   )}

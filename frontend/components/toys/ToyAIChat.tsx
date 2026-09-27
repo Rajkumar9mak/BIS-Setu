@@ -152,26 +152,26 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
   };
 
   return (
-    <section id="toy-ai-assistant" className="w-full py-16 bg-[#171713] text-[#f4f2ec] border-b border-[#d5c7b2]/15">
+    <section id="toy-ai-assistant" className="w-full py-16 bg-[#f4f2ec] dark:bg-[#171713] text-[#171713] dark:text-[#f4f2ec] border-b border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4b4932]/60 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-3">
-            <Bot className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#927a48]/15 dark:bg-[#4b4932]/60 border border-[#927a48]/30 dark:border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-bold uppercase tracking-wider mb-3">
+            <Bot className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>Intelligent Retrieval</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#f4f2ec]">
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#171713] dark:text-[#f4f2ec]">
             Ask about Toy Safety
           </h2>
-          <p className="text-sm sm:text-base text-[#d5c7b2] mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6b675b] dark:text-[#d5c7b2] mt-2 leading-relaxed">
             Query the BIS Toy Safety Knowledge Base. Answers cite authentic standards without fabricating technical thresholds.
           </p>
         </div>
 
         {/* Prompt Suggestions Pills */}
         <div className="mb-8">
-          <p className="text-xs text-[#d5c7b2]/70 font-semibold mb-3 flex items-center gap-1.5">
-            <HelpCircle className="w-3.5 h-3.5 text-[#d1a24f]" />
+          <p className="text-xs text-[#6b675b] dark:text-[#d5c7b2]/70 font-semibold mb-3 flex items-center gap-1.5">
+            <HelpCircle className="w-3.5 h-3.5 text-[#927a48] dark:text-[#d1a24f]" />
             <span>Suggested Inquiries:</span>
           </p>
           <div className="flex flex-wrap gap-2">
@@ -179,17 +179,17 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
               <button
                 key={idx}
                 onClick={() => handleAsk(q)}
-                className="text-left px-3.5 py-2 rounded-xl bg-[#25251d] hover:bg-[#4b4932] border border-[#4b4932] hover:border-[#d1a24f] text-xs text-[#d5c7b2] hover:text-[#f4f2ec] transition-all flex items-center gap-2"
+                className="text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#25251d] hover:bg-[#e8e3d9] dark:hover:bg-[#4b4932] border border-[#d5c7b2]/40 dark:border-[#4b4932] hover:border-[#d1a24f] text-xs text-[#171713] dark:text-[#d5c7b2] hover:text-[#171713] dark:hover:text-[#f4f2ec] transition-all flex items-center gap-2 shadow-sm"
               >
                 <span>{q}</span>
-                <ArrowRight className="w-3 h-3 text-[#d1a24f] opacity-60" />
+                <ArrowRight className="w-3 h-3 text-[#927a48] dark:text-[#d1a24f] opacity-70" />
               </button>
             ))}
           </div>
         </div>
 
         {/* Chat Conversation Card */}
-        <div className="rounded-3xl glass-charcoal border border-[#d5c7b2]/20 shadow-2xl backdrop-blur-xl overflow-hidden">
+        <div className="rounded-3xl bg-white dark:bg-[#171713]/90 dark:glass-charcoal border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/20 shadow-xl backdrop-blur-xl overflow-hidden">
           {/* Messages Container */}
           <div className="p-6 sm:p-8 space-y-6 max-h-[520px] overflow-y-auto">
             {messages.map((msg, idx) => (
@@ -200,7 +200,7 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
                 }`}
               >
                 {msg.role === 'assistant' && (
-                  <div className="w-8 h-8 rounded-xl bg-[#4b4932] border border-[#d1a24f]/40 flex items-center justify-center flex-shrink-0 text-[#d1a24f]">
+                  <div className="w-8 h-8 rounded-xl bg-[#927a48]/15 dark:bg-[#4b4932] border border-[#927a48]/30 dark:border-[#d1a24f]/40 flex items-center justify-center flex-shrink-0 text-[#927a48] dark:text-[#d1a24f]">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
@@ -208,8 +208,8 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
                 <div
                   className={`max-w-2xl rounded-2xl p-4 sm:p-5 text-xs sm:text-sm leading-relaxed ${
                     msg.role === 'user'
-                      ? 'bg-[#d1a24f] text-[#171713] font-medium'
-                      : 'bg-[#25251d]/90 border border-[#d5c7b2]/15 text-[#f4f2ec]'
+                      ? 'bg-[#d1a24f] text-[#171713] font-medium shadow-sm'
+                      : 'bg-[#f4f2ec] dark:bg-[#25251d]/90 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/15 text-[#171713] dark:text-[#f4f2ec]'
                   }`}
                 >
                   <p className="whitespace-pre-line">{msg.content}</p>
@@ -232,10 +232,10 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
 
             {loading && (
               <div className="flex gap-4 items-center">
-                <div className="w-8 h-8 rounded-xl bg-[#4b4932] border border-[#d1a24f]/40 flex items-center justify-center text-[#d1a24f] animate-pulse">
+                <div className="w-8 h-8 rounded-xl bg-[#927a48]/20 dark:bg-[#4b4932] border border-[#927a48]/30 dark:border-[#d1a24f]/40 flex items-center justify-center text-[#927a48] dark:text-[#d1a24f] animate-pulse">
                   <Bot className="w-4 h-4" />
                 </div>
-                <div className="px-4 py-3 rounded-2xl bg-[#25251d] border border-[#d5c7b2]/15 text-xs text-[#d5c7b2] flex items-center gap-2">
+                <div className="px-4 py-3 rounded-2xl bg-[#f4f2ec] dark:bg-[#25251d] border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/15 text-xs text-[#6b675b] dark:text-[#d5c7b2] flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#d1a24f] animate-ping" />
                   <span>Searching toy safety standards knowledge base...</span>
                 </div>
@@ -244,7 +244,7 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
           </div>
 
           {/* Chat Input Bar */}
-          <div className="p-4 sm:p-6 border-t border-[#d5c7b2]/15 bg-[#171713]/90">
+          <div className="p-4 sm:p-6 border-t border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15 bg-[#f4f2ec]/60 dark:bg-[#171713]/90">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -257,7 +257,7 @@ export default function ToyAIChat({ initialQuery }: ToyAIChatProps) {
                 value={inputQuery}
                 onChange={(e) => setInputQuery(e.target.value)}
                 placeholder="Ask any question regarding Indian Toy Standards..."
-                className="flex-1 px-4 py-3.5 rounded-xl bg-[#25251d] border border-[#d5c7b2]/30 text-[#f4f2ec] placeholder-[#d5c7b2]/40 text-xs sm:text-sm focus:outline-none focus:border-[#d1a24f]"
+                className="flex-1 px-4 py-3.5 rounded-xl bg-white dark:bg-[#25251d] border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/30 text-[#171713] dark:text-[#f4f2ec] placeholder-[#6b675b]/60 dark:placeholder-[#d5c7b2]/40 text-xs sm:text-sm focus:outline-none focus:border-[#d1a24f]"
               />
               <button
                 type="submit"

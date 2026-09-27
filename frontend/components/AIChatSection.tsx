@@ -95,7 +95,7 @@ export default function AIChatSection() {
   const currentSource = response?.sources?.[0];
 
   return (
-    <section id="ai-assistant" className="relative py-20 bg-[#171713] text-[#f4f2ec] overflow-hidden">
+    <section id="ai-assistant" className="relative py-20 bg-[#f4f2ec] dark:bg-[#171713] text-[#171713] dark:text-[#f4f2ec] overflow-hidden transition-colors">
       {/* 3D Decorative shapes */}
       <DecorativeShapes variant="ribbon" className="-top-10 -right-16 opacity-60" />
       <DecorativeShapes variant="connected" className="bottom-0 -left-10 opacity-40" />
@@ -103,14 +103,14 @@ export default function AIChatSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#d1a24f] text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8e3d9]/70 dark:bg-[#4b4932]/50 border border-[#d1a24f]/30 text-[#927a48] dark:text-[#d1a24f] text-xs font-semibold">
             <Cpu className="w-3.5 h-3.5" />
             <span>High-Precision Regulatory Engine</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-[#f4f2ec]">
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-[#171713] dark:text-[#f4f2ec]">
             Ask BIS anything.
           </h2>
-          <p className="text-sm sm:text-base text-[#d5c7b2] font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-[#4b4932] dark:text-[#d5c7b2] font-normal leading-relaxed">
             BIS-Setu retrieves authoritative regulatory evidence before synthesizing any answer, ensuring 100% trace-backed compliance answers.
           </p>
         </div>
@@ -121,14 +121,14 @@ export default function AIChatSection() {
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#d5c7b2]/60" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6b675b]/60 dark:text-[#d5c7b2]/60" />
                 <input
                   type="text"
                   value={queryInput}
                   onChange={(e) => setQueryInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleAsk()}
                   placeholder="Ask a question about Indian Standards, testing limits, or certifications..."
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#171713]/90 border border-[#d5c7b2]/20 focus:border-[#d1a24f] focus:ring-2 focus:ring-[#d1a24f]/20 text-[#f4f2ec] placeholder:text-[#d5c7b2]/40 text-sm font-medium outline-none transition-all"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-[#171713]/90 border border-[#d5c7b2] dark:border-[#d5c7b2]/20 focus:border-[#d1a24f] focus:ring-2 focus:ring-[#d1a24f]/20 text-[#171713] dark:text-[#f4f2ec] placeholder:text-[#6b675b]/60 dark:placeholder:text-[#d5c7b2]/40 text-sm font-medium outline-none transition-all shadow-sm"
                 />
               </div>
 
@@ -144,7 +144,7 @@ export default function AIChatSection() {
 
             {/* Suggested Statutory Inquiries Pills */}
             <div className="pt-2 flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#d5c7b2]/70 mr-1">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#6b675b] dark:text-[#d5c7b2]/70 mr-1">
                 Try:
               </span>
               {sampleInquiries.map((sample, idx) => (
@@ -154,7 +154,7 @@ export default function AIChatSection() {
                     setQueryInput(sample);
                     handleAsk(sample);
                   }}
-                  className="px-3 py-1.5 rounded-xl bg-[#4b4932]/40 hover:bg-[#4b4932]/70 text-[#d5c7b2] hover:text-[#f4f2ec] border border-[#d5c7b2]/15 text-left transition-all"
+                  className="px-3 py-1.5 rounded-xl bg-[#e8e3d9]/80 dark:bg-[#4b4932]/40 hover:bg-[#d5c7b2] dark:hover:bg-[#4b4932]/70 text-[#4b4932] dark:text-[#d5c7b2] hover:text-[#171713] dark:hover:text-[#f4f2ec] border border-[#d5c7b2]/50 dark:border-[#d5c7b2]/15 text-left transition-all"
                 >
                   {sample}
                 </button>
@@ -164,27 +164,27 @@ export default function AIChatSection() {
 
           {/* AI Output Panel with Verification Flow */}
           {response && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 border-t border-[#d5c7b2]/15">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 border-t border-[#d5c7b2]/30 dark:border-[#d5c7b2]/15">
               {/* Left: AI Answer */}
               <div className="lg:col-span-7 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#d1a24f]"></span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#d5c7b2]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#6b675b] dark:text-[#d5c7b2]">
                       Grounded Answer
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#927a48]/20 text-[#d1a24f] border border-[#d1a24f]/30">
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#927a48]/20 text-[#927a48] dark:text-[#d1a24f] border border-[#d1a24f]/30">
                     Confidence: {Math.round((response.confidence ?? 0.92) * 100)}%
                   </span>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#4b4932]/25 border border-[#d5c7b2]/10 text-sm text-[#f4f2ec] leading-relaxed font-normal">
+                <div className="p-5 rounded-2xl bg-[#f4f2ec] dark:bg-[#4b4932]/25 border border-[#d5c7b2]/40 dark:border-[#d5c7b2]/10 text-sm text-[#171713] dark:text-[#f4f2ec] leading-relaxed font-normal">
                   {response.answer}
                 </div>
 
-                <div className="flex items-center gap-3 text-xs text-[#d5c7b2]/80 pt-1">
-                  <span className="font-semibold text-[#d1a24f]">Retrieval Pipeline:</span>
+                <div className="flex items-center gap-3 text-xs text-[#6b675b] dark:text-[#d5c7b2]/80 pt-1">
+                  <span className="font-semibold text-[#927a48] dark:text-[#d1a24f]">Retrieval Pipeline:</span>
                   <span>Vector Semantic + Statutory Clause Matching</span>
                 </div>
               </div>
