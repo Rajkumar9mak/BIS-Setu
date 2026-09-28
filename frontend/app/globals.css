@@ -284,8 +284,10 @@ html:not(.dark) .bg-earthy-mesh {
 /* 1. Primary Text Override: Turn Warm Ivory into Deep Charcoal in Light Mode */
 html:not(.dark) .text-\[\#f4f2ec\],
 html:not(.dark) .text-\[\#F4F2EC\],
-html:not(.dark) [class*="text-[#f4f2ec]" i],
-html:not(.dark) [class*="text-[#F4F2EC]" i],
+html:not(.dark) [class~="text-[#f4f2ec]"],
+html:not(.dark) [class~="text-[#F4F2EC]"],
+html:not(.dark) [class*="text-[#f4f2ec]"]:not([class*="dark:text-[#f4f2ec]"]):not([class*="dark:hover:text-[#f4f2ec]"]),
+html:not(.dark) [class*="text-[#F4F2EC]"]:not([class*="dark:text-[#F4F2EC]"]):not([class*="dark:hover:text-[#F4F2EC]"]),
 html:not(.dark) .text-warm-ivory {
   color: #171713;
 }
@@ -293,8 +295,10 @@ html:not(.dark) .text-warm-ivory {
 /* 2. Secondary / Muted Text Override: Turn Light Beige into High-Contrast Muted Olive-Slate */
 html:not(.dark) .text-\[\#d5c7b2\],
 html:not(.dark) .text-\[\#D5C7B2\],
-html:not(.dark) [class*="text-[#d5c7b2]" i],
-html:not(.dark) [class*="text-[#D5C7B2]" i],
+html:not(.dark) [class~="text-[#d5c7b2]"],
+html:not(.dark) [class~="text-[#D5C7B2]"],
+html:not(.dark) [class*="text-[#d5c7b2]"]:not([class*="dark:text-[#d5c7b2]"]):not([class*="dark:hover:text-[#d5c7b2]"]),
+html:not(.dark) [class*="text-[#D5C7B2]"]:not([class*="dark:text-[#D5C7B2]"]):not([class*="dark:hover:text-[#D5C7B2]"]),
 html:not(.dark) .text-light-beige {
   color: #6b675b;
 }
@@ -336,30 +340,51 @@ html:not(.dark) textarea::placeholder {
 }
 
 /* 6. Embedded Cards & Bubbles inside Light Glass Panels */
-html:not(.dark) .glass-charcoal [class*="bg-[#171713]"],
-html:not(.dark) .glass-charcoal [class*="bg-[#4b4932]"],
-html:not(.dark) .glass-olive [class*="bg-[#4b4932]"] {
+html:not(.dark) .glass-charcoal [class~="bg-[#171713]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) .glass-charcoal [class~="bg-[#4b4932]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) .glass-olive [class~="bg-[#4b4932]"]:not([class*="dark:"]):not([class*="hover:"]) {
   background-color: #f4f2ec;
   border-color: rgba(213, 199, 178, 0.65);
 }
 
 /* 7. Solid Dark Buttons & Badges retain legible White/Ivory Text in Light Mode */
-html:not(.dark) button[class*="bg-[#927a48]"],
-html:not(.dark) button[class*="bg-[#4b4932]"],
-html:not(.dark) button[class*="bg-[#b84a3a]"],
-html:not(.dark) a[class*="bg-[#927a48]"],
-html:not(.dark) a[class*="bg-[#4b4932]"],
-html:not(.dark) [class*="bg-[#927a48]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
-html:not(.dark) [class*="bg-[#4b4932]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
-html:not(.dark) [class*="bg-[#b84a3a]"] > [class*="text-[#f4f2ec]" i],
-html:not(.dark) [class*="bg-[#927a48]"]:not([class*="/"])[class*="text-[#f4f2ec]" i],
-html:not(.dark) [class*="bg-[#4b4932]"]:not([class*="/"])[class*="text-[#f4f2ec]" i] {
+html:not(.dark) button.bg-\[\#927a48\],
+html:not(.dark) button.bg-\[\#4b4932\],
+html:not(.dark) button.bg-\[\#b84a3a\],
+html:not(.dark) a.bg-\[\#927a48\],
+html:not(.dark) a.bg-\[\#4b4932\],
+html:not(.dark) button[class~="bg-[#927a48]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) button[class~="bg-[#4b4932]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) a[class~="bg-[#927a48]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) a[class~="bg-[#4b4932]"]:not([class*="dark:"]):not([class*="hover:"]),
+html:not(.dark) [class~="bg-[#927a48]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class~="bg-[#4b4932]"]:not([class*="/"]):not([class*="hover"]):not(button) > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class~="bg-[#b84a3a]"] > [class*="text-[#f4f2ec]" i],
+html:not(.dark) [class~="bg-[#927a48]"]:not([class*="/"])[class*="text-[#f4f2ec]" i],
+html:not(.dark) [class~="bg-[#4b4932]"]:not([class*="/"])[class*="text-[#f4f2ec]" i] {
   color: #ffffff !important;
 }
 
 /* Gold badges / buttons retain dark charcoal text */
 html:not(.dark) [class*="bg-[#d1a24f]"][class*="text-[#171713]"],
 html:not(.dark) [class*="bg-[#d1a24f]"] > [class*="text-[#171713]"] {
+  color: #171713 !important;
+}
+
+/* 8. Light Mode Text Color for Navigation & Tab Buttons */
+html:not(.dark) button[class*="text-[#4b4932]"]:not([class*="bg-[#d1a24f]"]):not([class~="bg-[#4b4932]"]):not([class~="bg-[#927a48]"]) {
+  color: #4b4932 !important;
+}
+
+html:not(.dark) button[class*="text-[#4b4932]"]:not([class*="bg-[#d1a24f]"]):not([class~="bg-[#4b4932]"]):not([class~="bg-[#927a48]"]):hover {
+  color: #171713 !important;
+}
+
+html:not(.dark) .flex.items-center button:not([class*="bg-[#d1a24f]"])[class*="text-[#4b4932]"] {
+  color: #4b4932 !important;
+}
+
+html:not(.dark) .flex.items-center button:not([class*="bg-[#d1a24f]"])[class*="text-[#4b4932]"]:hover {
   color: #171713 !important;
 }
 

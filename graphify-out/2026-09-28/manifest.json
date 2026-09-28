@@ -156,10 +156,10 @@
     "semantic_hash": "33b0e08ad70f1b293a93dd86c40c556a"
   },
   "backend/ingestion/pdf_parser.py": {
-    "mtime": 1790615725.6095164,
-    "seen": 1790616302.1230662,
-    "ast_hash": "d0fe50310cf993b5b4f9390dc7dce195",
-    "semantic_hash": ""
+    "mtime": 1788891157.8842247,
+    "seen": 1788983440.6045232,
+    "ast_hash": "1c59179b194f37722df9e38ce0a09758",
+    "semantic_hash": "1c59179b194f37722df9e38ce0a09758"
   },
   "backend/logging_config.py": {
     "mtime": 1788888835.6007576,
@@ -210,10 +210,10 @@
     "semantic_hash": "d0b6392baa6affb070192d51eb5734af"
   },
   "backend/services/document_analyzer.py": {
-    "mtime": 1790615744.5309772,
-    "seen": 1790616302.1230826,
-    "ast_hash": "572cea72fd80eb216fabfd8308e06e5c",
-    "semantic_hash": ""
+    "mtime": 1788945710.838043,
+    "seen": 1788983440.6045327,
+    "ast_hash": "1f14bc7941a766629027f416a347fdb2",
+    "semantic_hash": "1f14bc7941a766629027f416a347fdb2"
   },
   "backend/services/grounding.py": {
     "mtime": 1788952514.939605,
@@ -794,66 +794,6 @@
   "backend/data/standards_docs/Programme_of_Work_CED_22___Fire_Fighting_1790613694449.pdf": {
     "mtime": 1790613697.544425,
     "seen": 1790615076.02625,
-    "ast_hash": "abcdbaf46d85738102c709138449847c",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_3a73ca1b7f_kettle_compliant_test_report.txt": {
-    "mtime": 1790615614.295731,
-    "seen": 1790616302.1231995,
-    "ast_hash": "83623228ff23ee98d0f8fbd88884f734",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_5eb32fcd57_test_kettle_report.txt": {
-    "mtime": 1790616123.7067018,
-    "seen": 1790616302.123203,
-    "ast_hash": "d35bc95e74083a3e61c60f32214f3830",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_7c06fce1e9_kettle_compliant_test_report.txt": {
-    "mtime": 1790615598.5024357,
-    "seen": 1790616302.1232076,
-    "ast_hash": "83623228ff23ee98d0f8fbd88884f734",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_b1c0217d4f_fan_non_compliant_report.txt": {
-    "mtime": 1790615606.0461166,
-    "seen": 1790616302.1232092,
-    "ast_hash": "cb753af50e53b8c2e936b35dd176c48d",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_db48004d69_fan_non_compliant_report.txt": {
-    "mtime": 1790615612.03231,
-    "seen": 1790616302.1232152,
-    "ast_hash": "cb753af50e53b8c2e936b35dd176c48d",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_d4bec2b483_Programme_of_Work_CED_22___Fire_Fighting_1790613694449.pdf": {
-    "mtime": 1790615533.8540318,
-    "seen": 1790616302.123232,
-    "ast_hash": "abcdbaf46d85738102c709138449847c",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_47f61b79f8_fan_non_compliant_report.txt": {
-    "mtime": 1790616430.620597,
-    "seen": 1790621348.9958272,
-    "ast_hash": "cb753af50e53b8c2e936b35dd176c48d",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_760978a655_fan_non_compliant_report.txt": {
-    "mtime": 1790616428.317484,
-    "seen": 1790621348.9958396,
-    "ast_hash": "cb753af50e53b8c2e936b35dd176c48d",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_fb5905471c_kettle_compliant_test_report.txt": {
-    "mtime": 1790616425.350854,
-    "seen": 1790621348.9958873,
-    "ast_hash": "83623228ff23ee98d0f8fbd88884f734",
-    "semantic_hash": ""
-  },
-  "backend/data/uploads/doc_2293c5f0fb_Programme_of_Work_CED_22___Fire_Fighting_1790613694449.pdf": {
-    "mtime": 1790616356.6916277,
-    "seen": 1790621348.9959369,
     "ast_hash": "abcdbaf46d85738102c709138449847c",
     "semantic_hash": ""
   }

@@ -32,6 +32,11 @@ DATABASE_URL: str = os.environ.get(
 )
 VECTOR_DB_PATH: Path = Path(os.environ.get("VECTOR_DB_PATH", str(DATA_DIR / "chroma")))
 
+# Configurable RAG retrieval and relevance filtering settings
+RAG_RELEVANCE_THRESHOLD: float = float(os.environ.get("RAG_RELEVANCE_THRESHOLD", "0.40"))
+RAG_MAX_CONTEXT_DOCS: int = int(os.environ.get("RAG_MAX_CONTEXT_DOCS", "5"))
+RAG_STANDARD_FILTER_ENABLED: bool = os.environ.get("RAG_STANDARD_FILTER_ENABLED", "true").lower() in ("true", "1", "yes")
+
 def get_cors_origins() -> List[str]:
     raw = os.environ.get("CORS_ORIGINS", "")
     if raw.strip():

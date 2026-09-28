@@ -18,6 +18,10 @@ class PDFParseResult(BaseModel):
     document_metadata: Dict[str, Any] = Field(default_factory=dict)
     is_scanned: bool = False
 
+    @property
+    def full_text(self) -> str:
+        return "\n\n".join(p.text for p in self.pages if p.text)
+
 class PDFParser:
     """
     Page-aware PDF text extractor preserving page numbers, document metadata,

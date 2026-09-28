@@ -93,9 +93,14 @@ class DocumentAnalyzer:
             raise ValueError(f"Underlying file for document '{document_id}' does not exist.")
 
         # Read text
+        text = ""
         if stored_path.suffix.lower() == ".pdf":
-            parse_res = pdf_parser.parse_pdf(stored_path)
-            text = parse_res.full_text
+            try:
+                parse_res = pdf_parser.parse_pdf(stored_path)
+                text = parse_res.full_text
+            except Exception as e:
+                logger.warning(f"Error parsing PDF {stored_path.name} during analysis: {e}")
+                text = f"Document content from {stored_path.name}"
         else:
             with open(stored_path, "r", encoding="utf-8", errors="replace") as f:
                 text = f.read()
@@ -108,17 +113,19 @@ class DocumentAnalyzer:
         # 3. Match product and target standard
         matched_product = None
         for prod in compliance_engine.products:
-            if standard_code and any(standard_code.lower() in s["code"].lower() for s in prod["applicable_standards"]):
-                matched_product = prod
-                break
+            if standard_code:
+                sc_clean = standard_code.lower().strip()
+                if any(sc_clean in s["code"].lower() or s["code"].lower() in sc_clean for s in prod.get("applicable_standards", [])):
+                    matched_product = prod
+                    break
             if any(k in lower_text for k in [prod["name"].lower(), prod["category"].lower(), prod["id"]]):
                 matched_product = prod
                 break
-            if any(s["code"].lower() in lower_text for s in prod["applicable_standards"]):
+            if any(s["code"].lower() in lower_text for s in prod.get("applicable_standards", [])):
                 matched_product = prod
                 break
 
-        # Fallback to electric kettle if general electrical appliance
+        # Fallback based on text heuristics or default product
         if not matched_product:
             if any(w in lower_text for w in ["fan", "sweep", "air delivery"]):
                 matched_product = compliance_engine.get_product("prod_electric_fans")
@@ -131,7 +138,15 @@ class DocumentAnalyzer:
             else:
                 matched_product = compliance_engine.get_product("prod_electric_kettle")
 
-        target_standard = matched_product["applicable_standards"][0]
+        if not matched_product and compliance_engine.products:
+            matched_product = compliance_engine.products[0]
+
+        target_standards = matched_product.get("applicable_standards", []) if matched_product else []
+        target_standard = target_standards[0] if target_standards else {
+            "code": standard_code or "IS Standard",
+            "title": "Indian Standard Specification",
+            "is_primary": True
+        }
 
         # 4. Compare parameters against standard requirements
         comparison_rows: List[Dict[str, Any]] = []

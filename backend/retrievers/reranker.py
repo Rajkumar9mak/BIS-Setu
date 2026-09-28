@@ -1,5 +1,6 @@
 import re
 from typing import List, Dict, Any, Optional
+from config import RAG_RELEVANCE_THRESHOLD
 from retrievers.lexical_retriever import RetrievedDoc
 
 class RegulatoryReranker:
@@ -8,12 +9,15 @@ class RegulatoryReranker:
     and exact clause/standard matching to produce a high-precision evidence set.
     """
 
-    def __init__(self, min_relevance_threshold: float = 0.30):
-        self.min_relevance_threshold = min_relevance_threshold
+    def __init__(self, min_relevance_threshold: Optional[float] = None):
+        self.min_relevance_threshold = min_relevance_threshold if min_relevance_threshold is not None else RAG_RELEVANCE_THRESHOLD
         self.common_words = {
             "what", "how", "why", "which", "where", "when", "does", "have", "with",
             "from", "into", "that", "this", "under", "over", "some", "more", "most",
-            "give", "tell", "explain", "about"
+            "give", "tell", "explain", "about", "the", "are", "and", "for", "any",
+            "all", "can", "may", "was", "were", "been", "being", "had", "has",
+            "did", "not", "but", "out", "our", "you", "your", "its", "per", "via",
+            "something", "anything", "present", "knowledge", "base", "bases", "information"
         }
 
     def calculate_rerank_score(self, query: str, doc: RetrievedDoc) -> float:
@@ -64,7 +68,7 @@ class RegulatoryReranker:
         final_score = min(1.0, round(base_score + boost, 4))
         return final_score
 
-    def rerank(self, query: str, candidates: List[RetrievedDoc], top_k: int = 4) -> List[RetrievedDoc]:
+    def rerank(self, query: str, candidates: List[RetrievedDoc], top_k: int = 10) -> List[RetrievedDoc]:
         if not candidates:
             return []
 

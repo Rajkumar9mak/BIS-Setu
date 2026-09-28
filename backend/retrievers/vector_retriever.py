@@ -157,6 +157,9 @@ class VectorRetriever:
                 "clause_title": c.clause_title,
                 "page": c.page,
                 "edition_year": c.edition_year,
+                "category": c.metadata.get("category", "General"),
+                "mandatory_status": c.metadata.get("mandatory_status", "Statutory"),
+                "document_name": c.metadata.get("document_name", ""),
                 "data_status": c.data_status,
                 "text": c.text[:1000]
             }

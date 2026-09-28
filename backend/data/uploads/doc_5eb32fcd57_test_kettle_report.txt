@@ -1,0 +1,1 @@
+LAB TEST REPORT: Electric Kettle IS 302-2-15. Leakage Current: 0.35 mA. Input Power: 1450 W. Earthing Resistance: 0.05 Ohms.

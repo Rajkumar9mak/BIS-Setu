@@ -5,6 +5,7 @@ from config import GEMINI_API_KEY
 from ingestion.indexer import standards_indexer
 from retrievers.hybrid_retriever import hybrid_retriever
 from retrievers.reranker import reranker
+from retrievers.relevance_filter import relevance_filter, StandardDetector
 from services.citation_builder import citation_builder
 from services.grounding import grounding_validator
 from logging_config import logger
@@ -98,6 +99,73 @@ The answer should fit on one screen. Make BIS-Setu feel like a smart compliance 
         logger.warning(f"Gemini API call failed, falling back to deterministic synthesizer: {e}")
     return None
 
+def extract_key_requirement_summary(doc) -> str:
+    """
+    Extracts the key technical requirement sentence or structured thresholds
+    from a standard clause without simplistic or destructive regex truncation.
+    """
+    text = doc.text.strip()
+
+    # 1. Check for structured sub-items like a) ... b) ... c) ...
+    # e.g. "a) 72 ± 1 hour (3 days) not less than 16.0 MPa; b) 168 ± 2 hours (7 days) not less than 22.0 MPa..."
+    sub_items = re.findall(r"([a-z]\)\s*[^;\n]+(?:;|\.|$))", text)
+    if len(sub_items) >= 2:
+        return "; ".join(item.strip().rstrip(";") for item in sub_items)
+
+    # 2. Extract requirement sentences containing technical requirement verbs/keywords
+    raw_sentences = [s.strip() for s in re.split(r"(?<=[.;])\s+", text) if len(s.strip()) > 10]
+    req_keywords = [
+        "shall not exceed", "shall be not less than", "shall be", "shall conform",
+        "shall not", "must not", "shall have", "shall", "must", "not exceed",
+        "not less than", "not more than", "mandatory", "maximum", "minimum",
+        "peak acceleration", "penetration", "drop height", "tolerance", "mass of"
+    ]
+
+    for sent in raw_sentences:
+        sent_lower = sent.lower()
+        if any(kw in sent_lower for kw in req_keywords):
+            cleaned_sent = sent.rstrip(";")
+            if len(cleaned_sent) > 220:
+                cleaned_sent = cleaned_sent[:217] + "..."
+            return cleaned_sent
+
+    # 3. Fallback to first substantive sentence of the clause
+    if raw_sentences:
+        first_sent = raw_sentences[0].rstrip(";")
+        if len(first_sent) > 220:
+            first_sent = first_sent[:217] + "..."
+        return first_sent
+
+    return text[:150]
+
+def validate_citation_integrity(answer: str, filtered_docs: list) -> str:
+    """
+    Enforces that the generated answer cites and references ONLY standards present in filtered_docs.
+    Any line citing or referencing an unauthorized standard is sanitized.
+    """
+    if not filtered_docs:
+        return answer
+
+    allowed_digits = set()
+    for d in filtered_docs:
+        for digit in StandardDetector.extract_standard_digits(d.standard_number):
+            allowed_digits.add(digit)
+
+    cleaned_lines = []
+    for line in answer.split("\n"):
+        line_std_digits = StandardDetector.extract_standard_digits(line)
+        if line_std_digits:
+            unauthorized = [d for d in line_std_digits if d not in allowed_digits]
+            if unauthorized:
+                logger.warning(
+                    f"[CitationIntegrity] Stripped line citing unapproved standard: '{line.strip()}' "
+                    f"(unauthorized: {unauthorized}, allowed: {allowed_digits})"
+                )
+                continue
+        cleaned_lines.append(line)
+
+    return "\n".join(cleaned_lines)
+
 def synthesize_grounded_local(query: str, top_docs: list) -> str:
     """
     Deterministic synthesizer producing the compact BIS-Setu response format:
@@ -122,25 +190,9 @@ def synthesize_grounded_local(query: str, top_docs: list) -> str:
 
     for doc in top_docs:
         req_title = doc.clause_title or f"Clause {doc.clause_number}"
-        # Extract numerical limits if present
-        limit_match = re.search(
-            r"([\u2264\u2265<>±]?\s*\d+(?:\.\d+)?\s*(?:mA|V|W|Ω|MPa|m3/min|°C|mm|kg|N|%|Hz|min|s|h))",
-            doc.text, re.IGNORECASE
-        )
-        limit_text = f"**{limit_match.group(1).strip()}**" if limit_match else "See clause text"
-
+        req_summary = extract_key_requirement_summary(doc)
         ref_str = f"`[{doc.standard_number}, Cl. {doc.clause_number}, p. {doc.page}]`"
-
-        # Extract a brief condition if present
-        cond_match = re.search(
-            r"(?:when tested|at normal|under|applied at|tested by|during|at rated)\s*([^,.;]{5,50})",
-            doc.text, re.IGNORECASE
-        )
-        condition = cond_match.group(0).strip() if cond_match else None
-
-        lines.append(f"- **{req_title}:** {limit_text} {ref_str}")
-        if condition:
-            lines.append(f"  - Condition: {condition}")
+        lines.append(f"- **{req_title}:** {req_summary} {ref_str}")
 
     # 3. Important
     lines.append("\n### ⚠️ Important\n")
@@ -172,73 +224,68 @@ def synthesize_grounded_local(query: str, top_docs: list) -> str:
 
 async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[str, Any]:
     """
-    Complete hybrid RAG pipeline:
-    BM25 + ChromaDB -> RRF Fusion -> Reranking -> Grounding Validation -> Synthesis -> Verified Output
+    Complete 5-stage hybrid RAG pipeline:
+    Hybrid Retrieval (top 15) -> Reranking (top 10) -> Relevance Filter (top 5) -> Grounding Validation -> Synthesis -> Verified Output
     """
     clean_query = query.strip()
     if not clean_query:
         return {
             "query": "",
             "answer": "Please provide a query regarding Indian Standards or BIS certification.",
+            "applicable_standard": "Not Determined",
+            "standard_title": "",
+            "relevant_requirement": "",
+            "evidence": "",
+            "source": "N/A",
             "is_grounded": False,
+            "grounded": False,
             "confidence": 0.0,
+            "confidence_level": "Low",
             "citations": [],
             "structured_citations": [],
             "sources": [],
             "warnings": ["EMPTY_QUERY: Query string was empty."]
         }
 
-    # 1. Hybrid Retrieval (BM25 + Vector)
-    retrieved_candidates = hybrid_retriever.retrieve(clean_query, top_k=8)
+    # Stage 1: Candidate Retrieval (BM25 + Vector)
+    retrieved_candidates = hybrid_retriever.retrieve(clean_query, top_k=15)
 
-    # 2. Re-ranking
-    reranked_docs = reranker.rerank(clean_query, retrieved_candidates, top_k=4)
+    # Stage 2: Re-ranking
+    reranked_docs = reranker.rerank(clean_query, retrieved_candidates, top_k=10)
 
-    # 3. Grounding Check & Confidence Evaluation
-    grounding_eval = grounding_validator.evaluate(clean_query, reranked_docs)
+    # Stage 3: Relevance Threshold Filtering & Cross-Standard Contamination Prevention
+    filtered_docs = relevance_filter.filter(
+        clean_query,
+        reranked_docs,
+        detected_standard=None,
+        detected_category=category
+    )
 
-    # 4. If evidence is insufficient, return safe refusal
+    # Stage 4: Grounding Check & Confidence Evaluation
+    grounding_eval = grounding_validator.evaluate(clean_query, filtered_docs)
+
+    # If evidence is insufficient, return safe refusal without leaking irrelevant sources
     if not grounding_eval.has_sufficient_evidence:
-        citations = citation_builder.build_citations(reranked_docs)
-        citation_tags = [c.citation_tag for c in citations]
-        structured_citations = [
-            {
-                "standard_number": c.standard_number,
-                "clause_number": c.clause_number,
-                "page": c.page,
-                "document": c.document,
-                "citation_tag": c.citation_tag
-            }
-            for c in citations
-        ]
         return {
             "query": clean_query,
             "answer": grounding_eval.unsupported_reason,
+            "applicable_standard": "Not Determined",
+            "standard_title": "",
+            "relevant_requirement": "",
+            "evidence": "",
+            "source": "N/A",
             "is_grounded": False,
+            "grounded": False,
             "confidence": grounding_eval.confidence,
-            "citations": citation_tags,
-            "structured_citations": structured_citations,
-            "sources": [
-                {
-                    "id": d.clause_id,
-                    "standard_number": d.standard_number,
-                    "standard_title": d.standard_title,
-                    "category": d.metadata.get("category", "General"),
-                    "clause_number": d.clause_number,
-                    "clause_title": d.clause_title,
-                    "page": d.page,
-                    "text": d.text,
-                    "mandatory_status": d.metadata.get("mandatory_status", "Statutory"),
-                    "citation": f"[{d.standard_number}, Cl. {d.clause_number}, p. {d.page}]",
-                    "_relevance_score": d.score
-                }
-                for d in reranked_docs
-            ],
+            "confidence_level": "Low",
+            "citations": [],
+            "structured_citations": [],
+            "sources": [],
             "warnings": grounding_eval.warnings
         }
 
-    # 5. Build structured citations & formatted context
-    citations = citation_builder.build_citations(reranked_docs)
+    # Stage 5: Build structured citations & formatted context strictly from filtered_docs
+    citations = citation_builder.build_citations(filtered_docs)
     citation_tags = [c.citation_tag for c in citations]
     structured_citations = [
         {
@@ -250,19 +297,22 @@ async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[s
         }
         for c in citations
     ]
-    context_text = citation_builder.format_context_for_prompt(reranked_docs)
+    context_text = citation_builder.format_context_for_prompt(filtered_docs)
 
-    # 6. Synthesis (Gemini with deterministic fallback)
+    # Synthesis (Gemini with deterministic fallback)
     gemini_answer = await synthesize_with_gemini(clean_query, context_text)
     if gemini_answer and len(gemini_answer.strip()) > 30:
         raw_answer = gemini_answer
     else:
-        raw_answer = synthesize_grounded_local(clean_query, reranked_docs)
+        raw_answer = synthesize_grounded_local(clean_query, filtered_docs)
 
-    # 7. Post-validation check
+    # Post-validation check
     final_answer, final_eval = grounding_validator.post_validate_answer(
-        raw_answer, reranked_docs, grounding_eval
+        raw_answer, filtered_docs, grounding_eval
     )
+
+    # Citation Integrity Validation: strip any unauthorized citations or phantom standards
+    final_answer = validate_citation_integrity(final_answer, filtered_docs)
 
     sources = [
         {
@@ -278,10 +328,10 @@ async def query_rag_engine(query: str, category: Optional[str] = None) -> Dict[s
             "citation": f"[{d.standard_number}, Cl. {d.clause_number}, p. {d.page}]",
             "_relevance_score": d.score
         }
-        for d in reranked_docs
+        for d in filtered_docs
     ]
 
-    primary_doc = reranked_docs[0] if reranked_docs else None
+    primary_doc = filtered_docs[0] if filtered_docs else None
     conf_score = final_eval.confidence
     conf_level = "High" if conf_score >= 0.70 else ("Medium" if conf_score >= 0.40 else "Low")
 
