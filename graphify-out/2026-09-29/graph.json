@@ -4236,7 +4236,7 @@
       "file_type": "code",
       "norm_label": "delete",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L105"
+      "source_location": "L109"
     },
     {
       "id": "frontend_app_api_path_route_get",
@@ -4247,7 +4247,7 @@
       "file_type": "code",
       "norm_label": "get",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L102"
+      "source_location": "L106"
     },
     {
       "id": "frontend_app_api_path_route_options",
@@ -4258,7 +4258,7 @@
       "file_type": "code",
       "norm_label": "options",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L107"
+      "source_location": "L111"
     },
     {
       "id": "frontend_app_api_path_route_patch",
@@ -4269,7 +4269,7 @@
       "file_type": "code",
       "norm_label": "patch",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L106"
+      "source_location": "L110"
     },
     {
       "id": "frontend_app_api_path_route_post",
@@ -4280,7 +4280,7 @@
       "file_type": "code",
       "norm_label": "post",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L103"
+      "source_location": "L107"
     },
     {
       "id": "frontend_app_api_path_route_put",
@@ -4291,7 +4291,7 @@
       "file_type": "code",
       "norm_label": "put",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L104"
+      "source_location": "L108"
     },
     {
       "id": "backend_services_document_analyzer_py_any",
@@ -7706,7 +7706,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L67",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -14347,7 +14347,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L102",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -14358,7 +14358,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L103",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -14369,7 +14369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L104",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
@@ -14380,7 +14380,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L105",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -14391,7 +14391,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L106",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -14402,7 +14402,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L107",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
