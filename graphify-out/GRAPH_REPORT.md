@@ -1,30 +1,30 @@
 # Graph Report - bis  (2026-09-29)
 
 ## Corpus Check
-- 114 files · ~141,953 words
+- 114 files · ~142,043 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 636 nodes · 1120 edges · 61 communities (35 shown, 24 thin omitted)
+- 639 nodes · 1124 edges · 62 communities (41 shown, 19 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 49 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4517ad8d`
+- Built from commit: `bb0d5f5c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - RetrievedDoc
 - dependencies
-- react
+- components/DecorativeShapes.tsx
 - toy_standards.ts
 - frontend/package.json
 - clause_parser.py
 - ComplianceEngine
 - compilerOptions
 - rag_engine.py
-- errors.py
+- FastAPI
 - verification.py
 - LocalRegulatoryEmbeddingFunction
 - devDependencies
@@ -52,28 +52,29 @@
 - Specification Doc: README
 - Specification Doc: implementation_plan
 - 21st/ComplianceRoadmap.tsx
-- app/page.tsx
-- .dispatch
+- react
+- RequestLoggingMiddleware
 - main.py
-- lucide-react
-- FeatureGrid.tsx
-- ToyHero.tsx
-- projects.py
+- toys/page.tsx
+- consumer/page.tsx
+- types.ts
+- models.py
 - api.ts
 - scripts
-- homepage/Hero.tsx
+- lucide-react
 - CitationBadge.tsx
-- FeatureCard.tsx
-- LatestUpdates.tsx
-- GlassCard.tsx
+- AIChatSection.tsx
+- ToyStandardSearch.tsx
+- dashboard/page.tsx
 - utils.ts
-- next
-- HTTPException
+- ToyAIChat.tsx
+- projects.py
 - compliance.py
-- FastAPI
+- analyze_document
 - get_connection
 - grievances.py
 - StandardSearch.tsx
+- AudienceSection.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 50 edges
@@ -102,7 +103,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (61 total, 24 thin omitted)
+## Communities (62 total, 19 thin omitted)
 
 ### Community 0 - "RetrievedDoc"
 Cohesion: 0.06
@@ -112,13 +113,13 @@ Nodes (30): ClauseChunk, ClauseChunker, BaseModel, Page and clause-aware chunker
 Cohesion: 0.20
 Nodes (10): dependencies, canvas-confetti, clsx, lucide-react, motion, next, react, react-dom (+2 more)
 
-### Community 2 - "react"
+### Community 2 - "components/DecorativeShapes.tsx"
 Cohesion: 0.20
-Nodes (8): AIChatSection(), CitationCard(), CitationProps, DecorativeShapes(), ShapeProps, RagResponse, SourceClause, react
+Nodes (6): LabsPage(), loadLabs(), DecorativeShapes(), ShapeProps, fetchLaboratories(), Laboratory
 
 ### Community 3 - "toy_standards.ts"
-Cohesion: 0.08
-Nodes (29): CopilotPage(), ChatMessage, ProductComplianceExplorer(), ProductComplianceExplorerProps, ChatMessage, ToyAIChat(), ToyAIChatProps, ToyCategoryCardsProps (+21 more)
+Cohesion: 0.14
+Nodes (15): ChatMessage, ProductComplianceExplorerProps, ToyCategoryCardsProps, InquiryOption, ToySafetyExplorerProps, ToyTypeOption, ProductSafetyScope, REGULATED_PRODUCTS_DATA (+7 more)
 
 ### Community 4 - "frontend/package.json"
 Cohesion: 0.13
@@ -140,9 +141,9 @@ Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModu
 Cohesion: 0.08
 Nodes (29): ask_rag(), get_all_clauses(), get_rag_stats(), get_source_clause(), BaseModel, get, post, RagQueryRequest (+21 more)
 
-### Community 10 - "errors.py"
-Cohesion: 0.33
-Nodes (12): app_exception_handler(), AppException, format_error_response(), http_exception_handler(), Any, Request, register_error_handlers(), unhandled_exception_handler() (+4 more)
+### Community 10 - "FastAPI"
+Cohesion: 0.17
+Nodes (19): get_certifications(), initiate_renewal(), BaseModel, get, post, RenewalRequest, app_exception_handler(), AppException (+11 more)
 
 ### Community 11 - "verification.py"
 Cohesion: 0.26
@@ -184,53 +185,73 @@ Nodes (3): dependencies, graphify, graphify
 Cohesion: 0.33
 Nodes (3): ComplianceRoadmapProps, DEFAULT_STEPS, StepItem
 
-### Community 39 - "app/page.tsx"
-Cohesion: 0.13
-Nodes (12): AudienceSection(), consumerPoints, industryPoints, BISAI(), ComplianceWorkflow(), steps, FinalCTA(), exampleLabs (+4 more)
+### Community 39 - "react"
+Cohesion: 0.11
+Nodes (17): BISAI(), ComplianceWorkflow(), steps, FeatureCardData, featureCards, FeatureGrid(), FinalCTA(), Hero() (+9 more)
+
+### Community 40 - "RequestLoggingMiddleware"
+Cohesion: 0.40
+Nodes (4): Request, RequestLoggingMiddleware, BaseHTTPMiddleware, Response
 
 ### Community 41 - "main.py"
-Cohesion: 0.18
-Nodes (10): init_db(), Initializes SQLite database tables and schema., get_logger(), RequestLoggingMiddleware, setup_logging(), health(), get, root() (+2 more)
+Cohesion: 0.20
+Nodes (8): init_db(), Initializes SQLite database tables and schema., get_logger(), setup_logging(), health(), get, root(), Logger
 
-### Community 42 - "lucide-react"
-Cohesion: 0.18
-Nodes (4): metadata, Footer(), Navbar(), lucide-react
+### Community 42 - "toys/page.tsx"
+Cohesion: 0.22
+Nodes (6): metadata, ProductComplianceExplorer(), Footer(), Navbar(), nextConfig, next
 
-### Community 43 - "FeatureGrid.tsx"
-Cohesion: 0.50
-Nodes (3): FeatureCardData, featureCards, FeatureGrid()
+### Community 43 - "consumer/page.tsx"
+Cohesion: 0.24
+Nodes (12): BUYING_CHECKLISTS, ConsumerPage(), ConsumerVerificationSection(), Props, VerificationCard(), submitGrievance(), verifyImage(), verifyProduct() (+4 more)
 
-### Community 45 - "projects.py"
-Cohesion: 0.21
-Nodes (14): create_project(), list_project_tasks(), list_projects(), get, post, discover_standards(), post, DocumentAnalyzeRequest (+6 more)
+### Community 44 - "types.ts"
+Cohesion: 0.14
+Nodes (13): BaseFees, CostTimeline, DiscoveredStandard, DocumentAnalysisRequirement, FeeBreakdown, KeyTest, QcoStatus, RoadmapStep (+5 more)
+
+### Community 45 - "models.py"
+Cohesion: 0.31
+Nodes (9): discover_standards(), post, DocumentAnalyzeRequest, GrievanceCreate, ProjectCreate, ProjectUpdate, BaseModel, StandardsDiscoveryRequest (+1 more)
 
 ### Community 46 - "api.ts"
-Cohesion: 0.07
-Nodes (55): BUYING_CHECKLISTS, ConsumerPage(), DashboardPage(), load(), IndustryPage(), loadData(), runAnalysis(), LabsPage() (+47 more)
+Cohesion: 0.17
+Nodes (21): IndustryPage(), loadData(), runAnalysis(), StandardsSearchSection(), analyzeCompliance(), analyzeDocument(), API_BASE, createProject() (+13 more)
 
 ### Community 47 - "scripts"
 Cohesion: 0.40
 Nodes (5): scripts, build, dev, lint, start
 
-### Community 48 - "homepage/Hero.tsx"
-Cohesion: 0.40
-Nodes (4): Hero(), ServiceHub(), ServiceItem, services
+### Community 48 - "lucide-react"
+Cohesion: 0.13
+Nodes (7): CORE_FEATURES, FeatureItem, ServiceHub(), ServiceItem, services, ToyHeroProps, lucide-react
 
-### Community 51 - "LatestUpdates.tsx"
-Cohesion: 0.50
-Nodes (3): LatestUpdates(), UpdateItem, updates
-
-### Community 55 - "HTTPException"
+### Community 50 - "AIChatSection.tsx"
 Cohesion: 0.24
-Nodes (11): analyze_document(), get_document_details(), get, post, UploadFile, upload_document(), get_project(), update_project() (+3 more)
+Nodes (9): CopilotPage(), AIChatSection(), CitationCard(), CitationProps, ToyAIChat(), extractErrorMessage(), queryRag(), RagResponse (+1 more)
+
+### Community 51 - "ToyStandardSearch.tsx"
+Cohesion: 0.29
+Nodes (5): ToyStandardCard(), ToyStandardCardProps, FilterOption, ToyStandardSearchProps, ToySafetyScope
+
+### Community 52 - "dashboard/page.tsx"
+Cohesion: 0.38
+Nodes (6): DashboardPage(), load(), fetchDashboardData(), initiateRenewal(), DashboardData, ManufacturerLicence
+
+### Community 54 - "ToyAIChat.tsx"
+Cohesion: 0.43
+Nodes (5): ChatMessage, ToyAIChatProps, ToyCitation, ToyCitationCard(), ToyCitationCardProps
+
+### Community 55 - "projects.py"
+Cohesion: 0.24
+Nodes (12): get_document_details(), get, create_project(), get_project(), list_project_tasks(), list_projects(), get, post (+4 more)
 
 ### Community 56 - "compliance.py"
 Cohesion: 0.31
 Nodes (8): analyze_compliance(), ComplianceAnalyzeRequest, get_labs(), get_product(), get_products(), BaseModel, get, post
 
-### Community 57 - "FastAPI"
-Cohesion: 0.29
-Nodes (7): get_certifications(), initiate_renewal(), BaseModel, get, post, RenewalRequest, FastAPI
+### Community 57 - "analyze_document"
+Cohesion: 0.50
+Nodes (4): analyze_document(), post, UploadFile, upload_document()
 
 ### Community 58 - "get_connection"
 Cohesion: 0.43
@@ -244,25 +265,29 @@ Nodes (5): get_grievance(), list_grievances(), get, post, report_grievance()
 Cohesion: 0.50
 Nodes (3): popularSearches, sampleResults, StandardSearch()
 
+### Community 61 - "AudienceSection.tsx"
+Cohesion: 0.50
+Nodes (3): AudienceSection(), consumerPoints, industryPoints
+
 ## Knowledge Gaps
-- **142 isolated node(s):** `maxDuration`, `GET`, `POST`, `PUT`, `DELETE` (+137 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 266 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **143 isolated node(s):** `maxDuration`, `GET`, `POST`, `PUT`, `DELETE` (+138 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 268 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `lucide-react`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `origin-button.tsx`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`, `21st/DecorativeShapes.tsx`, `GlassCard.tsx`, `StandardSearch.tsx`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `lucide-react` to `react`, `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`, `StandardSearch.tsx`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `components/DecorativeShapes.tsx`, `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `toys/page.tsx`, `consumer/page.tsx`, `api.ts`, `origin-button.tsx`, `lucide-react`, `CitationBadge.tsx`, `AIChatSection.tsx`, `ToyStandardSearch.tsx`, `dashboard/page.tsx`, `21st/DecorativeShapes.tsx`, `ToyAIChat.tsx`, `StandardSearch.tsx`, `AudienceSection.tsx`?**
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+- **Why does `lucide-react` connect `lucide-react` to `components/DecorativeShapes.tsx`, `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `react`, `toys/page.tsx`, `consumer/page.tsx`, `api.ts`, `CitationBadge.tsx`, `AIChatSection.tsx`, `ToyStandardSearch.tsx`, `dashboard/page.tsx`, `ToyAIChat.tsx`, `StandardSearch.tsx`, `AudienceSection.tsx`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
 - **Why does `RetrievedDoc` connect `RetrievedDoc` to `rag_engine.py`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Are the 6 inferred relationships involving `RetrievedDoc` (e.g. with `HybridRetriever` and `RelevanceFilter`) actually correct?**
   _`RetrievedDoc` has 6 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 11 inferred relationships involving `ComplianceEngine` (e.g. with `Electric Kettle Test Report (doc_0091e71c)` and `Electric Kettle Test Report (doc_01ee7870)`) actually correct?**
   _`ComplianceEngine` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `maxDuration`, `GET`, `POST` to the rest of the system?**
-  _142 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _143 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `RetrievedDoc` be split into smaller, more focused modules?**
   _Cohesion score 0.05789235639981909 - nodes in this community are weakly interconnected._

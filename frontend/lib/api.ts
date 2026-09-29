@@ -12,7 +12,32 @@ import {
   GrievanceResult
 } from './types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
+function getApiBase(): string {
+  const envUrl = (process.env.NEXT_PUBLIC_API_URL || '').trim();
+  if (!envUrl) return '';
+  let clean = envUrl.replace(/\/+$/, '');
+  if (clean.endsWith('/api')) {
+    clean = clean.slice(0, -4);
+  }
+  return clean;
+}
+
+const API_BASE = getApiBase();
+
+async function extractErrorMessage(res: Response): Promise<string> {
+  const data = await res.json().catch(() => null);
+  if (data?.detail) {
+    const detailStr = typeof data.detail === 'string' ? data.detail : JSON.stringify(data.detail);
+    return `${detailStr} (${res.url || 'endpoint'})`;
+  }
+  if (data?.details) {
+    return `${data.error || 'Error'}: ${data.details}`;
+  }
+  if (data?.error || data?.message) {
+    return data.error || data.message;
+  }
+  return `Server responded with ${res.status} (${res.statusText || 'Error'}) at ${res.url || 'backend endpoint'}`;
+}
 
 export async function fetchProducts(): Promise<Product[]> {
   try {
@@ -102,8 +127,7 @@ export async function queryRag(query: string, category?: string): Promise<RagRes
       body: JSON.stringify({ query, category })
     });
     if (!res.ok) {
-      const data = await res.json().catch(() => null);
-      const detailMsg = data?.details ? `${data.error}: ${data.details}` : (data?.error || data?.message || `Server responded with ${res.status}`);
+      const detailMsg = await extractErrorMessage(res);
       throw new Error(detailMsg);
     }
     return await res.json();

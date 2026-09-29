@@ -303,6 +303,19 @@
       "source_location": "L8"
     },
     {
+      "id": "frontend_components_citationcard_citationprops",
+      "label": "CitationProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "citationprops",
+      "source_file": "frontend/components/CitationCard.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "frontend_components_decorativeshapes_shapeprops",
       "label": "ShapeProps",
       "_callable": true,
@@ -314,6 +327,32 @@
       "norm_label": "shapeprops",
       "source_file": "frontend/components/DecorativeShapes.tsx",
       "source_location": "L3"
+    },
+    {
+      "id": "frontend_lib_types_ragresponse",
+      "label": "RagResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "ragresponse",
+      "source_file": "frontend/lib/types.ts",
+      "source_location": "L170"
+    },
+    {
+      "id": "frontend_lib_types_sourceclause",
+      "label": "SourceClause",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "sourceclause",
+      "source_file": "frontend/lib/types.ts",
+      "source_location": "L148"
     },
     {
       "id": "frontend_components_21st_decorativeshapes_decorativeshapesprops",
@@ -607,51 +646,12 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 40,
-      "community_name": "RequestLoggingMiddleware",
+      "community": 41,
+      "community_name": "main.py",
       "file_type": "code",
       "norm_label": "requestloggingmiddleware",
       "source_file": "backend/logging_config.py",
       "source_location": "L25"
-    },
-    {
-      "id": "frontend_components_citationcard_citationprops",
-      "label": "CitationProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "citationprops",
-      "source_file": "frontend/components/CitationCard.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "frontend_lib_types_ragresponse",
-      "label": "RagResponse",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "ragresponse",
-      "source_file": "frontend/lib/types.ts",
-      "source_location": "L170"
-    },
-    {
-      "id": "frontend_lib_types_sourceclause",
-      "label": "SourceClause",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "lucide-react",
-      "file_type": "code",
-      "norm_label": "sourceclause",
-      "source_file": "frontend/lib/types.ts",
-      "source_location": "L148"
     },
     {
       "id": "frontend_components_homepage_featuregrid_featurecarddata",
@@ -680,52 +680,13 @@
       "source_location": "L6"
     },
     {
-      "id": "backend_api_compliance_complianceanalyzerequest",
-      "label": "ComplianceAnalyzeRequest",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "complianceanalyzerequest",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L8"
-    },
-    {
-      "id": "backend_api_dashboard_renewalrequest",
-      "label": "RenewalRequest",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "renewalrequest",
-      "source_file": "backend/api/dashboard.py",
-      "source_location": "L56"
-    },
-    {
-      "id": "backend_database_db_databasemanager",
-      "label": "DatabaseManager",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "databasemanager",
-      "source_file": "backend/database/db.py",
-      "source_location": "L108"
-    },
-    {
       "id": "backend_database_models_documentanalyzerequest",
       "label": "DocumentAnalyzeRequest",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "documentanalyzerequest",
       "source_file": "backend/database/models.py",
@@ -738,7 +699,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "grievancecreate",
       "source_file": "backend/database/models.py",
@@ -751,7 +712,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "projectcreate",
       "source_file": "backend/database/models.py",
@@ -764,7 +725,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "projectupdate",
       "source_file": "backend/database/models.py",
@@ -777,7 +738,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "standardsdiscoveryrequest",
       "source_file": "backend/database/models.py",
@@ -790,7 +751,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "taskupdate",
       "source_file": "backend/database/models.py",
@@ -1265,6 +1226,45 @@
       "source_location": "L3"
     },
     {
+      "id": "backend_api_compliance_complianceanalyzerequest",
+      "label": "ComplianceAnalyzeRequest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "complianceanalyzerequest",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "backend_api_dashboard_renewalrequest",
+      "label": "RenewalRequest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "renewalrequest",
+      "source_file": "backend/api/dashboard.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "backend_database_db_databasemanager",
+      "label": "DatabaseManager",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": "databasemanager",
+      "source_file": "backend/database/db.py",
+      "source_location": "L108"
+    },
+    {
       "id": "backend_services_compliance_engine_complianceengine",
       "label": "ComplianceEngine",
       "_callable": true,
@@ -1328,18 +1328,6 @@
       "norm_label": "legacyclauseindex",
       "source_file": "backend/services/rag_engine.py",
       "source_location": "L391"
-    },
-    {
-      "id": "backend_config_get_cors_origins",
-      "label": "get_cors_origins()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "get_cors_origins()",
-      "source_file": "backend/config.py",
-      "source_location": "L40"
     },
     {
       "id": "backend_ingestion_chunker_clausechunker_chunk_clause",
@@ -1448,18 +1436,6 @@
       "norm_label": ".load_pdf_standards()",
       "source_file": "backend/ingestion/indexer.py",
       "source_location": "L48"
-    },
-    {
-      "id": "backend_logging_config_get_logger",
-      "label": "get_logger()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "get_logger()",
-      "source_file": "backend/logging_config.py",
-      "source_location": "L20"
     },
     {
       "id": "backend_retrievers_hybrid_retriever_hybridretriever_init",
@@ -2119,7 +2095,7 @@
       "file_type": "code",
       "norm_label": "handleproxy()",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L53"
+      "source_location": "L55"
     },
     {
       "id": "backend_services_document_analyzer_documentanalyzer_analyze",
@@ -2290,28 +2266,28 @@
       "source_location": "L98"
     },
     {
-      "id": "frontend_app_labs_page_labspage",
-      "label": "LabsPage()",
+      "id": "frontend_components_aichatsection_aichatsection",
+      "label": "AIChatSection()",
       "_callable": true,
       "_origin": "ast",
       "community": 2,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "labspage()",
-      "source_file": "frontend/app/labs/page.tsx",
-      "source_location": "L20"
+      "norm_label": "aichatsection()",
+      "source_file": "frontend/components/AIChatSection.tsx",
+      "source_location": "L22"
     },
     {
-      "id": "frontend_app_labs_page_labspage_loadlabs",
-      "label": "loadLabs()",
+      "id": "frontend_components_citationcard_citationcard",
+      "label": "CitationCard()",
       "_callable": true,
       "_origin": "ast",
       "community": 2,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "loadlabs()",
-      "source_file": "frontend/app/labs/page.tsx",
-      "source_location": "L28"
+      "norm_label": "citationcard()",
+      "source_file": "frontend/components/CitationCard.tsx",
+      "source_location": "L15"
     },
     {
       "id": "frontend_components_complianceroadmap_complianceroadmap",
@@ -2362,18 +2338,6 @@
       "source_location": "L5"
     },
     {
-      "id": "frontend_lib_api_fetchlaboratories",
-      "label": "fetchLaboratories()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "fetchlaboratories()",
-      "source_file": "frontend/lib/api.ts",
-      "source_location": "L240"
-    },
-    {
       "id": "frontend_components_21st_decorativeshapes_decorativeshapes",
       "label": "DecorativeShapes()",
       "_callable": true,
@@ -2407,18 +2371,6 @@
       "file_type": "code",
       "norm_label": "copilotpage()",
       "source_file": "frontend/app/copilot/page.tsx",
-      "source_location": "L22"
-    },
-    {
-      "id": "frontend_components_aichatsection_aichatsection",
-      "label": "AIChatSection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "toy_standards.ts",
-      "file_type": "code",
-      "norm_label": "aichatsection()",
-      "source_file": "frontend/components/AIChatSection.tsx",
       "source_location": "L22"
     },
     {
@@ -2650,18 +2602,6 @@
       "source_location": "L7"
     },
     {
-      "id": "frontend_components_homepage_standardsearch_standardsearch",
-      "label": "StandardSearch()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "standardsearch()",
-      "source_file": "frontend/components/homepage/StandardSearch.tsx",
-      "source_location": "L38"
-    },
-    {
       "id": "frontend_components_homepage_truststats_truststats",
       "label": "TrustStats()",
       "_callable": true,
@@ -2679,59 +2619,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 40,
-      "community_name": "RequestLoggingMiddleware",
+      "community_name": ".dispatch",
       "file_type": "code",
       "norm_label": ".dispatch()",
       "source_file": "backend/logging_config.py",
       "source_location": "L26"
     },
     {
-      "id": "frontend_components_citationcard_citationcard",
-      "label": "CitationCard()",
+      "id": "backend_config_get_cors_origins",
+      "label": "get_cors_origins()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "citationcard()",
-      "source_file": "frontend/components/CitationCard.tsx",
-      "source_location": "L15"
+      "norm_label": "get_cors_origins()",
+      "source_file": "backend/config.py",
+      "source_location": "L40"
     },
     {
-      "id": "frontend_components_dashboardpreviewsection_dashboardpreviewsection",
-      "label": "DashboardPreviewSection()",
+      "id": "backend_database_db_init_db",
+      "label": "init_db()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "dashboardpreviewsection()",
-      "source_file": "frontend/components/DashboardPreviewSection.tsx",
-      "source_location": "L14"
+      "norm_label": "init_db()",
+      "source_file": "backend/database/db.py",
+      "source_location": "L17"
     },
     {
-      "id": "frontend_components_labfindersection_labfindersection",
-      "label": "LabFinderSection()",
+      "id": "backend_logging_config_get_logger",
+      "label": "get_logger()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "labfindersection()",
-      "source_file": "frontend/components/LabFinderSection.tsx",
-      "source_location": "L7"
+      "norm_label": "get_logger()",
+      "source_file": "backend/logging_config.py",
+      "source_location": "L20"
     },
     {
-      "id": "frontend_components_statssection_statssection",
-      "label": "StatsSection()",
+      "id": "backend_logging_config_setup_logging",
+      "label": "setup_logging()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "statssection()",
-      "source_file": "frontend/components/StatsSection.tsx",
-      "source_location": "L4"
+      "norm_label": "setup_logging()",
+      "source_file": "backend/logging_config.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "backend_main_health",
+      "label": "health()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "health()",
+      "source_file": "backend/main.py",
+      "source_location": "L73"
+    },
+    {
+      "id": "backend_main_root",
+      "label": "root()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "root()",
+      "source_file": "backend/main.py",
+      "source_location": "L55"
     },
     {
       "id": "frontend_app_layout_rootlayout",
@@ -2739,7 +2703,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "rootlayout()",
       "source_file": "frontend/app/layout.tsx",
@@ -2751,11 +2715,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "toysafetypage()",
       "source_file": "frontend/app/toys/page.tsx",
       "source_location": "L10"
+    },
+    {
+      "id": "frontend_components_dashboardpreviewsection_dashboardpreviewsection",
+      "label": "DashboardPreviewSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "dashboardpreviewsection()",
+      "source_file": "frontend/components/DashboardPreviewSection.tsx",
+      "source_location": "L14"
     },
     {
       "id": "frontend_components_footer_footer",
@@ -2763,10 +2739,22 @@
       "_callable": true,
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "footer()",
       "source_file": "frontend/components/Footer.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_components_labfindersection_labfindersection",
+      "label": "LabFinderSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "labfindersection()",
+      "source_file": "frontend/components/LabFinderSection.tsx",
       "source_location": "L7"
     },
     {
@@ -2775,11 +2763,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "navbar()",
       "source_file": "frontend/components/Navbar.tsx",
       "source_location": "L21"
+    },
+    {
+      "id": "frontend_components_statssection_statssection",
+      "label": "StatsSection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "statssection()",
+      "source_file": "frontend/components/StatsSection.tsx",
+      "source_location": "L4"
     },
     {
       "id": "frontend_components_homepage_featuregrid_featuregrid",
@@ -2806,172 +2806,16 @@
       "source_location": "L11"
     },
     {
-      "id": "backend_api_compliance_analyze_compliance",
-      "label": "analyze_compliance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "analyze_compliance()",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L25"
-    },
-    {
-      "id": "backend_api_compliance_get_labs",
-      "label": "get_labs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_labs()",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L47"
-    },
-    {
-      "id": "backend_api_compliance_get_product",
-      "label": "get_product()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_product()",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L18"
-    },
-    {
-      "id": "backend_api_compliance_get_products",
-      "label": "get_products()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_products()",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L14"
-    },
-    {
-      "id": "backend_api_dashboard_get_certifications",
-      "label": "get_certifications()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_certifications()",
-      "source_file": "backend/api/dashboard.py",
-      "source_location": "L62"
-    },
-    {
-      "id": "backend_api_dashboard_initiate_renewal",
-      "label": "initiate_renewal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "initiate_renewal()",
-      "source_file": "backend/api/dashboard.py",
-      "source_location": "L72"
-    },
-    {
-      "id": "backend_api_documents_analyze_document",
-      "label": "analyze_document()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "analyze_document()",
-      "source_file": "backend/api/documents.py",
-      "source_location": "L29"
-    },
-    {
-      "id": "backend_api_documents_get_document_details",
-      "label": "get_document_details()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_document_details()",
-      "source_file": "backend/api/documents.py",
-      "source_location": "L42"
-    },
-    {
-      "id": "backend_api_documents_upload_document",
-      "label": "upload_document()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "upload_document()",
-      "source_file": "backend/api/documents.py",
-      "source_location": "L11"
-    },
-    {
-      "id": "backend_api_grievances_get_grievance",
-      "label": "get_grievance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_grievance()",
-      "source_file": "backend/api/grievances.py",
-      "source_location": "L59"
-    },
-    {
-      "id": "backend_api_grievances_list_grievances",
-      "label": "list_grievances()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "list_grievances()",
-      "source_file": "backend/api/grievances.py",
-      "source_location": "L55"
-    },
-    {
-      "id": "backend_api_grievances_report_grievance",
-      "label": "report_grievance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "report_grievance()",
-      "source_file": "backend/api/grievances.py",
-      "source_location": "L10"
-    },
-    {
       "id": "backend_api_projects_create_project",
       "label": "create_project()",
       "_callable": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "create_project()",
       "source_file": "backend/api/projects.py",
       "source_location": "L26"
-    },
-    {
-      "id": "backend_api_projects_get_project",
-      "label": "get_project()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_project()",
-      "source_file": "backend/api/projects.py",
-      "source_location": "L68"
     },
     {
       "id": "backend_api_projects_list_project_tasks",
@@ -2979,7 +2823,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "list_project_tasks()",
       "source_file": "backend/api/projects.py",
@@ -2991,35 +2835,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "list_projects()",
       "source_file": "backend/api/projects.py",
       "source_location": "L63"
-    },
-    {
-      "id": "backend_api_projects_update_project",
-      "label": "update_project()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "update_project()",
-      "source_file": "backend/api/projects.py",
-      "source_location": "L84"
-    },
-    {
-      "id": "backend_api_projects_update_task_status",
-      "label": "update_task_status()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "update_task_status()",
-      "source_file": "backend/api/projects.py",
-      "source_location": "L114"
     },
     {
       "id": "backend_api_standards_discover_standards",
@@ -3027,107 +2847,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "discover_standards()",
       "source_file": "backend/api/standards.py",
       "source_location": "L8"
-    },
-    {
-      "id": "backend_database_db_databasemanager_execute",
-      "label": ".execute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": ".execute()",
-      "source_file": "backend/database/db.py",
-      "source_location": "L132"
-    },
-    {
-      "id": "backend_database_db_databasemanager_query",
-      "label": ".query()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": ".query()",
-      "source_file": "backend/database/db.py",
-      "source_location": "L110"
-    },
-    {
-      "id": "backend_database_db_databasemanager_query_one",
-      "label": ".query_one()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": ".query_one()",
-      "source_file": "backend/database/db.py",
-      "source_location": "L121"
-    },
-    {
-      "id": "backend_database_db_get_connection",
-      "label": "get_connection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get_connection()",
-      "source_file": "backend/database/db.py",
-      "source_location": "L10"
-    },
-    {
-      "id": "backend_database_db_init_db",
-      "label": "init_db()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "init_db()",
-      "source_file": "backend/database/db.py",
-      "source_location": "L17"
-    },
-    {
-      "id": "backend_logging_config_setup_logging",
-      "label": "setup_logging()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "setup_logging()",
-      "source_file": "backend/logging_config.py",
-      "source_location": "L8"
-    },
-    {
-      "id": "backend_main_health",
-      "label": "health()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "health()",
-      "source_file": "backend/main.py",
-      "source_location": "L73"
-    },
-    {
-      "id": "backend_main_root",
-      "label": "root()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "root()",
-      "source_file": "backend/main.py",
-      "source_location": "L55"
     },
     {
       "id": "frontend_app_consumer_page_consumerpage",
@@ -3202,6 +2926,30 @@
       "source_location": "L134"
     },
     {
+      "id": "frontend_app_labs_page_labspage",
+      "label": "LabsPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "labspage()",
+      "source_file": "frontend/app/labs/page.tsx",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_app_labs_page_labspage_loadlabs",
+      "label": "loadLabs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "loadlabs()",
+      "source_file": "frontend/app/labs/page.tsx",
+      "source_location": "L28"
+    },
+    {
       "id": "frontend_components_consumerverificationsection_consumerverificationsection",
       "label": "ConsumerVerificationSection()",
       "_callable": true,
@@ -3259,7 +3007,7 @@
       "file_type": "code",
       "norm_label": "analyzedocument()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L144"
+      "source_location": "L148"
     },
     {
       "id": "frontend_lib_api_createproject",
@@ -3271,7 +3019,7 @@
       "file_type": "code",
       "norm_label": "createproject()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L184"
+      "source_location": "L188"
     },
     {
       "id": "frontend_lib_api_discoverstandards",
@@ -3283,7 +3031,7 @@
       "file_type": "code",
       "norm_label": "discoverstandards()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L112"
+      "source_location": "L116"
     },
     {
       "id": "frontend_lib_api_fetchdashboarddata",
@@ -3295,7 +3043,19 @@
       "file_type": "code",
       "norm_label": "fetchdashboarddata()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L254"
+      "source_location": "L258"
+    },
+    {
+      "id": "frontend_lib_api_fetchlaboratories",
+      "label": "fetchLaboratories()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "fetchlaboratories()",
+      "source_file": "frontend/lib/api.ts",
+      "source_location": "L244"
     },
     {
       "id": "frontend_lib_api_fetchproducts",
@@ -3319,7 +3079,7 @@
       "file_type": "code",
       "norm_label": "fetchproject()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L173"
+      "source_location": "L177"
     },
     {
       "id": "frontend_lib_api_fetchprojects",
@@ -3331,7 +3091,7 @@
       "file_type": "code",
       "norm_label": "fetchprojects()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L162"
+      "source_location": "L166"
     },
     {
       "id": "frontend_lib_api_initiaterenewal",
@@ -3343,7 +3103,7 @@
       "file_type": "code",
       "norm_label": "initiaterenewal()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L265"
+      "source_location": "L269"
     },
     {
       "id": "frontend_lib_api_submitgrievance",
@@ -3355,7 +3115,7 @@
       "file_type": "code",
       "norm_label": "submitgrievance()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L225"
+      "source_location": "L229"
     },
     {
       "id": "frontend_lib_api_updateprojecttask",
@@ -3367,7 +3127,7 @@
       "file_type": "code",
       "norm_label": "updateprojecttask()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L206"
+      "source_location": "L210"
     },
     {
       "id": "frontend_lib_api_uploaddocument",
@@ -3379,7 +3139,7 @@
       "file_type": "code",
       "norm_label": "uploaddocument()",
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L127"
+      "source_location": "L131"
     },
     {
       "id": "frontend_lib_api_verifyimage",
@@ -3598,6 +3358,234 @@
       "source_location": "L11"
     },
     {
+      "id": "backend_api_documents_analyze_document",
+      "label": "analyze_document()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "analyze_document()",
+      "source_file": "backend/api/documents.py",
+      "source_location": "L29"
+    },
+    {
+      "id": "backend_api_documents_get_document_details",
+      "label": "get_document_details()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "get_document_details()",
+      "source_file": "backend/api/documents.py",
+      "source_location": "L42"
+    },
+    {
+      "id": "backend_api_documents_upload_document",
+      "label": "upload_document()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "upload_document()",
+      "source_file": "backend/api/documents.py",
+      "source_location": "L11"
+    },
+    {
+      "id": "backend_api_projects_get_project",
+      "label": "get_project()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "get_project()",
+      "source_file": "backend/api/projects.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "backend_api_projects_update_project",
+      "label": "update_project()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "update_project()",
+      "source_file": "backend/api/projects.py",
+      "source_location": "L84"
+    },
+    {
+      "id": "backend_api_projects_update_task_status",
+      "label": "update_task_status()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "update_task_status()",
+      "source_file": "backend/api/projects.py",
+      "source_location": "L114"
+    },
+    {
+      "id": "backend_api_compliance_analyze_compliance",
+      "label": "analyze_compliance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "analyze_compliance()",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "backend_api_compliance_get_labs",
+      "label": "get_labs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "get_labs()",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L47"
+    },
+    {
+      "id": "backend_api_compliance_get_product",
+      "label": "get_product()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "get_product()",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "backend_api_compliance_get_products",
+      "label": "get_products()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "get_products()",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L14"
+    },
+    {
+      "id": "backend_api_dashboard_get_certifications",
+      "label": "get_certifications()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "get_certifications()",
+      "source_file": "backend/api/dashboard.py",
+      "source_location": "L62"
+    },
+    {
+      "id": "backend_api_dashboard_initiate_renewal",
+      "label": "initiate_renewal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "initiate_renewal()",
+      "source_file": "backend/api/dashboard.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "backend_database_db_databasemanager_execute",
+      "label": ".execute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": ".execute()",
+      "source_file": "backend/database/db.py",
+      "source_location": "L132"
+    },
+    {
+      "id": "backend_database_db_databasemanager_query",
+      "label": ".query()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": ".query()",
+      "source_file": "backend/database/db.py",
+      "source_location": "L110"
+    },
+    {
+      "id": "backend_database_db_databasemanager_query_one",
+      "label": ".query_one()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": ".query_one()",
+      "source_file": "backend/database/db.py",
+      "source_location": "L121"
+    },
+    {
+      "id": "backend_database_db_get_connection",
+      "label": "get_connection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": "get_connection()",
+      "source_file": "backend/database/db.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "backend_api_grievances_get_grievance",
+      "label": "get_grievance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "get_grievance()",
+      "source_file": "backend/api/grievances.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "backend_api_grievances_list_grievances",
+      "label": "list_grievances()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "list_grievances()",
+      "source_file": "backend/api/grievances.py",
+      "source_location": "L55"
+    },
+    {
+      "id": "backend_api_grievances_report_grievance",
+      "label": "report_grievance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "report_grievance()",
+      "source_file": "backend/api/grievances.py",
+      "source_location": "L10"
+    },
+    {
       "id": "backend_services_compliance_engine_complianceengine_calculate_cost_and_timeline",
       "label": ".calculate_cost_and_timeline()",
       "_callable": true,
@@ -3680,6 +3668,18 @@
       "norm_label": "._load_data()",
       "source_file": "backend/services/compliance_engine.py",
       "source_location": "L13"
+    },
+    {
+      "id": "frontend_components_homepage_standardsearch_standardsearch",
+      "label": "StandardSearch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "StandardSearch.tsx",
+      "file_type": "code",
+      "norm_label": "standardsearch()",
+      "source_file": "frontend/components/homepage/StandardSearch.tsx",
+      "source_location": "L38"
     },
     {
       "id": "backend_tests_test_backend_test_compliance_analyze",
@@ -4102,17 +4102,6 @@
       "source_location": "L141"
     },
     {
-      "id": "backend_config",
-      "label": "config.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "config.py",
-      "source_file": "backend/config.py",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_ingestion_chunker",
       "label": "chunker.py",
       "_origin": "ast",
@@ -4168,17 +4157,6 @@
       "source_location": ""
     },
     {
-      "id": "backend_logging_config",
-      "label": "logging_config.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "logging_config.py",
-      "source_file": "backend/logging_config.py",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_retrievers_hybrid_retriever",
       "label": "hybrid_retriever.py",
       "_origin": "ast",
@@ -4210,17 +4188,6 @@
       "norm_label": "basemodel",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "backend_retrievers_relevance_filter",
-      "label": "relevance_filter.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "relevance_filter.py",
-      "source_file": "backend/retrievers/relevance_filter.py",
-      "source_location": "L1"
     },
     {
       "id": "backend_retrievers_reranker",
@@ -4309,28 +4276,6 @@
       "norm_label": "standards_discovery.py",
       "source_file": "backend/services/standards_discovery.py",
       "source_location": "L1"
-    },
-    {
-      "id": "backend_services_verification_engine",
-      "label": "verification_engine.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "verification_engine.py",
-      "source_file": "backend/services/verification_engine.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "logger",
-      "label": "Logger",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "RetrievedDoc",
-      "file_type": "code",
-      "norm_label": "logger",
-      "source_file": "",
-      "source_location": ""
     },
     {
       "id": "backend_ingestion_chunker_rationale_23",
@@ -4891,7 +4836,7 @@
       "file_type": "code",
       "norm_label": "delete",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L109"
+      "source_location": "L137"
     },
     {
       "id": "frontend_app_api_path_route_get",
@@ -4902,7 +4847,18 @@
       "file_type": "code",
       "norm_label": "get",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L106"
+      "source_location": "L134"
+    },
+    {
+      "id": "frontend_app_api_path_route_maxduration",
+      "label": "maxDuration",
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "route.ts",
+      "file_type": "code",
+      "norm_label": "maxduration",
+      "source_file": "frontend/app/api/[...path]/route.ts",
+      "source_location": "L53"
     },
     {
       "id": "frontend_app_api_path_route_options",
@@ -4913,7 +4869,7 @@
       "file_type": "code",
       "norm_label": "options",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L111"
+      "source_location": "L139"
     },
     {
       "id": "frontend_app_api_path_route_patch",
@@ -4924,7 +4880,7 @@
       "file_type": "code",
       "norm_label": "patch",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L110"
+      "source_location": "L138"
     },
     {
       "id": "frontend_app_api_path_route_post",
@@ -4935,7 +4891,7 @@
       "file_type": "code",
       "norm_label": "post",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L107"
+      "source_location": "L135"
     },
     {
       "id": "frontend_app_api_path_route_put",
@@ -4946,7 +4902,7 @@
       "file_type": "code",
       "norm_label": "put",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L108"
+      "source_location": "L136"
     },
     {
       "id": "backend_services_document_analyzer_py_any",
@@ -5037,14 +4993,36 @@
       "source_location": "L99"
     },
     {
-      "id": "frontend_app_labs_page",
-      "label": "labs/page.tsx",
+      "id": "frontend_app_copilot_page",
+      "label": "copilot/page.tsx",
       "_origin": "ast",
       "community": 2,
       "community_name": "react",
       "file_type": "code",
-      "norm_label": "labs/page.tsx",
-      "source_file": "frontend/app/labs/page.tsx",
+      "norm_label": "copilot/page.tsx",
+      "source_file": "frontend/app/copilot/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_aichatsection",
+      "label": "AIChatSection.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "aichatsection.tsx",
+      "source_file": "frontend/components/AIChatSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_citationcard",
+      "label": "CitationCard.tsx",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "citationcard.tsx",
+      "source_file": "frontend/components/CitationCard.tsx",
       "source_location": "L1"
     },
     {
@@ -5510,39 +5488,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_homepage_standardsearch",
-      "label": "StandardSearch.tsx",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "standardsearch.tsx",
-      "source_file": "frontend/components/homepage/StandardSearch.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_components_homepage_standardsearch_popularsearches",
-      "label": "popularSearches",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "popularsearches",
-      "source_file": "frontend/components/homepage/StandardSearch.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "frontend_components_homepage_standardsearch_sampleresults",
-      "label": "sampleResults",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "app/page.tsx",
-      "file_type": "code",
-      "norm_label": "sampleresults",
-      "source_file": "frontend/components/homepage/StandardSearch.tsx",
-      "source_location": "L17"
-    },
-    {
       "id": "frontend_components_homepage_truststats",
       "label": "TrustStats.tsx",
       "_origin": "ast",
@@ -5734,20 +5679,9 @@
       "label": "Request",
       "_origin": "ast",
       "community": 40,
-      "community_name": "RequestLoggingMiddleware",
+      "community_name": ".dispatch",
       "file_type": "code",
       "norm_label": "request",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "basehttpmiddleware",
-      "label": "BaseHTTPMiddleware",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "RequestLoggingMiddleware",
-      "file_type": "code",
-      "norm_label": "basehttpmiddleware",
       "source_file": "",
       "source_location": ""
     },
@@ -5756,95 +5690,150 @@
       "label": "Response",
       "_origin": "ast",
       "community": 40,
-      "community_name": "RequestLoggingMiddleware",
+      "community_name": ".dispatch",
       "file_type": "code",
       "norm_label": "response",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "frontend_app_copilot_page",
-      "label": "copilot/page.tsx",
+      "id": "backend_api_documents",
+      "label": "documents.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "copilot/page.tsx",
-      "source_file": "frontend/app/copilot/page.tsx",
+      "norm_label": "documents.py",
+      "source_file": "backend/api/documents.py",
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_aichatsection",
-      "label": "AIChatSection.tsx",
+      "id": "backend_config",
+      "label": "config.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "aichatsection.tsx",
-      "source_file": "frontend/components/AIChatSection.tsx",
+      "norm_label": "config.py",
+      "source_file": "backend/config.py",
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_citationcard",
-      "label": "CitationCard.tsx",
+      "id": "backend_database_db",
+      "label": "db.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "citationcard.tsx",
-      "source_file": "frontend/components/CitationCard.tsx",
+      "norm_label": "db.py",
+      "source_file": "backend/database/db.py",
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_dashboardpreviewsection",
-      "label": "DashboardPreviewSection.tsx",
+      "id": "backend_logging_config",
+      "label": "logging_config.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "dashboardpreviewsection.tsx",
-      "source_file": "frontend/components/DashboardPreviewSection.tsx",
+      "norm_label": "logging_config.py",
+      "source_file": "backend/logging_config.py",
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_labfindersection",
-      "label": "LabFinderSection.tsx",
+      "id": "backend_main",
+      "label": "main.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "labfindersection.tsx",
-      "source_file": "frontend/components/LabFinderSection.tsx",
+      "norm_label": "main.py",
+      "source_file": "backend/main.py",
       "source_location": "L1"
     },
     {
-      "id": "frontend_components_statssection",
-      "label": "StatsSection.tsx",
+      "id": "backend_main_py_get",
+      "label": "get",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "statssection.tsx",
-      "source_file": "frontend/components/StatsSection.tsx",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_services_compliance_engine",
+      "label": "compliance_engine.py",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "compliance_engine.py",
+      "source_file": "backend/services/compliance_engine.py",
       "source_location": "L1"
     },
     {
-      "id": "ref_lucide_react",
-      "label": "lucide-react",
+      "id": "backend_services_document_analyzer",
+      "label": "document_analyzer.py",
       "_origin": "ast",
       "community": 41,
-      "community_name": "lucide-react",
-      "file_type": "concept",
-      "norm_label": "lucide-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L15"
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "document_analyzer.py",
+      "source_file": "backend/services/document_analyzer.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_services_verification_engine",
+      "label": "verification_engine.py",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "verification_engine.py",
+      "source_file": "backend/services/verification_engine.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "basehttpmiddleware",
+      "label": "BaseHTTPMiddleware",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "basehttpmiddleware",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "logger",
+      "label": "Logger",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "logger",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_database_db_rationale_18",
+      "label": "Initializes SQLite database tables and schema.",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "initializes sqlite database tables and schema.",
+      "source_file": "backend/database/db.py",
+      "source_location": "L18"
     },
     {
       "id": "frontend_app_layout",
       "label": "layout.tsx",
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "layout.tsx",
       "source_file": "frontend/app/layout.tsx",
@@ -5855,7 +5844,7 @@
       "label": "metadata",
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "metadata",
       "source_file": "frontend/app/layout.tsx",
@@ -5866,10 +5855,21 @@
       "label": "toys/page.tsx",
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "toys/page.tsx",
       "source_file": "frontend/app/toys/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_dashboardpreviewsection",
+      "label": "DashboardPreviewSection.tsx",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "dashboardpreviewsection.tsx",
+      "source_file": "frontend/components/DashboardPreviewSection.tsx",
       "source_location": "L1"
     },
     {
@@ -5877,10 +5877,21 @@
       "label": "Footer.tsx",
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "footer.tsx",
       "source_file": "frontend/components/Footer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_labfindersection",
+      "label": "LabFinderSection.tsx",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "labfindersection.tsx",
+      "source_file": "frontend/components/LabFinderSection.tsx",
       "source_location": "L1"
     },
     {
@@ -5888,11 +5899,33 @@
       "label": "Navbar.tsx",
       "_origin": "ast",
       "community": 42,
-      "community_name": "toys/page.tsx",
+      "community_name": "lucide-react",
       "file_type": "code",
       "norm_label": "navbar.tsx",
       "source_file": "frontend/components/Navbar.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_statssection",
+      "label": "StatsSection.tsx",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "code",
+      "norm_label": "statssection.tsx",
+      "source_file": "frontend/components/StatsSection.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "lucide-react",
+      "file_type": "concept",
+      "norm_label": "lucide-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L15"
     },
     {
       "id": "frontend_components_homepage_featuregrid",
@@ -5928,176 +5961,11 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_api_compliance",
-      "label": "compliance.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "compliance.py",
-      "source_file": "backend/api/compliance.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_api_compliance_py_basemodel",
-      "label": "BaseModel",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "basemodel",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_compliance_py_get",
-      "label": "get",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_compliance_py_post",
-      "label": "post",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_dashboard",
-      "label": "dashboard.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "dashboard.py",
-      "source_file": "backend/api/dashboard.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_api_dashboard_py_basemodel",
-      "label": "BaseModel",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "basemodel",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_dashboard_py_get",
-      "label": "get",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_dashboard_py_post",
-      "label": "post",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_documents",
-      "label": "documents.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "documents.py",
-      "source_file": "backend/api/documents.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_api_documents_py_get",
-      "label": "get",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_documents_py_post",
-      "label": "post",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_documents_py_uploadfile",
-      "label": "UploadFile",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "uploadfile",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_grievances",
-      "label": "grievances.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "grievances.py",
-      "source_file": "backend/api/grievances.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_api_grievances_py_get",
-      "label": "get",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_api_grievances_py_post",
-      "label": "post",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "backend_api_projects",
       "label": "projects.py",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "projects.py",
       "source_file": "backend/api/projects.py",
@@ -6108,7 +5976,7 @@
       "label": "get",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "get",
       "source_file": "",
@@ -6119,7 +5987,7 @@
       "label": "post",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "post",
       "source_file": "",
@@ -6130,7 +5998,7 @@
       "label": "standards.py",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "standards.py",
       "source_file": "backend/api/standards.py",
@@ -6141,31 +6009,9 @@
       "label": "post",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_database_db",
-      "label": "db.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "db.py",
-      "source_file": "backend/database/db.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_database_db_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "any",
       "source_file": "",
       "source_location": ""
     },
@@ -6174,7 +6020,7 @@
       "label": "models.py",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "models.py",
       "source_file": "backend/database/models.py",
@@ -6185,110 +6031,11 @@
       "label": "BaseModel",
       "_origin": "ast",
       "community": 45,
-      "community_name": "main.py",
+      "community_name": "projects.py",
       "file_type": "code",
       "norm_label": "basemodel",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "backend_main",
-      "label": "main.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "main.py",
-      "source_file": "backend/main.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_main_py_get",
-      "label": "get",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_services_compliance_engine",
-      "label": "compliance_engine.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "compliance_engine.py",
-      "source_file": "backend/services/compliance_engine.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_services_document_analyzer",
-      "label": "document_analyzer.py",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "document_analyzer.py",
-      "source_file": "backend/services/document_analyzer.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "connection",
-      "label": "Connection",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "connection",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "fastapi",
-      "label": "FastAPI",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "fastapi",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "httpexception",
-      "label": "HTTPException",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "httpexception",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "patch",
-      "label": "patch",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "patch",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_database_db_rationale_18",
-      "label": "Initializes SQLite database tables and schema.",
-      "_origin": "ast",
-      "community": 45,
-      "community_name": "main.py",
-      "file_type": "rationale",
-      "norm_label": "initializes sqlite database tables and schema.",
-      "source_file": "backend/database/db.py",
-      "source_location": "L18"
     },
     {
       "id": "frontend_app_consumer_page",
@@ -6332,6 +6079,17 @@
       "file_type": "code",
       "norm_label": "industry/page.tsx",
       "source_file": "frontend/app/industry/page.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_app_labs_page",
+      "label": "labs/page.tsx",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "labs/page.tsx",
+      "source_file": "frontend/app/labs/page.tsx",
       "source_location": "L1"
     },
     {
@@ -6731,6 +6489,215 @@
       "source_location": "L17"
     },
     {
+      "id": "backend_api_documents_py_get",
+      "label": "get",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_documents_py_post",
+      "label": "post",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "post",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_documents_py_uploadfile",
+      "label": "UploadFile",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "uploadfile",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "httpexception",
+      "label": "HTTPException",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "httpexception",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "patch",
+      "label": "patch",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "HTTPException",
+      "file_type": "code",
+      "norm_label": "patch",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_compliance",
+      "label": "compliance.py",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "compliance.py",
+      "source_file": "backend/api/compliance.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_api_compliance_py_basemodel",
+      "label": "BaseModel",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "basemodel",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_compliance_py_get",
+      "label": "get",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_compliance_py_post",
+      "label": "post",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "compliance.py",
+      "file_type": "code",
+      "norm_label": "post",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_dashboard",
+      "label": "dashboard.py",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "dashboard.py",
+      "source_file": "backend/api/dashboard.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_api_dashboard_py_basemodel",
+      "label": "BaseModel",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "basemodel",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_dashboard_py_get",
+      "label": "get",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_dashboard_py_post",
+      "label": "post",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "post",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "fastapi",
+      "label": "FastAPI",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "FastAPI",
+      "file_type": "code",
+      "norm_label": "fastapi",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_database_db_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "connection",
+      "label": "Connection",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "get_connection",
+      "file_type": "code",
+      "norm_label": "connection",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_grievances",
+      "label": "grievances.py",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "grievances.py",
+      "source_file": "backend/api/grievances.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_api_grievances_py_get",
+      "label": "get",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_api_grievances_py_post",
+      "label": "post",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "grievances.py",
+      "file_type": "code",
+      "norm_label": "post",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "backend_services_compliance_engine_py_any",
       "label": "Any",
       "_origin": "ast",
@@ -6740,6 +6707,39 @@
       "norm_label": "any",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "frontend_components_homepage_standardsearch",
+      "label": "StandardSearch.tsx",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "StandardSearch.tsx",
+      "file_type": "code",
+      "norm_label": "standardsearch.tsx",
+      "source_file": "frontend/components/homepage/StandardSearch.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_components_homepage_standardsearch_popularsearches",
+      "label": "popularSearches",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "StandardSearch.tsx",
+      "file_type": "code",
+      "norm_label": "popularsearches",
+      "source_file": "frontend/components/homepage/StandardSearch.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_components_homepage_standardsearch_sampleresults",
+      "label": "sampleResults",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "StandardSearch.tsx",
+      "file_type": "code",
+      "norm_label": "sampleresults",
+      "source_file": "frontend/components/homepage/StandardSearch.tsx",
+      "source_location": "L17"
     },
     {
       "id": "frontend_tsconfig",
@@ -7004,6 +7004,17 @@
       "norm_label": "post",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "backend_retrievers_relevance_filter",
+      "label": "relevance_filter.py",
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "rag_engine.py",
+      "file_type": "code",
+      "norm_label": "relevance_filter.py",
+      "source_file": "backend/retrievers/relevance_filter.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_services_rag_engine",
@@ -8306,7 +8317,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L71",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -16159,7 +16170,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L106",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -16170,7 +16181,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L107",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -16181,7 +16192,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L108",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -16192,7 +16203,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L109",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -16203,7 +16214,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L110",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -16214,7 +16225,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
-      "source_location": "L111",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -16230,13 +16241,24 @@
     },
     {
       "source": "frontend_app_api_path_route",
-      "target": "frontend_app_api_path_route_handleproxy",
+      "target": "frontend_app_api_path_route_maxduration",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/app/api/[...path]/route.ts",
       "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_app_api_path_route",
+      "target": "frontend_app_api_path_route_handleproxy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/app/api/[...path]/route.ts",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -17468,7 +17490,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L112",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -17479,7 +17501,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L127",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -17490,7 +17512,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L144",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -17501,7 +17523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L162",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -17523,7 +17545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L173",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -17534,7 +17556,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L184",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -17545,7 +17567,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L206",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -17556,7 +17578,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L225",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -17567,7 +17589,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L240",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -17578,7 +17600,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L254",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -17589,7 +17611,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/lib/api.ts",
-      "source_location": "L265",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -20477,5 +20499,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "058298f1b6862d6603139ca50521f6faa696fb8e"
+  "built_at_commit": "4517ad8dc86657ea566c0dd72811202e53658d6a"
 }

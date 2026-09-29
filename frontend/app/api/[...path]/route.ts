@@ -54,7 +54,9 @@ export const maxDuration = 60;
 
 async function handleProxy(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
   const { path } = await params;
-  const targetPath = (path || []).join("/");
+  const rawSegments = path || [];
+  const segments = rawSegments[0] === "api" ? rawSegments.slice(1) : rawSegments;
+  const targetPath = segments.join("/");
   let rawUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_API_URL;
   if (rawUrl && (rawUrl.includes("localhost") || rawUrl.includes("127.0.0.1"))) {
     rawUrl = undefined;
