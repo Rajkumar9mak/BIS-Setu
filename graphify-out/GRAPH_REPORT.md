@@ -1,16 +1,16 @@
 # Graph Report - bis  (2026-09-29)
 
 ## Corpus Check
-- 114 files · ~141,797 words
+- 114 files · ~141,953 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 635 nodes · 1119 edges · 55 communities (30 shown, 23 thin omitted)
+- 636 nodes · 1120 edges · 61 communities (35 shown, 24 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 49 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `058298f1`
+- Built from commit: `4517ad8d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,12 +53,12 @@
 - Specification Doc: implementation_plan
 - 21st/ComplianceRoadmap.tsx
 - app/page.tsx
-- RequestLoggingMiddleware
+- .dispatch
+- main.py
 - lucide-react
-- toys/page.tsx
 - FeatureGrid.tsx
 - ToyHero.tsx
-- main.py
+- projects.py
 - api.ts
 - scripts
 - homepage/Hero.tsx
@@ -68,6 +68,12 @@
 - GlassCard.tsx
 - utils.ts
 - next
+- HTTPException
+- compliance.py
+- FastAPI
+- get_connection
+- grievances.py
+- StandardSearch.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 50 edges
@@ -96,23 +102,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (55 total, 23 thin omitted)
+## Communities (61 total, 24 thin omitted)
 
 ### Community 0 - "RetrievedDoc"
-Cohesion: 0.05
-Nodes (32): ClauseChunk, ClauseChunker, BaseModel, Page and clause-aware chunker that preserves regulatory provenance, clause…, StandardClause, Any, Path, Central document indexer that digests PDF standard specifications and… (+24 more)
+Cohesion: 0.06
+Nodes (30): ClauseChunk, ClauseChunker, BaseModel, Page and clause-aware chunker that preserves regulatory provenance, clause…, StandardClause, Any, Path, Central document indexer that digests PDF standard specifications and… (+22 more)
 
 ### Community 1 - "dependencies"
 Cohesion: 0.20
 Nodes (10): dependencies, canvas-confetti, clsx, lucide-react, motion, next, react, react-dom (+2 more)
 
 ### Community 2 - "react"
-Cohesion: 0.24
-Nodes (6): LabsPage(), loadLabs(), DecorativeShapes(), ShapeProps, fetchLaboratories(), react
+Cohesion: 0.20
+Nodes (8): AIChatSection(), CitationCard(), CitationProps, DecorativeShapes(), ShapeProps, RagResponse, SourceClause, react
 
 ### Community 3 - "toy_standards.ts"
 Cohesion: 0.08
-Nodes (30): CopilotPage(), AIChatSection(), ChatMessage, ProductComplianceExplorer(), ProductComplianceExplorerProps, ChatMessage, ToyAIChat(), ToyAIChatProps (+22 more)
+Nodes (29): CopilotPage(), ChatMessage, ProductComplianceExplorer(), ProductComplianceExplorerProps, ChatMessage, ToyAIChat(), ToyAIChatProps, ToyCategoryCardsProps (+21 more)
 
 ### Community 4 - "frontend/package.json"
 Cohesion: 0.13
@@ -155,8 +161,8 @@ Cohesion: 0.27
 Nodes (8): assignRef(), ButtonHTMLAttributesForMotion, FILL_EASE, getCoverDiameter(), hasTextContent(), OriginButton, OriginButtonProps, cn()
 
 ### Community 16 - "route.ts"
-Cohesion: 0.25
-Nodes (8): DELETE, findBackendPort(), GET, handleProxy(), OPTIONS, PATCH, POST, PUT
+Cohesion: 0.22
+Nodes (9): DELETE, findBackendPort(), GET, handleProxy(), maxDuration, OPTIONS, PATCH, POST (+1 more)
 
 ### Community 17 - "DocumentAnalyzer"
 Cohesion: 0.43
@@ -179,32 +185,28 @@ Cohesion: 0.33
 Nodes (3): ComplianceRoadmapProps, DEFAULT_STEPS, StepItem
 
 ### Community 39 - "app/page.tsx"
-Cohesion: 0.11
-Nodes (15): AudienceSection(), consumerPoints, industryPoints, BISAI(), ComplianceWorkflow(), steps, FinalCTA(), exampleLabs (+7 more)
+Cohesion: 0.13
+Nodes (12): AudienceSection(), consumerPoints, industryPoints, BISAI(), ComplianceWorkflow(), steps, FinalCTA(), exampleLabs (+4 more)
 
-### Community 40 - "RequestLoggingMiddleware"
-Cohesion: 0.40
-Nodes (4): Request, RequestLoggingMiddleware, BaseHTTPMiddleware, Response
+### Community 41 - "main.py"
+Cohesion: 0.18
+Nodes (10): init_db(), Initializes SQLite database tables and schema., get_logger(), RequestLoggingMiddleware, setup_logging(), health(), get, root() (+2 more)
 
-### Community 41 - "lucide-react"
-Cohesion: 0.19
-Nodes (5): CitationCard(), CitationProps, RagResponse, SourceClause, lucide-react
-
-### Community 42 - "toys/page.tsx"
-Cohesion: 0.36
-Nodes (3): metadata, Footer(), Navbar()
+### Community 42 - "lucide-react"
+Cohesion: 0.18
+Nodes (4): metadata, Footer(), Navbar(), lucide-react
 
 ### Community 43 - "FeatureGrid.tsx"
 Cohesion: 0.50
 Nodes (3): FeatureCardData, featureCards, FeatureGrid()
 
-### Community 45 - "main.py"
-Cohesion: 0.05
-Nodes (55): analyze_compliance(), ComplianceAnalyzeRequest, get_labs(), get_product(), get_products(), BaseModel, get, post (+47 more)
+### Community 45 - "projects.py"
+Cohesion: 0.21
+Nodes (14): create_project(), list_project_tasks(), list_projects(), get, post, discover_standards(), post, DocumentAnalyzeRequest (+6 more)
 
 ### Community 46 - "api.ts"
 Cohesion: 0.07
-Nodes (52): BUYING_CHECKLISTS, ConsumerPage(), DashboardPage(), load(), IndustryPage(), loadData(), runAnalysis(), ConsumerVerificationSection() (+44 more)
+Nodes (55): BUYING_CHECKLISTS, ConsumerPage(), DashboardPage(), load(), IndustryPage(), loadData(), runAnalysis(), LabsPage() (+47 more)
 
 ### Community 47 - "scripts"
 Cohesion: 0.40
@@ -218,17 +220,41 @@ Nodes (4): Hero(), ServiceHub(), ServiceItem, services
 Cohesion: 0.50
 Nodes (3): LatestUpdates(), UpdateItem, updates
 
+### Community 55 - "HTTPException"
+Cohesion: 0.24
+Nodes (11): analyze_document(), get_document_details(), get, post, UploadFile, upload_document(), get_project(), update_project() (+3 more)
+
+### Community 56 - "compliance.py"
+Cohesion: 0.31
+Nodes (8): analyze_compliance(), ComplianceAnalyzeRequest, get_labs(), get_product(), get_products(), BaseModel, get, post
+
+### Community 57 - "FastAPI"
+Cohesion: 0.29
+Nodes (7): get_certifications(), initiate_renewal(), BaseModel, get, post, RenewalRequest, FastAPI
+
+### Community 58 - "get_connection"
+Cohesion: 0.43
+Nodes (4): DatabaseManager, get_connection(), Any, Connection
+
+### Community 59 - "grievances.py"
+Cohesion: 0.40
+Nodes (5): get_grievance(), list_grievances(), get, post, report_grievance()
+
+### Community 60 - "StandardSearch.tsx"
+Cohesion: 0.50
+Nodes (3): popularSearches, sampleResults, StandardSearch()
+
 ## Knowledge Gaps
-- **141 isolated node(s):** `GET`, `POST`, `PUT`, `DELETE`, `PATCH` (+136 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 265 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **142 isolated node(s):** `maxDuration`, `GET`, `POST`, `PUT`, `DELETE` (+137 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 266 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `lucide-react`, `toys/page.tsx`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `origin-button.tsx`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`, `21st/DecorativeShapes.tsx`, `GlassCard.tsx`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `lucide-react` to `react`, `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `toys/page.tsx`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`?**
+- **Why does `react` connect `react` to `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `lucide-react`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `origin-button.tsx`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`, `21st/DecorativeShapes.tsx`, `GlassCard.tsx`, `StandardSearch.tsx`?**
+  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+- **Why does `lucide-react` connect `lucide-react` to `react`, `toy_standards.ts`, `frontend/package.json`, `21st/ComplianceRoadmap.tsx`, `app/page.tsx`, `FeatureGrid.tsx`, `ToyHero.tsx`, `api.ts`, `homepage/Hero.tsx`, `CitationBadge.tsx`, `FeatureCard.tsx`, `LatestUpdates.tsx`, `StandardSearch.tsx`?**
   _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Why does `RetrievedDoc` connect `RetrievedDoc` to `rag_engine.py`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
@@ -236,7 +262,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`RetrievedDoc` has 6 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 11 inferred relationships involving `ComplianceEngine` (e.g. with `Electric Kettle Test Report (doc_0091e71c)` and `Electric Kettle Test Report (doc_01ee7870)`) actually correct?**
   _`ComplianceEngine` has 11 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `GET`, `POST`, `PUT` to the rest of the system?**
-  _141 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `maxDuration`, `GET`, `POST` to the rest of the system?**
+  _142 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `RetrievedDoc` be split into smaller, more focused modules?**
-  _Cohesion score 0.05368382080710848 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05789235639981909 - nodes in this community are weakly interconnected._

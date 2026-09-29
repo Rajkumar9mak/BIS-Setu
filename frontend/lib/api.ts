@@ -101,11 +101,15 @@ export async function queryRag(query: string, category?: string): Promise<RagRes
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, category })
     });
-    if (!res.ok) throw new Error('Failed to query RAG');
+    if (!res.ok) {
+      const data = await res.json().catch(() => null);
+      const detailMsg = data?.details ? `${data.error}: ${data.details}` : (data?.error || data?.message || `Server responded with ${res.status}`);
+      throw new Error(detailMsg);
+    }
     return await res.json();
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error querying RAG:', err);
-    return null;
+    throw err;
   }
 }
 

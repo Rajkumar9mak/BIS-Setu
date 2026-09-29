@@ -114,7 +114,7 @@ export default function ConsumerPage() {
     try {
       const res = await verifyProduct(target);
       if (!res) {
-        setErrorMessage('Verification service is unreachable. Please make sure the backend is active on port 8001.');
+        setErrorMessage('Verification service is unreachable. Please make sure the backend service is active.');
       } else {
         setResult(res);
       }

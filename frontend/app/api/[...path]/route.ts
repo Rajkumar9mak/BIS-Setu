@@ -50,10 +50,33 @@ async function findBackendPort(): Promise<string> {
   return uniquePorts[0] || "8000";
 }
 
+export const maxDuration = 60;
+
 async function handleProxy(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
   const { path } = await params;
   const targetPath = (path || []).join("/");
-  const remoteUrl = process.env.BACKEND_URL || (process.env.NEXT_PUBLIC_API_URL && !process.env.NEXT_PUBLIC_API_URL.includes("localhost") ? process.env.NEXT_PUBLIC_API_URL : null);
+  let rawUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_API_URL;
+  if (rawUrl && (rawUrl.includes("localhost") || rawUrl.includes("127.0.0.1"))) {
+    rawUrl = undefined;
+  }
+
+  // Normalize protocol
+  if (rawUrl && !rawUrl.startsWith("http://") && !rawUrl.startsWith("https://")) {
+    rawUrl = `https://${rawUrl}`;
+  }
+
+  const isVercel = Boolean(process.env.VERCEL);
+
+  // If on Vercel and no backend URL is set, fail with a clear actionable message
+  if (isVercel && !rawUrl) {
+    return NextResponse.json(
+      {
+        error: "BACKEND_URL environment variable is missing in Vercel settings.",
+        details: "Go to your Vercel Project Settings > Environment Variables, add BACKEND_URL with your Render URL (e.g. https://bis-setu-backend.onrender.com), and redeploy."
+      },
+      { status: 500 }
+    );
+  }
 
   const search = req.nextUrl.search || "";
   const headers = new Headers(req.headers);
@@ -64,8 +87,8 @@ async function handleProxy(req: NextRequest, { params }: { params: Promise<{ pat
     ...Object.fromEntries(headers.entries()),
   };
 
-  if (remoteUrl) {
-    const cleanBase = remoteUrl.replace(/\/+$/, "");
+  if (rawUrl) {
+    const cleanBase = rawUrl.replace(/\/+$/, "").replace(/\/api$/, "");
     targetUrl = `${cleanBase}/api/${targetPath}${search}`;
   } else {
     const port = await findBackendPort();
@@ -97,7 +120,12 @@ async function handleProxy(req: NextRequest, { params }: { params: Promise<{ pat
   } catch (err: any) {
     console.error(`[API Proxy Error] Failed to proxy to ${targetUrl}:`, err);
     return NextResponse.json(
-      { error: "Backend service unreachable", details: err?.message, targetUrl },
+      {
+        error: "Backend service unreachable",
+        details: err?.message || "Failed to connect to backend",
+        targetUrl,
+        hint: isVercel ? "If your backend is hosted on Render free tier, it may be waking up from sleep (can take ~40s). Please wait and try again." : "Make sure your backend is running locally on port 8000 or 8001."
+      },
       { status: 502 }
     );
   }

@@ -42,7 +42,7 @@ export default function CopilotPage() {
     try {
       const res = await queryRag(q);
       if (!res) {
-        setErrorMessage('Unable to retrieve an answer from the compliance server. Please verify the backend is running on port 8001.');
+        setErrorMessage('Unable to retrieve an answer from the compliance server. Please verify the backend service is running and reachable.');
       } else {
         setCurrentResponse(res);
         if (res.sources && res.sources.length > 0) {
