@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Building2,
   CheckCircle2,
@@ -52,7 +53,7 @@ import {
 import DecorativeShapes from '@/components/DecorativeShapes';
 import ProductComplianceExplorer from '@/components/compliance/ProductComplianceExplorer';
 
-export default function IndustryPage() {
+function IndustryPageContent() {
   // Main Top-level Tab
   const [activeTab, setActiveTab] = useState<'products' | 'discovery' | 'audit' | 'projects' | 'wizard'>('products');
   const [explorerInitialProduct, setExplorerInitialProduct] = useState<string>('toys');
@@ -169,6 +170,25 @@ export default function IndustryPage() {
       setDiscoveryLoading(false);
     }
   };
+
+  // Sync tab and search query dynamically with URL parameters (for /standards, /compliance, and homepage searches)
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && ['products', 'discovery', 'audit', 'projects', 'wizard'].includes(tabParam)) {
+      setActiveTab(tabParam as any);
+    }
+    const qParam = searchParams.get('q');
+    if (qParam && qParam.trim()) {
+      setDiscoveryQuery(qParam.trim());
+      handleDiscover(qParam.trim());
+    }
+    const prodParam = searchParams.get('product');
+    if (prodParam) {
+      setExplorerInitialProduct(prodParam);
+      setSelectedProductId(prodParam);
+    }
+  }, [searchParams]);
 
   // Handle Document Upload & Audit
   const handleDocumentAudit = async (fileToAudit?: File) => {
@@ -1274,5 +1294,13 @@ export default function IndustryPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function IndustryPage() {
+  return (
+    <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-sm text-[#4b4932] dark:text-[#d5c7b2]">Loading BIS Industry Suite...</div>}>
+      <IndustryPageContent />
+    </Suspense>
   );
 }

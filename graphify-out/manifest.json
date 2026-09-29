@@ -276,10 +276,10 @@
     "semantic_hash": ""
   },
   "frontend/app/industry/page.tsx": {
-    "mtime": 1788969518.5154133,
-    "seen": 1788983440.6045456,
-    "ast_hash": "42e33946048d62e6c37c602f86e0b83e",
-    "semantic_hash": "42e33946048d62e6c37c602f86e0b83e"
+    "mtime": 1790693088.23728,
+    "seen": 1790693119.96142,
+    "ast_hash": "497d5b1831608e657ff1c0d4a622fb83",
+    "semantic_hash": ""
   },
   "frontend/app/labs/page.tsx": {
     "mtime": 1788969559.7556217,
@@ -498,9 +498,9 @@
     "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "frontend/next.config.ts": {
-    "mtime": 1790357055.4750423,
-    "seen": 1790357274.4197686,
-    "ast_hash": "57bf54975f6b643106435aa91240f352",
+    "mtime": 1790693052.1772182,
+    "seen": 1790693119.9614727,
+    "ast_hash": "ee2056d63d456669f5e00c7a7fa1466e",
     "semantic_hash": ""
   },
   "frontend/package.json": {
