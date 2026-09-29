@@ -53,12 +53,25 @@ async function findBackendPort(): Promise<string> {
 async function handleProxy(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
   const { path } = await params;
   const targetPath = (path || []).join("/");
-  const search = req.nextUrl.search || "";
-  const port = await findBackendPort();
-  const targetUrl = `http://127.0.0.1:${port}/api/${targetPath}${search}`;
+  const remoteUrl = process.env.BACKEND_URL || (process.env.NEXT_PUBLIC_API_URL && !process.env.NEXT_PUBLIC_API_URL.includes("localhost") ? process.env.NEXT_PUBLIC_API_URL : null);
 
+  const search = req.nextUrl.search || "";
   const headers = new Headers(req.headers);
   headers.delete("host");
+
+  let targetUrl: string;
+  const forwardHeaders: Record<string, string> = {
+    ...Object.fromEntries(headers.entries()),
+  };
+
+  if (remoteUrl) {
+    const cleanBase = remoteUrl.replace(/\/+$/, "");
+    targetUrl = `${cleanBase}/api/${targetPath}${search}`;
+  } else {
+    const port = await findBackendPort();
+    targetUrl = `http://127.0.0.1:${port}/api/${targetPath}${search}`;
+    forwardHeaders.host = `127.0.0.1:${port}`;
+  }
 
   let body: BodyInit | null = null;
   if (req.method !== "GET" && req.method !== "HEAD") {
@@ -68,10 +81,7 @@ async function handleProxy(req: NextRequest, { params }: { params: Promise<{ pat
   try {
     const upstreamRes = await fetch(targetUrl, {
       method: req.method,
-      headers: {
-        ...Object.fromEntries(headers.entries()),
-        host: `127.0.0.1:${port}`,
-      },
+      headers: forwardHeaders,
       body,
       cache: "no-store",
     });
